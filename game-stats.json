@@ -1,0 +1,2959 @@
+{
+  "games": [
+    {
+      "game": {
+        "date": "2026-03-07",
+        "location": "Home",
+        "away": "B1 - Pirates",
+        "home": "Millbrae Mud Hens (Bronco)"
+      },
+      "linescore": {
+        "B1 - Pirates": {
+          "innings": {
+            "1": 1,
+            "2": 4,
+            "3": 0,
+            "4": 4
+          },
+          "R": 9,
+          "H": 8,
+          "E": 1
+        },
+        "Millbrae Mud Hens (Bronco)": {
+          "innings": {
+            "1": 7,
+            "2": 7,
+            "3": 8,
+            "4": 0
+          },
+          "R": 22,
+          "H": 18,
+          "E": 2
+        }
+      },
+      "teams": {
+        "B1 - Pirates": {
+          "batting": {
+            "players": [
+              {
+                "name": "Gavin E",
+                "number": "13",
+                "position": "P",
+                "AB": 3,
+                "R": 2,
+                "H": 2,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Colin R",
+                "number": "16",
+                "position": "P",
+                "AB": 3,
+                "R": 2,
+                "H": 2,
+                "RBI": 3,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Dan G",
+                "number": "50",
+                "position": "P",
+                "AB": 3,
+                "R": 1,
+                "H": 2,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Austin",
+                "number": null,
+                "position": null,
+                "AB": 2,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "Chace",
+                "number": "10",
+                "position": null,
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 3
+              },
+              {
+                "name": "Gio",
+                "number": null,
+                "position": null,
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "Mason",
+                "number": null,
+                "position": null,
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 2
+              },
+              {
+                "name": "Cyrus",
+                "number": "14",
+                "position": null,
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 1,
+                "BB": 2,
+                "SO": 1
+              },
+              {
+                "name": "Greyson",
+                "number": null,
+                "position": null,
+                "AB": 2,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 2
+              },
+              {
+                "name": "Marcus",
+                "number": "2",
+                "position": null,
+                "AB": 1,
+                "R": 2,
+                "H": 1,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 0
+              }
+            ],
+            "totals": {
+              "AB": 22,
+              "R": 9,
+              "H": 8,
+              "RBI": 8,
+              "BB": 6,
+              "SO": 10
+            },
+            "notes": {
+              "TB": [
+                {
+                  "name": "Marcus",
+                  "count": 3
+                },
+                {
+                  "name": "Dan G",
+                  "count": 2
+                },
+                {
+                  "name": "Austin",
+                  "count": 1
+                },
+                {
+                  "name": "Gavin E",
+                  "count": 3
+                },
+                {
+                  "name": "Colin R",
+                  "count": 4
+                }
+              ],
+              "LOB": 7
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "Colin R",
+                "number": "16",
+                "IP": 1.0,
+                "H": 5,
+                "R": 7,
+                "ER": 6,
+                "BB": 3,
+                "SO": 2,
+                "HR": 1
+              },
+              {
+                "name": "Dan G",
+                "number": "50",
+                "IP": 1.0,
+                "H": 4,
+                "R": 7,
+                "ER": 2,
+                "BB": 3,
+                "SO": 1,
+                "HR": 1
+              },
+              {
+                "name": "Gavin E",
+                "number": "13",
+                "IP": 1.0,
+                "H": 9,
+                "R": 8,
+                "ER": 8,
+                "BB": 1,
+                "SO": 0,
+                "HR": 1
+              }
+            ],
+            "totals": {
+              "IP": 3.0,
+              "H": 18,
+              "R": 22,
+              "ER": 16,
+              "BB": 7,
+              "SO": 3,
+              "HR": 3
+            },
+            "notes": {
+              "L": [
+                {
+                  "name": "Colin R",
+                  "count": 1
+                }
+              ],
+              "#P": [
+                {
+                  "name": "Dan G",
+                  "count": 47
+                },
+                {
+                  "name": "Gavin E",
+                  "count": 50
+                },
+                {
+                  "name": "Colin R",
+                  "count": 48
+                }
+              ],
+              "K": [
+                {
+                  "name": "Dan G",
+                  "count": 24
+                },
+                {
+                  "name": "Gavin E",
+                  "count": 26
+                },
+                {
+                  "name": "Colin R",
+                  "count": 24
+                }
+              ],
+              "WP": [
+                {
+                  "name": "Dan G",
+                  "count": 1
+                },
+                {
+                  "name": "Colin R",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "Dan G",
+                  "count": 1
+                },
+                {
+                  "name": "Gavin E",
+                  "count": 1
+                }
+              ],
+              "BF": [
+                {
+                  "name": "Dan G",
+                  "count": 12
+                },
+                {
+                  "name": "Gavin E",
+                  "count": 14
+                },
+                {
+                  "name": "Colin R",
+                  "count": 11
+                }
+              ]
+            }
+          }
+        },
+        "Millbrae Mud Hens (Bronco)": {
+          "batting": {
+            "players": [
+              {
+                "name": "B Mui",
+                "number": "18",
+                "position": "P",
+                "AB": 3,
+                "R": 2,
+                "H": 1,
+                "RBI": 2,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "N Nishik",
+                "number": "67",
+                "position": "LF",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "K Nishik",
+                "number": "14",
+                "position": "SS",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 2,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "R Lue",
+                "number": "9",
+                "position": "C",
+                "AB": 2,
+                "R": 3,
+                "H": 2,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "position": "CF",
+                "AB": 3,
+                "R": 2,
+                "H": 1,
+                "RBI": 3,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "J Magni",
+                "number": "16",
+                "position": "3B",
+                "AB": 2,
+                "R": 3,
+                "H": 2,
+                "RBI": 2,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "J Sweeney",
+                "number": "22",
+                "position": "1B",
+                "AB": 3,
+                "R": 3,
+                "H": 3,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "A Chang",
+                "number": "25",
+                "position": "RF",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "J Lau",
+                "number": "1",
+                "position": "2B",
+                "AB": 1,
+                "R": 1,
+                "H": 1,
+                "RBI": 2,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "position": "RF",
+                "AB": 3,
+                "R": 0,
+                "H": 3,
+                "RBI": 5,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "N Pinchak",
+                "number": "3",
+                "position": "RF",
+                "AB": 3,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "G Loo",
+                "number": "10",
+                "position": "LF",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              }
+            ],
+            "totals": {
+              "AB": 28,
+              "R": 22,
+              "H": 18,
+              "RBI": 19,
+              "BB": 7,
+              "SO": 3
+            },
+            "notes": {
+              "HR": [
+                {
+                  "name": "K Cheng",
+                  "count": 1
+                },
+                {
+                  "name": "J Magni",
+                  "count": 1
+                },
+                {
+                  "name": "B Mui",
+                  "count": 1
+                }
+              ],
+              "TB": [
+                {
+                  "name": "G Loo",
+                  "count": 1
+                },
+                {
+                  "name": "N Pinchak",
+                  "count": 1
+                },
+                {
+                  "name": "N Nishikawa",
+                  "count": 1
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 4
+                },
+                {
+                  "name": "R Lue",
+                  "count": 2
+                },
+                {
+                  "name": "J Magni",
+                  "count": 5
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 1
+                },
+                {
+                  "name": "B Mui",
+                  "count": 4
+                },
+                {
+                  "name": "R Pineda",
+                  "count": 3
+                },
+                {
+                  "name": "J Sweeney",
+                  "count": 3
+                },
+                {
+                  "name": "A Chang",
+                  "count": 1
+                },
+                {
+                  "name": "J Lau",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "R Lue",
+                  "count": 1
+                },
+                {
+                  "name": "J Magni",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "G Loo",
+                  "count": 2
+                },
+                {
+                  "name": "N Nishikawa",
+                  "count": 4
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 1
+                },
+                {
+                  "name": "R Lue",
+                  "count": 2
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 2
+                },
+                {
+                  "name": "B Mui",
+                  "count": 1
+                },
+                {
+                  "name": "J Sweeney",
+                  "count": 1
+                }
+              ],
+              "LOB": 6
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "B Mui",
+                "number": "18",
+                "IP": 2.0,
+                "H": 8,
+                "R": 5,
+                "ER": 5,
+                "BB": 1,
+                "SO": 5,
+                "HR": 0
+              },
+              {
+                "name": "A Chang",
+                "number": "25",
+                "IP": 1.0,
+                "H": 0,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 3,
+                "HR": 0
+              },
+              {
+                "name": "N Nishi",
+                "number": "67",
+                "IP": 1.0,
+                "H": 0,
+                "R": 4,
+                "ER": 1,
+                "BB": 5,
+                "SO": 2,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 4.0,
+              "H": 8,
+              "R": 9,
+              "ER": 6,
+              "BB": 6,
+              "SO": 10,
+              "HR": 0
+            },
+            "notes": {
+              "W": [
+                {
+                  "name": "B Mui",
+                  "count": 1
+                }
+              ],
+              "#P": [
+                {
+                  "name": "N Nishikawa",
+                  "count": 49
+                },
+                {
+                  "name": "B Mui",
+                  "count": 50
+                },
+                {
+                  "name": "A Chang",
+                  "count": 13
+                }
+              ],
+              "K": [
+                {
+                  "name": "N Nishikawa",
+                  "count": 23
+                },
+                {
+                  "name": "B Mui",
+                  "count": 36
+                },
+                {
+                  "name": "A Chang",
+                  "count": 10
+                }
+              ],
+              "WP": [
+                {
+                  "name": "N Nishikawa",
+                  "count": 2
+                }
+              ],
+              "BF": [
+                {
+                  "name": "N Nishikawa",
+                  "count": 10
+                },
+                {
+                  "name": "B Mui",
+                  "count": 15
+                },
+                {
+                  "name": "A Chang",
+                  "count": 3
+                }
+              ],
+              "E": [
+                {
+                  "name": "N Pinchak",
+                  "count": 1
+                },
+                {
+                  "name": "R Lue",
+                  "count": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "game": {
+        "date": "2026-03-14",
+        "location": "Away",
+        "away": "Millbrae Mud Hens (Bronco)",
+        "home": "B2 - Athletics"
+      },
+      "linescore": {
+        "Millbrae Mud Hens (Bronco)": {
+          "innings": {
+            "1": 3,
+            "2": 7,
+            "3": 4,
+            "4": 0,
+            "5": 5
+          },
+          "R": 19,
+          "H": 15,
+          "E": 6
+        },
+        "B2 - Athletics": {
+          "innings": {
+            "1": 0,
+            "2": 0,
+            "3": 3,
+            "4": 2,
+            "5": 1
+          },
+          "R": 6,
+          "H": 3,
+          "E": 2
+        }
+      },
+      "teams": {
+        "Millbrae Mud Hens (Bronco)": {
+          "batting": {
+            "players": [
+              {
+                "name": "B Mui",
+                "number": "18",
+                "position": "SS",
+                "AB": 1,
+                "R": 3,
+                "H": 1,
+                "RBI": 1,
+                "BB": 3,
+                "SO": 0
+              },
+              {
+                "name": "N Nishik",
+                "number": "67",
+                "position": "LF",
+                "AB": 3,
+                "R": 2,
+                "H": 1,
+                "RBI": 2,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "R Lue",
+                "number": "9",
+                "position": "C",
+                "AB": 2,
+                "R": 3,
+                "H": 2,
+                "RBI": 4,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "position": "CF",
+                "AB": 3,
+                "R": 3,
+                "H": 2,
+                "RBI": 2,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "J Magni",
+                "number": "16",
+                "position": "3B",
+                "AB": 4,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 3
+              },
+              {
+                "name": "J Sweeney",
+                "number": "22",
+                "position": "1B",
+                "AB": 3,
+                "R": 1,
+                "H": 2,
+                "RBI": 5,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "A Chang",
+                "number": "25",
+                "position": "P",
+                "AB": 3,
+                "R": 0,
+                "H": 2,
+                "RBI": 2,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "J Lau",
+                "number": "1",
+                "position": "RF",
+                "AB": 3,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "position": "2B",
+                "AB": 3,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "N Pinchak",
+                "number": "3",
+                "position": "3B",
+                "AB": 3,
+                "R": 3,
+                "H": 2,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "O Manyak",
+                "number": "2",
+                "position": "2B",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              }
+            ],
+            "totals": {
+              "AB": 30,
+              "R": 19,
+              "H": 15,
+              "RBI": 16,
+              "BB": 10,
+              "SO": 6
+            },
+            "notes": {
+              "HR": [
+                {
+                  "name": "J Sweeney",
+                  "count": 1
+                }
+              ],
+              "TB": [
+                {
+                  "name": "A Chang",
+                  "count": 2
+                },
+                {
+                  "name": "O Manyak-Pritsker",
+                  "count": 1
+                },
+                {
+                  "name": "N Pinchak",
+                  "count": 2
+                },
+                {
+                  "name": "J Lau",
+                  "count": 1
+                },
+                {
+                  "name": "J Sweeney",
+                  "count": 5
+                },
+                {
+                  "name": "R Pineda",
+                  "count": 1
+                },
+                {
+                  "name": "N Nishikawa",
+                  "count": 1
+                },
+                {
+                  "name": "B Mui",
+                  "count": 1
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 3
+                },
+                {
+                  "name": "R Lue",
+                  "count": 3
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "J Sweeney",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "N Pinchak",
+                  "count": 1
+                },
+                {
+                  "name": "B Mui",
+                  "count": 2
+                }
+              ],
+              "LOB": 7
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "A Chang",
+                "number": "25",
+                "IP": 2.0,
+                "H": 0,
+                "R": 0,
+                "ER": 0,
+                "BB": 2,
+                "SO": 4,
+                "HR": 0
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "IP": 1.0,
+                "H": 3,
+                "R": 3,
+                "ER": 3,
+                "BB": 3,
+                "SO": 0,
+                "HR": 0
+              },
+              {
+                "name": "O Manya",
+                "number": "2",
+                "IP": 2.0,
+                "H": 0,
+                "R": 3,
+                "ER": 0,
+                "BB": 1,
+                "SO": 1,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 5.0,
+              "H": 3,
+              "R": 6,
+              "ER": 3,
+              "BB": 6,
+              "SO": 5,
+              "HR": 0
+            },
+            "notes": {}
+          }
+        },
+        "B2 - Athletics": {
+          "batting": {
+            "players": [
+              {
+                "name": "Andrew W",
+                "number": "10",
+                "position": "SS",
+                "AB": 3,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Tyson S",
+                "number": "12",
+                "position": "P",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "Alden P",
+                "number": "19",
+                "position": "C",
+                "AB": 0,
+                "R": 0,
+                "H": 0,
+                "RBI": 1,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "James O",
+                "number": "17",
+                "position": "1B",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "Ryan P",
+                "number": "50",
+                "position": "2B",
+                "AB": 3,
+                "R": 0,
+                "H": 1,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "Dylan H",
+                "number": "5",
+                "position": "P",
+                "AB": 3,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "Locke W",
+                "number": "13",
+                "position": "LF",
+                "AB": 3,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Sam F",
+                "number": "3",
+                "position": "3B",
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "Malaki C",
+                "number": "24",
+                "position": "RF",
+                "AB": 2,
+                "R": 2,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "P O'Connor",
+                "number": null,
+                "position": "CF",
+                "AB": 0,
+                "R": 2,
+                "H": 0,
+                "RBI": 0,
+                "BB": 2,
+                "SO": 0
+              }
+            ],
+            "totals": {
+              "AB": 20,
+              "R": 6,
+              "H": 3,
+              "RBI": 2,
+              "BB": 6,
+              "SO": 5
+            },
+            "notes": {
+              "TB": [
+                {
+                  "name": "Ryan P",
+                  "count": 1
+                },
+                {
+                  "name": "Dylan H",
+                  "count": 1
+                },
+                {
+                  "name": "Andrew W",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "Alden P",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "Locke W",
+                  "count": 1
+                },
+                {
+                  "name": "James O",
+                  "count": 2
+                },
+                {
+                  "name": "Alden P",
+                  "count": 2
+                },
+                {
+                  "name": "P O'Connor",
+                  "count": 2
+                }
+              ],
+              "LOB": 6
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "Tyson S",
+                "number": "12",
+                "IP": 1.0,
+                "H": 3,
+                "R": 3,
+                "ER": 3,
+                "BB": 2,
+                "SO": 1,
+                "HR": 0
+              },
+              {
+                "name": "Dylan H",
+                "number": "5",
+                "IP": 0.2,
+                "H": 4,
+                "R": 7,
+                "ER": 7,
+                "BB": 4,
+                "SO": 1,
+                "HR": 1
+              },
+              {
+                "name": "Locke W",
+                "number": "13",
+                "IP": 1.0,
+                "H": 3,
+                "R": 4,
+                "ER": 0,
+                "BB": 2,
+                "SO": 1,
+                "HR": 0
+              },
+              {
+                "name": "Sam F",
+                "number": "3",
+                "IP": 1.2,
+                "H": 4,
+                "R": 5,
+                "ER": 5,
+                "BB": 2,
+                "SO": 3,
+                "HR": 0
+              },
+              {
+                "name": "Andrew",
+                "number": "10",
+                "IP": 0.1,
+                "H": 1,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 0,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 4.2,
+              "H": 15,
+              "R": 19,
+              "ER": 15,
+              "BB": 10,
+              "SO": 6,
+              "HR": 1
+            },
+            "notes": {}
+          }
+        }
+      }
+    },
+    {
+      "game": {
+        "date": "2026-03-21",
+        "location": "Away",
+        "away": "Millbrae Mud Hens (Bronco)",
+        "home": "B3 - Yankees"
+      },
+      "linescore": {
+        "Millbrae Mud Hens (Bronco)": {
+          "innings": {
+            "1": 1,
+            "2": 0,
+            "3": 5,
+            "4": 0,
+            "5": 4
+          },
+          "R": 10,
+          "H": 12,
+          "E": 1
+        },
+        "B3 - Yankees": {
+          "innings": {
+            "1": 0,
+            "2": 0,
+            "3": 4,
+            "4": 1,
+            "5": 1
+          },
+          "R": 6,
+          "H": 7,
+          "E": 3
+        }
+      },
+      "teams": {
+        "Millbrae Mud Hens (Bronco)": {
+          "batting": {
+            "players": [
+              {
+                "name": "K Nishik",
+                "number": "14",
+                "position": "SS",
+                "AB": 4,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "position": "P",
+                "AB": 3,
+                "R": 2,
+                "H": 1,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "R Lue",
+                "number": "9",
+                "position": "3B",
+                "AB": 3,
+                "R": 1,
+                "H": 2,
+                "RBI": 2,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "J Sweeney",
+                "number": "22",
+                "position": "1B",
+                "AB": 3,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "J Magni",
+                "number": "16",
+                "position": "3B",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "A Chang",
+                "number": "25",
+                "position": "CF",
+                "AB": 3,
+                "R": 1,
+                "H": 1,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "position": "2B",
+                "AB": 3,
+                "R": 1,
+                "H": 2,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "N Pinchak",
+                "number": "3",
+                "position": "RF",
+                "AB": 3,
+                "R": 1,
+                "H": 1,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "J Lau",
+                "number": "1",
+                "position": "C",
+                "AB": 2,
+                "R": 0,
+                "H": 2,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "O Manyak",
+                "number": "2",
+                "position": "LF",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "G Loo",
+                "number": "10",
+                "position": "LF",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 1
+              }
+            ],
+            "totals": {
+              "AB": 29,
+              "R": 10,
+              "H": 12,
+              "RBI": 7,
+              "BB": 3,
+              "SO": 5
+            },
+            "notes": {
+              "HR": [
+                {
+                  "name": "R Lue",
+                  "count": 1
+                }
+              ],
+              "TB": [
+                {
+                  "name": "N Pinchak",
+                  "count": 2
+                },
+                {
+                  "name": "R Lue",
+                  "count": 6
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 2
+                },
+                {
+                  "name": "A Chang",
+                  "count": 1
+                },
+                {
+                  "name": "J Lau",
+                  "count": 2
+                },
+                {
+                  "name": "R Pineda",
+                  "count": 2
+                },
+                {
+                  "name": "J Sweeney",
+                  "count": 2
+                },
+                {
+                  "name": "J Magni",
+                  "count": 2
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "G Loo",
+                  "count": 1
+                },
+                {
+                  "name": "J Lau",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "A Chang",
+                  "count": 1
+                },
+                {
+                  "name": "J Lau",
+                  "count": 2
+                },
+                {
+                  "name": "R Pineda",
+                  "count": 1
+                },
+                {
+                  "name": "O Manyak-Pritsker",
+                  "count": 1
+                },
+                {
+                  "name": "J Magni",
+                  "count": 1
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 1
+                }
+              ],
+              "LOB": 9
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "IP": 2.0,
+                "H": 3,
+                "R": 4,
+                "ER": 4,
+                "BB": 4,
+                "SO": 3,
+                "HR": 0
+              },
+              {
+                "name": "K Nishi",
+                "number": "14",
+                "IP": 3.0,
+                "H": 4,
+                "R": 2,
+                "ER": 1,
+                "BB": 2,
+                "SO": 5,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 5.0,
+              "H": 7,
+              "R": 6,
+              "ER": 5,
+              "BB": 6,
+              "SO": 8,
+              "HR": 0
+            },
+            "notes": {
+              "#P": [
+                {
+                  "name": "K Cheng",
+                  "count": 51
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 58
+                }
+              ],
+              "K": [
+                {
+                  "name": "K Cheng",
+                  "count": 26
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 33
+                }
+              ],
+              "WP": [
+                {
+                  "name": "K Cheng",
+                  "count": 1
+                }
+              ],
+              "BF": [
+                {
+                  "name": "K Cheng",
+                  "count": 13
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 14
+                }
+              ],
+              "E": [
+                {
+                  "name": "A Chang",
+                  "count": 1
+                }
+              ]
+            }
+          }
+        },
+        "B3 - Yankees": {
+          "batting": {
+            "players": [
+              {
+                "name": "Nolan",
+                "number": "22",
+                "position": null,
+                "AB": 3,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Koh",
+                "number": "18",
+                "position": "P",
+                "AB": 2,
+                "R": 1,
+                "H": 1,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "Logan",
+                "number": "15",
+                "position": null,
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "Lincoln",
+                "number": "6",
+                "position": null,
+                "AB": 2,
+                "R": 1,
+                "H": 2,
+                "RBI": 3,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "Aduay",
+                "number": "50",
+                "position": "P",
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "Matthew",
+                "number": "2",
+                "position": "C",
+                "AB": 2,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "Michael",
+                "number": "13",
+                "position": null,
+                "AB": 3,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "Ethan",
+                "number": "10",
+                "position": null,
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 2,
+                "SO": 1
+              },
+              {
+                "name": "Koa",
+                "number": "29",
+                "position": null,
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 3
+              }
+            ],
+            "totals": {
+              "AB": 21,
+              "R": 6,
+              "H": 7,
+              "RBI": 4,
+              "BB": 6,
+              "SO": 8
+            },
+            "notes": {
+              "TB": [
+                {
+                  "name": "Lincoln",
+                  "count": 2
+                },
+                {
+                  "name": "Matthew",
+                  "count": 1
+                },
+                {
+                  "name": "Logan",
+                  "count": 1
+                },
+                {
+                  "name": "Koh",
+                  "count": 2
+                },
+                {
+                  "name": "Nolan",
+                  "count": 1
+                },
+                {
+                  "name": "Michael",
+                  "count": 2
+                }
+              ],
+              "SB": [
+                {
+                  "name": "Lincoln",
+                  "count": 5
+                },
+                {
+                  "name": "Matthew",
+                  "count": 1
+                },
+                {
+                  "name": "Logan",
+                  "count": 2
+                },
+                {
+                  "name": "Koh",
+                  "count": 3
+                },
+                {
+                  "name": "Nolan",
+                  "count": 1
+                }
+              ],
+              "LOB": 6,
+              "HBP": [
+                {
+                  "name": "Aduay",
+                  "count": 2
+                }
+              ],
+              "CS": [
+                {
+                  "name": "Michael",
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "Koh",
+                "number": "18",
+                "IP": 2.2,
+                "H": 6,
+                "R": 4,
+                "ER": 3,
+                "BB": 0,
+                "SO": 2,
+                "HR": 1
+              },
+              {
+                "name": "Aduay",
+                "number": "50",
+                "IP": 2.0,
+                "H": 6,
+                "R": 6,
+                "ER": 1,
+                "BB": 3,
+                "SO": 3,
+                "HR": 0
+              },
+              {
+                "name": "Matthew",
+                "number": "2",
+                "IP": 0.1,
+                "H": 0,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 0,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 5.0,
+              "H": 12,
+              "R": 10,
+              "ER": 4,
+              "BB": 3,
+              "SO": 5,
+              "HR": 1
+            },
+            "notes": {
+              "#P": [
+                {
+                  "name": "Matthew",
+                  "count": 1
+                },
+                {
+                  "name": "Koh",
+                  "count": 46
+                },
+                {
+                  "name": "Aduay",
+                  "count": 64
+                }
+              ],
+              "K": [
+                {
+                  "name": "Matthew",
+                  "count": 1
+                },
+                {
+                  "name": "Koh",
+                  "count": 32
+                },
+                {
+                  "name": "Aduay",
+                  "count": 34
+                }
+              ],
+              "WP": [
+                {
+                  "name": "Koh",
+                  "count": 2
+                },
+                {
+                  "name": "Aduay",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "Aduay",
+                  "count": 2
+                }
+              ],
+              "BF": [
+                {
+                  "name": "Matthew",
+                  "count": 1
+                },
+                {
+                  "name": "Koh",
+                  "count": 15
+                },
+                {
+                  "name": "Aduay",
+                  "count": 18
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "game": {
+        "date": "2026-03-17",
+        "location": "Away",
+        "away": "Millbrae Mud Hens (Bronco)",
+        "home": "Millbrae Little Giants (Team 5)"
+      },
+      "linescore": {
+        "Millbrae Mud Hens (Bronco)": {
+          "innings": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 2,
+            "5": 0
+          },
+          "R": 2,
+          "H": 5,
+          "E": 0
+        },
+        "Millbrae Little Giants (Team 5)": {
+          "innings": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 6,
+            "5": 5
+          },
+          "R": 11,
+          "H": 8,
+          "E": 1
+        }
+      },
+      "teams": {
+        "Millbrae Mud Hens (Bronco)": {
+          "batting": {
+            "players": [
+              {
+                "name": "B Mui",
+                "number": "18",
+                "position": "P",
+                "AB": 1,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "N Nishik",
+                "number": "67",
+                "position": "LF",
+                "AB": 2,
+                "R": 0,
+                "H": 1,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "K Nishik",
+                "number": "14",
+                "position": "SS",
+                "AB": 2,
+                "R": 0,
+                "H": 1,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "R Lue",
+                "number": "9",
+                "position": "C",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "position": "CF",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "J Sweeney",
+                "number": "22",
+                "position": "1B",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "J Magni",
+                "number": "16",
+                "position": "3B",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "A Chang",
+                "number": "25",
+                "position": "2B",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "position": "2B",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "N Pinchak",
+                "number": "3",
+                "position": "3B",
+                "AB": 1,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "J Lau",
+                "number": "1",
+                "position": "RF",
+                "AB": 1,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "O Manyak",
+                "number": "2",
+                "position": "LF",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "G Loo",
+                "number": "10",
+                "position": "LF",
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              }
+            ],
+            "totals": {
+              "AB": 19,
+              "R": 2,
+              "H": 5,
+              "RBI": 2,
+              "BB": 0,
+              "SO": 7
+            },
+            "notes": {
+              "TB": [
+                {
+                  "name": "J Lau",
+                  "count": 2
+                },
+                {
+                  "name": "B Mui",
+                  "count": 2
+                },
+                {
+                  "name": "N Pinchak",
+                  "count": 2
+                },
+                {
+                  "name": "N Nishikawa",
+                  "count": 1
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "B Mui",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "K Nishikawa",
+                  "count": 1
+                }
+              ],
+              "LOB": 3,
+              "CS": [
+                {
+                  "name": "N Pinchak",
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "B Mui",
+                "number": "18",
+                "IP": 3.0,
+                "H": 2,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 4,
+                "HR": 0
+              },
+              {
+                "name": "J Swee",
+                "number": "22",
+                "IP": 0.0,
+                "H": 1,
+                "R": 4,
+                "ER": 4,
+                "BB": 3,
+                "SO": 0,
+                "HR": 0
+              },
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "IP": 1.1,
+                "H": 2,
+                "R": 5,
+                "ER": 5,
+                "BB": 4,
+                "SO": 3,
+                "HR": 0
+              },
+              {
+                "name": "O Many",
+                "number": "2",
+                "IP": 0.2,
+                "H": 3,
+                "R": 2,
+                "ER": 2,
+                "BB": 0,
+                "SO": 2,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 5.0,
+              "H": 8,
+              "R": 11,
+              "ER": 11,
+              "BB": 7,
+              "SO": 9,
+              "HR": 0
+            },
+            "notes": {
+              "L": [
+                {
+                  "name": "J Sweeney",
+                  "count": 1
+                }
+              ],
+              "#P": [
+                {
+                  "name": "J Sweeney",
+                  "count": 21
+                },
+                {
+                  "name": "O Manyak-Pritsker",
+                  "count": 18
+                },
+                {
+                  "name": "B Mui",
+                  "count": 46
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 40
+                }
+              ],
+              "K": [
+                {
+                  "name": "J Sweeney",
+                  "count": 7
+                },
+                {
+                  "name": "O Manyak-Pritsker",
+                  "count": 13
+                },
+                {
+                  "name": "B Mui",
+                  "count": 31
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 17
+                }
+              ],
+              "BF": [
+                {
+                  "name": "J Sweeney",
+                  "count": 4
+                },
+                {
+                  "name": "O Manyak-Pritsker",
+                  "count": 5
+                },
+                {
+                  "name": "B Mui",
+                  "count": 11
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 10
+                }
+              ]
+            }
+          }
+        },
+        "Millbrae Little Giants (Team 5)": {
+          "batting": {
+            "players": [
+              {
+                "name": "J Gunde",
+                "number": "22",
+                "position": "SS",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "M von Fisc",
+                "number": "5",
+                "position": "P",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "C Gunde",
+                "number": "27",
+                "position": "3B",
+                "AB": 2,
+                "R": 2,
+                "H": 2,
+                "RBI": 2,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "D Friis",
+                "number": "18",
+                "position": "1B",
+                "AB": 2,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 2
+              },
+              {
+                "name": "L Kim",
+                "number": "29",
+                "position": "3B",
+                "AB": 3,
+                "R": 0,
+                "H": 1,
+                "RBI": 2,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "N Barakat",
+                "number": "14",
+                "position": "1B",
+                "AB": 3,
+                "R": 1,
+                "H": 2,
+                "RBI": 1,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "A Hsu",
+                "number": "21",
+                "position": "2B",
+                "AB": 2,
+                "R": 0,
+                "H": 1,
+                "RBI": 2,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "D Lintz",
+                "number": "42",
+                "position": "LF",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "L Hsu",
+                "number": "12",
+                "position": "CF",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "A Castell",
+                "number": "10",
+                "position": "2B",
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "A Villavi",
+                "number": "67",
+                "position": "LF",
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "O Chew",
+                "number": "9",
+                "position": "RF",
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 1
+              }
+            ],
+            "totals": {
+              "AB": 23,
+              "R": 11,
+              "H": 8,
+              "RBI": 7,
+              "BB": 7,
+              "SO": 9
+            },
+            "notes": {
+              "TB": [
+                {
+                  "name": "L Kim",
+                  "count": 2
+                },
+                {
+                  "name": "M von Fischer",
+                  "count": 1
+                },
+                {
+                  "name": "C Gunderson",
+                  "count": 2
+                },
+                {
+                  "name": "A Hsu",
+                  "count": 1
+                },
+                {
+                  "name": "N Barakat",
+                  "count": 2
+                },
+                {
+                  "name": "J Gunderson",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "L Kim",
+                  "count": 1
+                },
+                {
+                  "name": "C Gunderson",
+                  "count": 3
+                },
+                {
+                  "name": "A Hsu",
+                  "count": 2
+                },
+                {
+                  "name": "A Castellanos",
+                  "count": 2
+                },
+                {
+                  "name": "N Barakat",
+                  "count": 1
+                }
+              ],
+              "LOB": 4
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "M von Fi",
+                "number": "5",
+                "IP": 3.0,
+                "H": 2,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 2,
+                "HR": 0
+              },
+              {
+                "name": "J Gund",
+                "number": "22",
+                "IP": 1.0,
+                "H": 3,
+                "R": 2,
+                "ER": 2,
+                "BB": 0,
+                "SO": 2,
+                "HR": 0
+              },
+              {
+                "name": "C Gund",
+                "number": "27",
+                "IP": 1.0,
+                "H": 0,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 3,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 5.0,
+              "H": 5,
+              "R": 2,
+              "ER": 2,
+              "BB": 0,
+              "SO": 7,
+              "HR": 0
+            },
+            "notes": {
+              "W": [
+                {
+                  "name": "J Gunderson",
+                  "count": 1
+                }
+              ],
+              "#P": [
+                {
+                  "name": "M von Fischer",
+                  "count": 41
+                },
+                {
+                  "name": "C Gunderson",
+                  "count": 15
+                },
+                {
+                  "name": "J Gunderson",
+                  "count": 18
+                }
+              ],
+              "K": [
+                {
+                  "name": "M von Fischer",
+                  "count": 22
+                },
+                {
+                  "name": "C Gunderson",
+                  "count": 10
+                },
+                {
+                  "name": "J Gunderson",
+                  "count": 13
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "J Gunderson",
+                  "count": 1
+                }
+              ],
+              "BF": [
+                {
+                  "name": "M von Fischer",
+                  "count": 10
+                },
+                {
+                  "name": "C Gunderson",
+                  "count": 3
+                },
+                {
+                  "name": "J Gunderson",
+                  "count": 7
+                }
+              ],
+              "E": [
+                {
+                  "name": "A Castellanos",
+                  "count": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "game": {
+        "date": "2026-03-25",
+        "location": "Home",
+        "away": "Millbrae REBELS (Team 2)",
+        "home": "Millbrae Mud Hens (Bronco)"
+      },
+      "linescore": {
+        "Millbrae REBELS (Team 2)": {
+          "innings": {
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 1
+          },
+          "R": 1,
+          "H": 3,
+          "E": 1
+        },
+        "Millbrae Mud Hens (Bronco)": {
+          "innings": {
+            "1": 5,
+            "2": 1,
+            "3": 12,
+            "4": 0,
+            "5": 0
+          },
+          "R": 18,
+          "H": 10,
+          "E": 1
+        }
+      },
+      "teams": {
+        "Millbrae REBELS (Team 2)": {
+          "batting": {
+            "players": [
+              {
+                "name": "D Yang",
+                "number": "11",
+                "position": "2B",
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "M Dimalanta",
+                "number": "6",
+                "position": "C",
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "B Hsui",
+                "number": "28",
+                "position": "SS",
+                "AB": 2,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "F Fordyce",
+                "number": "16",
+                "position": "3B",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 2
+              },
+              {
+                "name": "L Chan",
+                "number": "8",
+                "position": "P",
+                "AB": 2,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "M Yeung",
+                "number": "12",
+                "position": "LF",
+                "AB": 2,
+                "R": 0,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "T Cannon",
+                "number": "3",
+                "position": "1B",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 1
+              },
+              {
+                "name": "J O'Sulli",
+                "number": "47",
+                "position": "CF",
+                "AB": 2,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "N Lee",
+                "number": "9",
+                "position": "RF",
+                "AB": 1,
+                "R": 0,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              }
+            ],
+            "totals": {
+              "AB": 18,
+              "R": 1,
+              "H": 3,
+              "RBI": 0,
+              "BB": 2,
+              "SO": 9
+            },
+            "notes": {
+              "TB": [
+                {
+                  "name": "J O'Sullivan",
+                  "count": 1
+                },
+                {
+                  "name": "B Hsui",
+                  "count": 1
+                },
+                {
+                  "name": "M Yeung",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "J O'Sullivan",
+                  "count": 1
+                },
+                {
+                  "name": "M Yeung",
+                  "count": 1
+                }
+              ],
+              "LOB": 4
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "L Chan",
+                "number": "8",
+                "IP": 1.2,
+                "H": 3,
+                "R": 5,
+                "ER": 5,
+                "BB": 5,
+                "SO": 1,
+                "HR": 1
+              },
+              {
+                "name": "B Hsui",
+                "number": "28",
+                "IP": 0.2,
+                "H": 6,
+                "R": 12,
+                "ER": 12,
+                "BB": 7,
+                "SO": 0,
+                "HR": 0
+              },
+              {
+                "name": "M Yeung",
+                "number": "12",
+                "IP": 0.2,
+                "H": 1,
+                "R": 1,
+                "ER": 1,
+                "BB": 1,
+                "SO": 1,
+                "HR": 1
+              },
+              {
+                "name": "M Dimal",
+                "number": "6",
+                "IP": 1.0,
+                "H": 0,
+                "R": 0,
+                "ER": 0,
+                "BB": 0,
+                "SO": 1,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 4.0,
+              "H": 10,
+              "R": 18,
+              "ER": 18,
+              "BB": 13,
+              "SO": 3,
+              "HR": 2
+            },
+            "notes": {}
+          }
+        },
+        "Millbrae Mud Hens (Bronco)": {
+          "batting": {
+            "players": [
+              {
+                "name": "B Mui",
+                "number": "18",
+                "position": "2B",
+                "AB": 1,
+                "R": 3,
+                "H": 1,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "N Nishik",
+                "number": "67",
+                "position": "LF",
+                "AB": 3,
+                "R": 1,
+                "H": 3,
+                "RBI": 4,
+                "BB": 0,
+                "SO": 0
+              },
+              {
+                "name": "K Nishik",
+                "number": "14",
+                "position": "SS",
+                "AB": 2,
+                "R": 2,
+                "H": 1,
+                "RBI": 1,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "R Lue",
+                "number": "9",
+                "position": "C",
+                "AB": 2,
+                "R": 3,
+                "H": 2,
+                "RBI": 4,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "K Cheng",
+                "number": "24",
+                "position": "CF",
+                "AB": 1,
+                "R": 2,
+                "H": 1,
+                "RBI": 0,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "J Sweeney",
+                "number": "22",
+                "position": "1B",
+                "AB": 1,
+                "R": 2,
+                "H": 0,
+                "RBI": 0,
+                "BB": 2,
+                "SO": 1
+              },
+              {
+                "name": "J Magni",
+                "number": "16",
+                "position": "3B",
+                "AB": 2,
+                "R": 1,
+                "H": 1,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              },
+              {
+                "name": "A Chang",
+                "number": "25",
+                "position": "P",
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 1,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "position": "2B",
+                "AB": 3,
+                "R": 0,
+                "H": 0,
+                "RBI": 2,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "N Pinchak",
+                "number": "3",
+                "position": "LF",
+                "AB": 2,
+                "R": 1,
+                "H": 1,
+                "RBI": 2,
+                "BB": 0,
+                "SO": 1
+              },
+              {
+                "name": "J Lau",
+                "number": "1",
+                "position": "RF",
+                "AB": 0,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 2,
+                "SO": 0
+              },
+              {
+                "name": "G Loo",
+                "number": "10",
+                "position": "RF",
+                "AB": 1,
+                "R": 1,
+                "H": 0,
+                "RBI": 0,
+                "BB": 1,
+                "SO": 0
+              }
+            ],
+            "totals": {
+              "AB": 19,
+              "R": 18,
+              "H": 10,
+              "RBI": 15,
+              "BB": 13,
+              "SO": 3
+            },
+            "notes": {
+              "HR": [
+                {
+                  "name": "R Lue",
+                  "count": 2
+                }
+              ],
+              "TB": [
+                {
+                  "name": "R Lue",
+                  "count": 8
+                },
+                {
+                  "name": "J Magni",
+                  "count": 1
+                },
+                {
+                  "name": "N Pinchak",
+                  "count": 2
+                },
+                {
+                  "name": "B Mui",
+                  "count": 1
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 1
+                },
+                {
+                  "name": "N Nishikawa",
+                  "count": 3
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 1
+                }
+              ],
+              "HBP": [
+                {
+                  "name": "B Mui",
+                  "count": 1
+                }
+              ],
+              "SB": [
+                {
+                  "name": "R Lue",
+                  "count": 1
+                },
+                {
+                  "name": "J Magni",
+                  "count": 1
+                },
+                {
+                  "name": "B Mui",
+                  "count": 4
+                },
+                {
+                  "name": "K Nishikawa",
+                  "count": 2
+                },
+                {
+                  "name": "N Nishikawa",
+                  "count": 1
+                },
+                {
+                  "name": "J Lau",
+                  "count": 1
+                },
+                {
+                  "name": "K Cheng",
+                  "count": 2
+                }
+              ],
+              "LOB": 3,
+              "CS": [
+                {
+                  "name": "N Nishikawa",
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "pitching": {
+            "players": [
+              {
+                "name": "A Chang",
+                "number": "25",
+                "IP": 3.0,
+                "H": 2,
+                "R": 0,
+                "ER": 0,
+                "BB": 2,
+                "SO": 6,
+                "HR": 0
+              },
+              {
+                "name": "R Pineda",
+                "number": "23",
+                "IP": 2.0,
+                "H": 1,
+                "R": 1,
+                "ER": 0,
+                "BB": 0,
+                "SO": 3,
+                "HR": 0
+              }
+            ],
+            "totals": {
+              "IP": 5.0,
+              "H": 3,
+              "R": 1,
+              "ER": 0,
+              "BB": 2,
+              "SO": 9,
+              "HR": 0
+            },
+            "notes": {}
+          }
+        }
+      }
+    }
+  ]
+}

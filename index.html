@@ -34,241 +34,90 @@
       min-height: 100vh;
     }
 
-    .wrap {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 14px 14px 40px;
-    }
-
+    .wrap { max-width: 1360px; margin: 0 auto; padding: 14px 14px 40px; }
     .hero {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      padding: 24px;
-      margin-bottom: 16px;
-      background:
-        linear-gradient(135deg, rgba(251,191,36,.16), rgba(56,189,248,.14)),
-        rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
+      position: relative; overflow: hidden; border-radius: 30px; padding: 24px; margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(251,191,36,.16), rgba(56,189,248,.14)), rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow);
     }
-
     .hero::after {
-      content: "⚾";
-      position: absolute;
-      right: 16px;
-      top: -8px;
-      font-size: clamp(74px, 16vw, 152px);
-      opacity: .12;
-      transform: rotate(12deg);
-      pointer-events: none;
+      content: "⚾"; position: absolute; right: 16px; top: -8px; font-size: clamp(74px, 16vw, 152px);
+      opacity: .12; transform: rotate(12deg); pointer-events: none;
     }
-
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(251,191,36,.12);
-      border: 1px solid rgba(251,191,36,.25);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: #fde68a;
-      margin-bottom: 10px;
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
+      background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.25);
+      font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em;
+      color: #fde68a; margin-bottom: 10px;
     }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(30px, 6vw, 54px);
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-
-    .hero p {
-      margin: 10px 0 0;
-      max-width: 820px;
-      color: var(--muted);
-      line-height: 1.5;
-      font-size: clamp(14px, 2.8vw, 18px);
-    }
+    h1 { margin: 0; font-size: clamp(30px, 6vw, 54px); line-height: 1; letter-spacing: -.04em; }
+    .hero p { margin: 10px 0 0; max-width: 860px; color: var(--muted); line-height: 1.5; font-size: clamp(14px, 2.8vw, 18px); }
 
     .panel {
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      background: var(--panel); border: 1px solid rgba(255,255,255,.10); border-radius: var(--radius);
+      box-shadow: var(--shadow); backdrop-filter: blur(10px);
     }
 
-    .toolbar, .snapshot-grid, .leaders-grid, .games-grid, .tables-grid, .charts-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-      margin-bottom: 16px;
+    .toolbar, .stats-grid, .leaders-grid, .tables-grid, .charts-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-bottom: 16px;
     }
 
-    .control, .section {
-      padding: 16px;
-    }
-
+    .control, .section { padding: 16px; }
     .control { grid-column: span 3; }
     .control label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: #bae6fd;
+      display: block; margin-bottom: 8px; font-size: 12px; font-weight: 900;
+      text-transform: uppercase; letter-spacing: .1em; color: #bae6fd;
     }
 
     select, button {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 14px;
-      padding: 12px 14px;
-      font: inherit;
-      font-weight: 700;
+      width: 100%; border: 1px solid rgba(255,255,255,.10); border-radius: 14px; padding: 12px 14px; font: inherit; font-weight: 700;
     }
+    select { background: rgba(2,6,23,.7); color: white; }
+    button { cursor: pointer; }
 
-    select {
-      background: rgba(2,6,23,.7);
-      color: white;
+    .section h2 { margin: 0 0 10px; font-size: clamp(22px, 4vw, 30px); letter-spacing: -.03em; }
+    .section-note { color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    .snapshot-card { grid-column: span 2; padding: 16px; min-height: 108px; background: rgba(255,255,255,.06); }
+    .snapshot-label { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #bae6fd; font-weight: 900; margin-bottom: 8px; }
+    .snapshot-value { font-size: 30px; line-height: 1; font-weight: 900; color: #fef08a; }
+    .snapshot-sub { margin-top: 8px; color: var(--muted); font-size: 12px; }
+
+    .games-panel, .leaders-panel, .table-panel, .chart-panel { grid-column: span 12; }
+
+    .games-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .game-card {
+      background: rgba(2,6,23,.35); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 14px;
     }
-
-    .section h2 {
-      margin: 0 0 10px;
-      font-size: clamp(22px, 4vw, 30px);
-      letter-spacing: -.03em;
+    .game-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 900; text-transform: uppercase;
+      letter-spacing: .08em; border-radius: 999px; padding: 7px 10px; background: rgba(255,255,255,.07); color: white;
     }
+    .pill.win { background: rgba(34,197,94,.16); color: #bbf7d0; }
+    .pill.loss { background: rgba(251,113,133,.16); color: #fecdd3; }
+    .game-score { font-size: 24px; font-weight: 900; color: #fef08a; line-height: 1; }
+    .game-meta { color: var(--muted); font-size: 13px; line-height: 1.4; margin-bottom: 10px; }
+    .game-button { background: linear-gradient(135deg, var(--gold), #fb923c); color: #1f2937; font-weight: 900; }
 
-    .section-note {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .snapshot-card {
-      grid-column: span 2;
-      padding: 16px;
-      min-height: 104px;
-      background: rgba(255,255,255,.06);
-    }
-
-    .snapshot-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: #bae6fd;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .snapshot-value {
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 900;
-      color: #fef08a;
-    }
-
-    .snapshot-sub {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .leaders-block {
-      grid-column: span 6;
-      padding: 16px;
-    }
-
-    .leaders-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 10px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .leader-cards {
-      display: grid;
-      gap: 12px;
-    }
-
-    .leader-card {
-      background: rgba(2,6,23,.35);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .leader-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: #c7d2fe;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .leader-list {
-      display: grid;
-      gap: 8px;
-    }
-
-    .leader-row {
-      display: grid;
-      grid-template-columns: 38px 1fr auto;
-      gap: 10px;
-      align-items: center;
-      background: rgba(255,255,255,.04);
-      border-radius: 14px;
-      padding: 10px 12px;
-    }
-
-    .badge {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      background: rgba(251,191,36,.16);
-      color: #fde68a;
-    }
-
-    .player-main {
-      font-weight: 800;
-    }
-
-    .player-sub {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    .leader-value {
-      font-size: 22px;
-      font-weight: 900;
-      color: #fef08a;
-    }
-
-    .chart-panel { grid-column: span 8; }
-    .game-panel { grid-column: span 4; }
+    .leader-groups { display: grid; gap: 16px; }
+    .leader-group-title { margin: 0 0 10px; font-size: 22px; }
+    .leaders-grid-inner { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .leader-card { background: rgba(2,6,23,.35); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 14px; }
+    .leader-title { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #c7d2fe; font-weight: 900; margin-bottom: 8px; }
+    .leader-list { display: grid; gap: 8px; }
+    .leader-row { display: grid; grid-template-columns: 38px 1fr auto; gap: 10px; align-items: center; background: rgba(255,255,255,.04); border-radius: 14px; padding: 10px 12px; }
+    .badge { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; background: rgba(251,191,36,.16); color: #fde68a; }
+    .player-main { font-weight: 800; }
+    .player-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .leader-value { font-size: 22px; font-weight: 900; color: #fef08a; }
+    .leader-row:not(:first-child) .player-main { font-size: 14px; }
+    .leader-row:not(:first-child) .player-sub { font-size: 11px; }
+    .leader-row:not(:first-child) .leader-value { font-size: 16px; opacity: .9; }
 
     .chart-box {
-      height: 340px;
-      background: rgba(2,6,23,.36);
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      padding: 8px;
-      margin-top: 12px;
+      height: 360px; background: rgba(2,6,23,.36); border-radius: 18px; border: 1px solid rgba(255,255,255,.08); padding: 8px; margin-top: 12px;
     }
-
     svg { width: 100%; height: 100%; overflow: visible; }
     .axis-label { fill: #cbd5e1; font-size: 12px; }
     .line-player { fill: none; stroke: var(--sky); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
@@ -276,308 +125,71 @@
     .point-player { fill: #7dd3fc; stroke: #082f49; stroke-width: 2; }
     .point-team { fill: #86efac; stroke: #14532d; stroke-width: 2; }
 
-    .games-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 12px;
+    .table-toolbar {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 10px;
     }
-
-    .game-card {
-      background: rgba(2,6,23,.35);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      padding: 14px;
+    .table-toolbar .mini-controls { display: flex; gap: 10px; flex-wrap: wrap; }
+    .mini-pill {
+      display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px;
+      background: rgba(255,255,255,.07); color: var(--muted); font-size: 12px; border: 1px solid rgba(255,255,255,.08);
     }
-
-    .game-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      border-radius: 999px;
-      padding: 7px 10px;
-      background: rgba(255,255,255,.07);
-      color: white;
-    }
-
-    .pill.win { background: rgba(34,197,94,.16); color: #bbf7d0; }
-    .pill.loss { background: rgba(251,113,133,.16); color: #fecdd3; }
-
-    .game-score {
-      font-size: 24px;
-      font-weight: 900;
-      color: #fef08a;
-      line-height: 1;
-    }
-
-    .game-meta {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    .game-button {
-      background: linear-gradient(135deg, var(--gold), #fb923c);
-      color: #1f2937;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .tables-grid .section { grid-column: span 6; }
-
-    .table-wrap {
-      overflow: auto;
-      background: rgba(2,6,23,.35);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      margin-top: 12px;
-    }
-
-    table {
-      width: 100%;
-      min-width: 940px;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 12px 10px;
-      border-bottom: 1px solid var(--line);
-      text-align: center;
-      white-space: nowrap;
-    }
-
+    .table-wrap { overflow: auto; background: rgba(2,6,23,.35); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; margin-top: 12px; }
+    table { width: 100%; min-width: 980px; border-collapse: collapse; }
+    th, td { padding: 12px 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
     th {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      background: #111827;
-      color: #fde68a;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      cursor: pointer;
-      user-select: none;
+      position: sticky; top: 0; z-index: 2; background: #111827; color: #fde68a; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; cursor: pointer; user-select: none;
     }
-
-    th:first-child, td:first-child {
-      position: sticky;
-      left: 0;
-      background: #0b1221;
-      text-align: left;
-      z-index: 1;
-    }
-
+    th:first-child, td:first-child { position: sticky; left: 0; background: #0b1221; text-align: left; z-index: 1; }
     tr:hover td { background: rgba(255,255,255,.04); }
-
-    .player-cell {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 800;
-    }
+    tfoot td { font-weight: 900; background: rgba(255,255,255,.06); }
+    .player-cell { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+    .glossary-tip { text-decoration: underline dotted; text-underline-offset: 2px; }
 
     .modal {
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 14px;
-      background: rgba(2,6,23,.76);
-      z-index: 50;
+      position: fixed; inset: 0; display: none; align-items: center; justify-content: center; padding: 14px;
+      background: rgba(2,6,23,.76); z-index: 50;
     }
-
     .modal.open { display: flex; }
-
     .modal-card {
-      width: min(980px, 100%);
-      max-height: 92vh;
-      overflow: auto;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(17,24,39,.98), rgba(15,23,42,.98));
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow);
-      padding: 18px;
+      width: min(1100px, 100%); max-height: 92vh; overflow: auto; border-radius: 24px;
+      background: linear-gradient(180deg, rgba(17,24,39,.98), rgba(15,23,42,.98)); border: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow); padding: 18px;
     }
+    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .close-btn { width: auto; min-width: 44px; background: rgba(255,255,255,.08); color: white; }
+    .boxscore-table { width: 100%; min-width: 620px; margin-top: 12px; }
+    .sub-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
+    .mini-panel { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 14px; }
+    .mini-title { margin: 0 0 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: #bae6fd; }
+    .note-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .note-card { background: rgba(255,255,255,.04); border-radius: 14px; padding: 10px 12px; }
+    .note-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #bae6fd; font-weight: 900; margin-bottom: 4px; }
 
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
+    .loading { padding: 28px; text-align: center; color: var(--muted); }
 
-    .close-btn {
-      width: auto;
-      min-width: 44px;
-      background: rgba(255,255,255,.08);
-      color: white;
-      cursor: pointer;
-    }
-
-    .boxscore-table {
-      width: 100%;
-      min-width: 620px;
-      margin-top: 12px;
-    }
-
-    .sub-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .mini-panel {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .mini-title {
-      margin: 0 0 10px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: #bae6fd;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 6px;
-    }
-
-    @media (max-width: 1080px) {
+    @media (max-width: 1180px) {
       .control { grid-column: span 6; }
-      .leaders-block, .chart-panel, .game-panel, .tables-grid .section, .snapshot-card { grid-column: span 12; }
+      .snapshot-card { grid-column: span 3; }
+      .leaders-grid-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-
-    @media (max-width: 680px) {
+    @media (max-width: 760px) {
       .wrap { padding: 10px 10px 28px; }
       .hero { padding: 18px; border-radius: 24px; }
-      .control { grid-column: span 12; }
-      .chart-box { height: 280px; }
-      .sub-grid { grid-template-columns: 1fr; }
+      .control, .snapshot-card { grid-column: span 6; }
+      .chart-box { height: 300px; }
+      .note-grid { grid-template-columns: 1fr; }
       .leader-row { grid-template-columns: 34px 1fr auto; }
       .leader-value { font-size: 18px; }
+      .games-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px) {
+      .control, .snapshot-card { grid-column: span 12; }
+      .leaders-grid-inner { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="hero">
-      <div class="eyebrow">⚾ Millbrae Mudhens • Spring 2026 • 12U Dashboard</div>
-      <h1>Millbrae Mudhens Season Stats</h1>
-      <p>
-        Leaders, sortable batting and pitching tables, progress charts, and game-by-game box scores.
-        Built to feel fun for the boys but still super usable for parents and coaches on phones.
-      </p>
-    </section>
-
-    <section class="toolbar">
-      <div class="panel control">
-        <label for="trendPlayer">Progress player</label>
-        <select id="trendPlayer"></select>
-      </div>
-      <div class="panel control">
-        <label for="trendMode">Progress mode</label>
-        <select id="trendMode">
-          <option value="batting">Batting</option>
-          <option value="pitching">Pitching</option>
-        </select>
-      </div>
-      <div class="panel control">
-        <label for="trendStat">Progress stat</label>
-        <select id="trendStat"></select>
-      </div>
-      <div class="panel control">
-        <label for="gameFilter">Game view</label>
-        <select id="gameFilter">
-          <option value="all">All games</option>
-          <option value="wins">Wins only</option>
-          <option value="losses">Losses only</option>
-        </select>
-      </div>
-    </section>
-
-    <section class="snapshot-grid" id="snapshotGrid"></section>
-
-    <section class="leaders-grid">
-      <div class="panel leaders-block">
-        <div class="leaders-header">
-          <div>
-            <h2>Top 5 Batting Leaders</h2>
-            <div class="section-note">Ten categories so the page feels like a real season awards board.</div>
-          </div>
-        </div>
-        <div class="leader-cards" id="battingLeaders"></div>
-      </div>
-
-      <div class="panel leaders-block">
-        <div class="leaders-header">
-          <div>
-            <h2>Top 5 Pitching Leaders</h2>
-            <div class="section-note">Includes four core pitching categories. Rate stats use a minimum of 2.0 IP.</div>
-          </div>
-        </div>
-        <div class="leader-cards" id="pitchingLeaders"></div>
-      </div>
-    </section>
-
-    <section class="charts-grid">
-      <div class="panel section chart-panel">
-        <h2>Player Progress Over Time</h2>
-        <div class="section-note">Blue line is the selected player. Green line is the team average for that same stat by game.</div>
-        <div class="chart-box">
-          <svg id="trendChart" viewBox="0 0 760 340" preserveAspectRatio="none"></svg>
-        </div>
-      </div>
-
-      <div class="panel section game-panel">
-        <h2>Games & Box Scores</h2>
-        <div class="section-note">Tap a game to open the full box score and the Mudhens player lines in a modal.</div>
-        <div class="games-list" id="gamesList"></div>
-      </div>
-    </section>
-
-    <section class="tables-grid">
-      <div class="panel section">
-        <h2>Batting Table</h2>
-        <div class="section-note">Tap any header to sort. Mobile keeps player names frozen on the left while you scroll.</div>
-        <div class="table-wrap">
-          <table id="battingTable"></table>
-        </div>
-      </div>
-
-      <div class="panel section">
-        <h2>Pitching Table</h2>
-        <div class="section-note">Includes totals and rate stats. Players with 0.0 innings are not shown in the season pitching table.</div>
-        <div class="table-wrap">
-          <table id="pitchingTable"></table>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer-note">
-      Season data currently includes the five PDFs loaded into this page for March 7, March 14, March 17, March 21, and March 25, 2026.
-    </div>
+  <div class="wrap" id="app">
+    <div class="loading panel">Loading stats…</div>
   </div>
 
   <div class="modal" id="gameModal" aria-hidden="true">
@@ -589,9 +201,7 @@
         </div>
         <button class="close-btn" id="closeModal">✕</button>
       </div>
-      <div class="table-wrap">
-        <table class="boxscore-table" id="modalBoxscore"></table>
-      </div>
+      <div class="table-wrap"><table class="boxscore-table" id="modalBoxscore"></table></div>
       <div class="sub-grid">
         <div class="mini-panel">
           <h3 class="mini-title">Mudhens Batting</h3>
@@ -601,338 +211,350 @@
           <h3 class="mini-title">Mudhens Pitching</h3>
           <div class="table-wrap"><table id="modalPitching"></table></div>
         </div>
+        <div class="mini-panel">
+          <h3 class="mini-title">Batting Notes</h3>
+          <div class="note-grid" id="modalBattingNotes"></div>
+        </div>
+        <div class="mini-panel">
+          <h3 class="mini-title">Pitching Notes</h3>
+          <div class="note-grid" id="modalPitchingNotes"></div>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-    const seasonData = {
-      team: "Millbrae Mudhens",
-      season: "Spring 2026",
-      battingLeaderCategories: [
-        { label: "Hits", key: "h", minAB: 0 },
-        { label: "Runs", key: "r", minAB: 0 },
-        { label: "RBI", key: "rbi", minAB: 0 },
-        { label: "AVG", key: "avg", minAB: 5 },
-        { label: "OBP", key: "obp", minAB: 5 },
-        { label: "SLG", key: "slg", minAB: 5 },
-        { label: "OPS", key: "ops", minAB: 5 },
-        { label: "HR", key: "hr", minAB: 0 },
-        { label: "SB", key: "sb", minAB: 0 },
-        { label: "2B", key: "doubles", minAB: 0 }
-      ],
-      pitchingLeaderCategories: [
-        { label: "Strikeouts", key: "so", minIP: 0, ascending: false },
-        { label: "Wins", key: "wins", minIP: 0, ascending: false },
-        { label: "ERA", key: "era", minIP: 2, ascending: true },
-        { label: "WHIP", key: "whip", minIP: 2, ascending: true }
-      ],
-      games: [
-        {
-          id: "2026-03-07",
-          date: "Mar 7, 2026",
-          shortDate: "3/7",
-          opponent: "B1 Pirates",
-          location: "Home",
-          result: "W",
-          score: "22-9",
-          teamRuns: 22,
-          oppRuns: 9,
-          teamHits: 18,
-          oppHits: 8,
-          teamErrors: 2,
-          oppErrors: 1,
-          teamInnings: ["7", "7", "8", "X"],
-          oppInnings: ["1", "4", "0", "4"],
-          batting: [
-            { name: "B Mui", jersey: 18, ab: 3, r: 2, h: 1, rbi: 2, bb: 1, so: 0, doubles: 0, triples: 0, hr: 1, sb: 1 },
-            { name: "N Nishika", jersey: 67, ab: 2, r: 2, h: 1, rbi: 1, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 4 },
-            { name: "K Nishika", jersey: 14, ab: 2, r: 2, h: 1, rbi: 2, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 2 },
-            { name: "R Lue", jersey: 9, ab: 2, r: 3, h: 2, rbi: 0, bb: 0, so: 0, doubles: 1, triples: 0, hr: 0, sb: 2 },
-            { name: "K Cheng", jersey: 24, ab: 3, r: 2, h: 1, rbi: 3, bb: 0, so: 1, doubles: 0, triples: 0, hr: 1, sb: 1 },
-            { name: "J Magni", jersey: 16, ab: 2, r: 3, h: 2, rbi: 2, bb: 0, so: 0, doubles: 0, triples: 0, hr: 1, sb: 0 },
-            { name: "J Sweeney", jersey: 22, ab: 3, r: 3, h: 3, rbi: 1, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "A Chang", jersey: 25, ab: 2, r: 2, h: 1, rbi: 1, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "J Lau", jersey: 1, ab: 1, r: 1, h: 1, rbi: 2, bb: 2, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "R Pineda", jersey: 23, ab: 3, r: 0, h: 3, rbi: 5, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "N Pinchak", jersey: 3, ab: 3, r: 0, h: 1, rbi: 0, bb: 0, so: 2, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "G Loo", jersey: 10, ab: 2, r: 2, h: 1, rbi: 0, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 2 }
-          ],
-          pitching: [
-            { name: "B Mui", jersey: 18, ip: 2.0, h: 8, r: 5, er: 5, bb: 1, so: 5, wins: 1, losses: 0 },
-            { name: "A Chang", jersey: 25, ip: 1.0, h: 0, r: 0, er: 0, bb: 0, so: 3, wins: 0, losses: 0 },
-            { name: "N Nishika", jersey: 67, ip: 1.0, h: 0, r: 4, er: 1, bb: 5, so: 2, wins: 0, losses: 0 }
-          ]
-        },
-        {
-          id: "2026-03-14",
-          date: "Mar 14, 2026",
-          shortDate: "3/14",
-          opponent: "B2 Athletics",
-          location: "Away",
-          result: "W",
-          score: "19-6",
-          teamRuns: 19,
-          oppRuns: 6,
-          teamHits: 15,
-          oppHits: 3,
-          teamErrors: 6,
-          oppErrors: 2,
-          teamInnings: ["3", "7", "4", "0", "5"],
-          oppInnings: ["0", "0", "3", "2", "1"],
-          batting: [
-            { name: "B Mui", jersey: 18, ab: 1, r: 3, h: 1, rbi: 1, bb: 3, so: 0, doubles: 0, triples: 0, hr: 0, sb: 2 },
-            { name: "N Nishika", jersey: 67, ab: 3, r: 2, h: 1, rbi: 2, bb: 1, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "R Lue", jersey: 9, ab: 2, r: 3, h: 2, rbi: 4, bb: 2, so: 0, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "K Cheng", jersey: 24, ab: 3, r: 3, h: 2, rbi: 2, bb: 1, so: 0, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "J Magni", jersey: 16, ab: 4, r: 0, h: 0, rbi: 0, bb: 0, so: 3, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "J Sweeney", jersey: 22, ab: 3, r: 1, h: 2, rbi: 5, bb: 0, so: 0, doubles: 0, triples: 0, hr: 1, sb: 0 },
-            { name: "A Chang", jersey: 25, ab: 3, r: 0, h: 2, rbi: 2, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "J Lau", jersey: 1, ab: 3, r: 0, h: 1, rbi: 0, bb: 1, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "R Pineda", jersey: 23, ab: 3, r: 2, h: 1, rbi: 0, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "N Pinchak", jersey: 3, ab: 3, r: 3, h: 2, rbi: 0, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "O Manyak", jersey: 2, ab: 2, r: 2, h: 1, rbi: 0, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 }
-          ],
-          pitching: [
-            { name: "A Chang", jersey: 25, ip: 2.0, h: 0, r: 0, er: 0, bb: 2, so: 4, wins: 1, losses: 0 },
-            { name: "R Pineda", jersey: 23, ip: 1.0, h: 3, r: 3, er: 3, bb: 3, so: 0, wins: 0, losses: 0 },
-            { name: "O Manyak", jersey: 2, ip: 2.0, h: 0, r: 3, er: 0, bb: 1, so: 1, wins: 0, losses: 0 }
-          ]
-        },
-        {
-          id: "2026-03-17",
-          date: "Mar 17, 2026",
-          shortDate: "3/17",
-          opponent: "Millbrae Little Giants Team 5",
-          location: "Away",
-          result: "L",
-          score: "2-11",
-          teamRuns: 2,
-          oppRuns: 11,
-          teamHits: 5,
-          oppHits: 8,
-          teamErrors: 0,
-          oppErrors: 1,
-          teamInnings: ["0", "0", "0", "2", "0"],
-          oppInnings: ["0", "0", "0", "6", "5"],
-          batting: [
-            { name: "B Mui", jersey: 18, ab: 1, r: 1, h: 1, rbi: 0, bb: 0, so: 0, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "N Nishika", jersey: 67, ab: 2, r: 0, h: 1, rbi: 1, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "K Nishika", jersey: 14, ab: 2, r: 0, h: 1, rbi: 1, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "R Lue", jersey: 9, ab: 2, r: 0, h: 0, rbi: 0, bb: 0, so: 2, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "K Cheng", jersey: 24, ab: 2, r: 0, h: 0, rbi: 0, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "J Sweeney", jersey: 22, ab: 2, r: 0, h: 0, rbi: 0, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "J Magni", jersey: 16, ab: 2, r: 0, h: 0, rbi: 0, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "A Chang", jersey: 25, ab: 1, r: 0, h: 0, rbi: 0, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "R Pineda", jersey: 23, ab: 1, r: 0, h: 0, rbi: 0, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "N Pinchak", jersey: 3, ab: 1, r: 0, h: 1, rbi: 0, bb: 0, so: 0, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "J Lau", jersey: 1, ab: 1, r: 0, h: 1, rbi: 0, bb: 0, so: 0, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "O Manyak", jersey: 2, ab: 1, r: 0, h: 0, rbi: 0, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "G Loo", jersey: 10, ab: 1, r: 1, h: 0, rbi: 0, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 }
-          ],
-          pitching: [
-            { name: "B Mui", jersey: 18, ip: 3.0, h: 2, r: 0, er: 0, bb: 0, so: 4, wins: 0, losses: 0 },
-            { name: "J Sweeney", jersey: 22, ip: 0.0, h: 1, r: 4, er: 4, bb: 3, so: 0, wins: 0, losses: 1 },
-            { name: "K Cheng", jersey: 24, ip: 1.1, h: 2, r: 5, er: 5, bb: 4, so: 3, wins: 0, losses: 0 },
-            { name: "O Manyak", jersey: 2, ip: 0.2, h: 3, r: 2, er: 2, bb: 0, so: 2, wins: 0, losses: 0 }
-          ]
-        },
-        {
-          id: "2026-03-21",
-          date: "Mar 21, 2026",
-          shortDate: "3/21",
-          opponent: "B3 Yankees",
-          location: "Away",
-          result: "W",
-          score: "10-6",
-          teamRuns: 10,
-          oppRuns: 6,
-          teamHits: 12,
-          oppHits: 7,
-          teamErrors: 1,
-          oppErrors: 3,
-          teamInnings: ["1", "0", "5", "0", "4"],
-          oppInnings: ["0", "0", "4", "1", "1"],
-          batting: [
-            { name: "K Nishika", jersey: 14, ab: 4, r: 1, h: 1, rbi: 0, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "K Cheng", jersey: 24, ab: 3, r: 2, h: 1, rbi: 1, bb: 0, so: 1, doubles: 1, triples: 0, hr: 0, sb: 1 },
-            { name: "R Lue", jersey: 9, ab: 3, r: 1, h: 2, rbi: 2, bb: 0, so: 0, doubles: 1, triples: 0, hr: 1, sb: 2 },
-            { name: "J Sweeney", jersey: 22, ab: 3, r: 1, h: 1, rbi: 0, bb: 0, so: 2, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "J Magni", jersey: 16, ab: 2, r: 2, h: 1, rbi: 0, bb: 1, so: 0, doubles: 1, triples: 0, hr: 0, sb: 1 },
-            { name: "A Chang", jersey: 25, ab: 3, r: 1, h: 1, rbi: 1, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "R Pineda", jersey: 23, ab: 3, r: 1, h: 2, rbi: 1, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "N Pinchak", jersey: 3, ab: 3, r: 1, h: 1, rbi: 1, bb: 0, so: 1, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "J Lau", jersey: 1, ab: 2, r: 0, h: 2, rbi: 0, bb: 0, so: 0, doubles: 1, triples: 0, hr: 0, sb: 2 },
-            { name: "O Manyak", jersey: 2, ab: 1, r: 0, h: 0, rbi: 0, bb: 2, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "G Loo", jersey: 10, ab: 2, r: 0, h: 0, rbi: 1, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 }
-          ],
-          pitching: [
-            { name: "K Cheng", jersey: 24, ip: 2.0, h: 3, r: 4, er: 4, bb: 4, so: 3, wins: 0, losses: 0 },
-            { name: "K Nishika", jersey: 14, ip: 3.0, h: 4, r: 2, er: 1, bb: 2, so: 5, wins: 0, losses: 0 }
-          ]
-        },
-        {
-          id: "2026-03-25",
-          date: "Mar 25, 2026",
-          shortDate: "3/25",
-          opponent: "Millbrae REBELS Team 2",
-          location: "Home",
-          result: "W",
-          score: "18-1",
-          teamRuns: 18,
-          oppRuns: 1,
-          teamHits: 10,
-          oppHits: 3,
-          teamErrors: 1,
-          oppErrors: 1,
-          teamInnings: ["5", "1", "12", "0", "X"],
-          oppInnings: ["0", "0", "0", "0", "1"],
-          batting: [
-            { name: "B Mui", jersey: 18, ab: 1, r: 3, h: 1, rbi: 1, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 4 },
-            { name: "N Nishika", jersey: 67, ab: 3, r: 1, h: 3, rbi: 4, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "K Nishika", jersey: 14, ab: 2, r: 2, h: 1, rbi: 1, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 2 },
-            { name: "R Lue", jersey: 9, ab: 2, r: 3, h: 2, rbi: 4, bb: 1, so: 0, doubles: 0, triples: 0, hr: 2, sb: 1 },
-            { name: "K Cheng", jersey: 24, ab: 1, r: 2, h: 1, rbi: 0, bb: 2, so: 0, doubles: 0, triples: 0, hr: 0, sb: 2 },
-            { name: "J Sweeney", jersey: 22, ab: 1, r: 2, h: 0, rbi: 0, bb: 2, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "J Magni", jersey: 16, ab: 2, r: 1, h: 1, rbi: 0, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "A Chang", jersey: 25, ab: 1, r: 1, h: 0, rbi: 1, bb: 2, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "R Pineda", jersey: 23, ab: 3, r: 0, h: 0, rbi: 2, bb: 0, so: 1, doubles: 0, triples: 0, hr: 0, sb: 0 },
-            { name: "N Pinchak", jersey: 3, ab: 2, r: 1, h: 1, rbi: 2, bb: 0, so: 1, doubles: 1, triples: 0, hr: 0, sb: 0 },
-            { name: "J Lau", jersey: 1, ab: 0, r: 1, h: 0, rbi: 0, bb: 2, so: 0, doubles: 0, triples: 0, hr: 0, sb: 1 },
-            { name: "G Loo", jersey: 10, ab: 1, r: 1, h: 0, rbi: 0, bb: 1, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 }
-          ],
-          pitching: [
-            { name: "A Chang", jersey: 25, ip: 3.0, h: 2, r: 0, er: 0, bb: 2, so: 6, wins: 1, losses: 0 },
-            { name: "R Pineda", jersey: 23, ip: 2.0, h: 1, r: 1, er: 0, bb: 0, so: 3, wins: 0, losses: 0 }
-          ]
-        }
+    const DEFAULT_UI = {
+      battingLeaderKeys: ["H", "R", "RBI", "AVG", "OBP", "SLG", "OPS", "HR", "SB", "2B"],
+      pitchingLeaderKeys: ["SO", "W", "ERA", "WHIP"],
+      battingTrendKeys: ["H", "R", "RBI", "BB", "AVG"],
+      pitchingTrendKeys: ["IP", "SO", "ER", "BF"],
+      teamCards: [
+        { section: "batting", key: "R", label: "Runs", perGame: true },
+        { section: "batting", key: "H", label: "Hits", perGame: true },
+        { section: "batting", key: "AVG", label: "Team AVG" },
+        { section: "pitching", key: "SO", label: "Pitching Ks", perGame: true },
+        { section: "batting", key: "SB", label: "Team SB", perGame: true },
+        { section: "batting", key: "HBP", label: "Team HBP", perGame: true },
+        { section: "batting", key: "LOB", label: "Team LOB", perGame: true },
+        { section: "fielding", key: "E", label: "Errors" },
+        { section: "pitching", key: "ERA", label: "Pitching ERA" },
+        { section: "pitching", key: "WHIP", label: "WHIP" }
       ]
     };
 
-    const battingCols = ["name","gp","ab","h","r","rbi","bb","so","doubles","triples","hr","sb","tb","avg","obp","slg","ops"];
-    const pitchingCols = ["name","ip","h","r","er","bb","so","wins","losses","era","whip","kbb"];
-    const trendPlayer = document.getElementById("trendPlayer");
-    const trendMode = document.getElementById("trendMode");
-    const trendStat = document.getElementById("trendStat");
-    const gameFilter = document.getElementById("gameFilter");
+    let fullStats = null;
+    let gameStats = null;
+    let battingSort = { key: null, dir: "desc" };
+    let pitchingSort = { key: null, dir: "desc" };
+    let fieldingSort = { key: null, dir: "desc" };
+
+    const app = document.getElementById("app");
     const gameModal = document.getElementById("gameModal");
     const closeModal = document.getElementById("closeModal");
 
-    let battingSort = { key: "h", dir: "desc" };
-    let pitchingSort = { key: "so", dir: "desc" };
-
-    const trendStatOptions = {
-      batting: [["h","Hits / Game"],["r","Runs / Game"],["rbi","RBI / Game"],["bb","Walks / Game"],["avg","Batting Avg"]],
-      pitching: [["ip","Innings Pitched"],["so","Strikeouts"],["er","Earned Runs"]]
-    };
+    function toNumber(value) {
+      if (value === null || value === undefined) return null;
+      if (typeof value === "number") return Number.isNaN(value) ? null : value;
+      const str = String(value).trim();
+      if (!str || str === "-") return null;
+      const normalized = str.startsWith(".") ? `0${str}` : str;
+      const num = Number(normalized);
+      return Number.isNaN(num) ? null : num;
+    }
 
     function safeDiv(a, b) { return b ? a / b : 0; }
-    function round(n, digits = 3) { return Number(n).toFixed(digits); }
-    function formatRate(n, digits = 3) { return round(n, digits).replace(/^0/, ""); }
-    function inningsToOuts(ip) {
-      const whole = Math.floor(ip);
-      const fraction = Math.round((ip - whole) * 10);
-      return (whole * 3) + fraction;
-    }
-    function outsToBaseballInnings(outs) {
-      const whole = Math.floor(outs / 3);
-      const remainder = outs % 3;
-      return Number(`${whole}.${remainder}`);
+    function round(n, digits = 2) { return Number(n).toFixed(digits); }
+    function rate(n, digits = 3) { return Number(n).toFixed(digits).replace(/^0/, ""); }
+
+    function formatStat(sectionOrKey, keyOrValue, maybeValue) {
+      const hasSection = maybeValue !== undefined;
+      const section = hasSection ? sectionOrKey : null;
+      const key = hasSection ? keyOrValue : sectionOrKey;
+      const value = hasSection ? maybeValue : keyOrValue;
+
+      if (value === null || value === undefined || value === "") return "—";
+      const num = toNumber(value);
+      if (num === null) return String(value);
+
+      const fixedTwoKeys = new Set(["ERA", "WHIP", "FIP", "K/BB", "GO/AO", "P/BF", "PS/PA", "BB/INN", "K/BF", "BAA", "BABIP", "BA/RISP"]);
+      const fixedThreeKeys = new Set(["AVG", "OBP", "OPS", "SLG"]);
+      const percentageKeys = new Set(["SB%", "QAB%", "C%", "LD%", "FB%", "GB%", "<3%", "S%", "FPS%", "FPSO%", "FPSW%", "FPSH%", "SM%", "WEAK%", "HHB%", "FBS%", "FBSW%", "FBSM%", "CBS%", "CBSW%", "CBSM%", "CTS%", "CTSW%", "CTSM%", "SLS%", "SLSW%", "SLSM%", "CHS%", "CHSW%", "CHSM%", "OSS%", "OSSW%", "OSSM%", "6+%", "2S+3%", "SV%", "CS%"]);
+      const genericCountLike = new Set(["GP", "PA", "AB", "H", "R", "RBI", "BB", "SO", "K-L", "HBP", "SAC", "SF", "ROE", "FC", "SB", "CS", "PIK", "QAB", "LOB", "2OUTRBI", "XBH", "TB", "PS", "#P", "W", "L", "SV", "SVO", "BS", "BF", "BK", "WP", "BBS", "LOBB", "LOBBS", "HR"]);
+      const fieldingInningKeys = new Set(["P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "SF", "Total", "INN"]);
+      const battingCountLike = new Set(["1B", "2B", "3B", "HR"]);
+
+      if (fixedTwoKeys.has(key)) return num.toFixed(2);
+      if (fixedThreeKeys.has(key)) return num.toFixed(3).replace(/^0/, "");
+      if (percentageKeys.has(key)) return String(value);
+
+      if (section === "fielding" && fieldingInningKeys.has(key)) {
+        const original = String(value);
+        if (original.includes(".")) return Number(value).toFixed(1);
+        return String(Math.round(num));
+      }
+
+      if (section === "batting" && battingCountLike.has(key)) {
+        return String(Math.round(num));
+      }
+
+      if (genericCountLike.has(key)) return String(Math.round(num));
+      if (Number.isInteger(num)) return String(num);
+      return Math.abs(num) < 1 ? rate(num, 3) : String(Number(num.toFixed(3)));
     }
 
-    function getPlayerMap() {
-      const map = new Map();
-      seasonData.games.forEach(game => {
-        game.batting.forEach(line => {
-          if (!map.has(line.name)) map.set(line.name, { name: line.name, jersey: line.jersey, battingGames: [], pitchingGames: [] });
-          map.get(line.name).battingGames.push({ gameId: game.id, date: game.shortDate, ...line, opponent: game.opponent, result: game.result, location: game.location });
-        });
-        game.pitching.forEach(line => {
-          if (!map.has(line.name)) map.set(line.name, { name: line.name, jersey: line.jersey, battingGames: [], pitchingGames: [] });
-          map.get(line.name).pitchingGames.push({ gameId: game.id, date: game.shortDate, ...line, opponent: game.opponent, result: game.result, location: game.location });
-        });
+    function displayName(player) {
+      const parts = [player.first, player.last].filter(Boolean);
+      return parts.length ? parts.join(" ") : (player.name || "Unknown");
+    }
+
+    function getGlossary() {
+      return fullStats?.glossary || {};
+    }
+
+    function getGlossaryForSection(section) {
+      const glossary = getGlossary();
+      if (glossary && typeof glossary === "object" && !Array.isArray(glossary)) {
+        if (glossary[section] && typeof glossary[section] === "object") return glossary[section];
+      }
+      return glossary || {};
+    }
+
+    function getGlossaryText(section, key) {
+      const scoped = getGlossaryForSection(section);
+      if (scoped && scoped[key]) return scoped[key];
+      const glossary = getGlossary();
+      if (glossary && glossary[key]) return glossary[key];
+      return null;
+    }
+    function getPlayers() { return fullStats?.players || []; }
+    function getTotals() { return fullStats?.totals || {}; }
+
+    function findMudhensTeamKey(game) {
+      const keys = Object.keys(game.teams || {});
+      const homeName = game.game?.home || "";
+      const awayName = game.game?.away || "";
+      const location = game.game?.location || "";
+      const directMatch = keys.find(k => /mud[ ]*hens/i.test(k));
+      if (directMatch) return directMatch;
+      if (/home/i.test(location) && keys.includes(homeName)) return homeName;
+      if (/away/i.test(location) && keys.includes(awayName)) return awayName;
+      if (/home/i.test(location) && keys.includes("Home")) return "Home";
+      if (/away/i.test(location) && keys.includes("Away")) return "Away";
+      return keys[0] || null;
+    }
+
+    function deriveOpponentTeamKey(game, mudhensKey) {
+      const keys = Object.keys(game.teams || {});
+      const homeName = game.game?.home || "";
+      const awayName = game.game?.away || "";
+      const location = game.game?.location || "";
+      if (/home/i.test(location)) {
+        const expectedOpponent = awayName || "Away";
+        return keys.find(k => k !== mudhensKey && (k === expectedOpponent || k === "Away")) || keys.find(k => k !== mudhensKey) || mudhensKey;
+      }
+      if (/away/i.test(location)) {
+        const expectedOpponent = homeName || "Home";
+        return keys.find(k => k !== mudhensKey && (k === expectedOpponent || k === "Home")) || keys.find(k => k !== mudhensKey) || mudhensKey;
+      }
+      return keys.find(k => k !== mudhensKey) || mudhensKey;
+    }
+
+    function getGames() {
+      return (gameStats?.games || []).map((g, idx) => {
+        const mudhensKey = findMudhensTeamKey(g);
+        const oppKey = deriveOpponentTeamKey(g, mudhensKey);
+        const mudhensLinescore = g.linescore?.[mudhensKey] || g.linescore?.[g.game?.away] || g.linescore?.[g.game?.home] || null;
+        const oppLinescore = g.linescore?.[oppKey] || null;
+        const mudhensTeam = g.teams?.[mudhensKey] || {};
+        const oppTeam = g.teams?.[oppKey] || {};
+
+        const mudhensScore = mudhensLinescore?.R ?? mudhensTeam?.batting?.totals?.R ?? 0;
+        const oppScore = oppLinescore?.R ?? oppTeam?.batting?.totals?.R ?? 0;
+        const location = g.game?.location || "";
+        const isHome = /^home$/i.test(location);
+        const opponent = isHome ? (g.game?.away || oppKey) : (g.game?.home || oppKey);
+        const inningsObj = mudhensLinescore?.innings || {};
+        const oppInningsObj = oppLinescore?.innings || {};
+        const maxInning = Math.max(0, ...Object.keys({...inningsObj, ...oppInningsObj}).map(Number));
+        const inningRange = Array.from({ length: maxInning }, (_, i) => String(i + 1));
+
+        return {
+          id: `game-${idx}`,
+          raw: g,
+          date: g.game?.date || "",
+          shortDate: (() => {
+            const d = g.game?.date ? new Date(`${g.game.date}T00:00:00`) : null;
+            return d && !Number.isNaN(d.valueOf()) ? `${d.getMonth() + 1}/${d.getDate()}` : g.game?.date || `Game ${idx + 1}`;
+          })(),
+          opponent: opponent || oppKey || `Opponent ${idx + 1}`,
+          location,
+          result: mudhensScore > oppScore ? "W" : mudhensScore < oppScore ? "L" : "T",
+          score: `${mudhensScore}-${oppScore}`,
+          teamRuns: mudhensScore,
+          oppRuns: oppScore,
+          teamHits: mudhensLinescore?.H ?? mudhensTeam?.batting?.totals?.H ?? 0,
+          oppHits: oppLinescore?.H ?? oppTeam?.batting?.totals?.H ?? 0,
+          teamErrors: mudhensLinescore?.E ?? mudhensTeam?.pitching?.notes?.E?.reduce((s,x)=>s + (x.count||0),0) ?? 0,
+          oppErrors: oppLinescore?.E ?? oppTeam?.pitching?.notes?.E?.reduce((s,x)=>s + (x.count||0),0) ?? 0,
+          mudhensKey,
+          oppKey,
+          teamInnings: inningRange.map(i => inningsObj[i] ?? ""),
+          oppInnings: inningRange.map(i => oppInningsObj[i] ?? ""),
+          batting: mudhensTeam?.batting?.players || [],
+          pitching: mudhensTeam?.pitching?.players || [],
+          battingTotals: mudhensTeam?.batting?.totals || {},
+          pitchingTotals: mudhensTeam?.pitching?.totals || {},
+          battingNotes: mudhensTeam?.batting?.notes || {},
+          pitchingNotes: mudhensTeam?.pitching?.notes || {}
+        };
       });
-      return map;
     }
 
-    function getBattingRows() {
-      return [...getPlayerMap().values()].map(player => {
-        const totals = player.battingGames.reduce((a, g) => {
-          a.gp += 1; a.ab += g.ab; a.h += g.h; a.r += g.r; a.rbi += g.rbi; a.bb += g.bb; a.so += g.so;
-          a.doubles += g.doubles; a.triples += g.triples; a.hr += g.hr; a.sb += g.sb;
-          return a;
-        }, { gp: 0, ab: 0, h: 0, r: 0, rbi: 0, bb: 0, so: 0, doubles: 0, triples: 0, hr: 0, sb: 0 });
-        const singles = totals.h - totals.doubles - totals.triples - totals.hr;
-        const tb = singles + (totals.doubles * 2) + (totals.triples * 3) + (totals.hr * 4);
-        const avg = safeDiv(totals.h, totals.ab);
-        const obp = safeDiv(totals.h + totals.bb, totals.ab + totals.bb);
-        const slg = safeDiv(tb, totals.ab);
-        return { name: player.name, jersey: player.jersey, ...totals, tb, avg, obp, slg, ops: obp + slg };
-      }).sort((a, b) => a.name.localeCompare(b.name));
+    function pickKeys(sectionObj, preferred) {
+      const keys = Object.keys(sectionObj || {});
+      const chosen = preferred.filter(k => keys.includes(k));
+      return chosen.length ? chosen : keys.slice(0, Math.min(10, keys.length));
     }
 
-    function getPitchingRows() {
-      return [...getPlayerMap().values()].map(player => {
-        const totals = player.pitchingGames.reduce((a, g) => {
-          a.outs += inningsToOuts(g.ip); a.h += g.h; a.r += g.r; a.er += g.er; a.bb += g.bb; a.so += g.so; a.wins += g.wins; a.losses += g.losses;
-          return a;
-        }, { outs: 0, h: 0, r: 0, er: 0, bb: 0, so: 0, wins: 0, losses: 0 });
-        const ip = outsToBaseballInnings(totals.outs);
-        const ipDecimal = totals.outs / 3;
-        const era = ipDecimal ? (totals.er * 9) / ipDecimal : null;
-        const whip = ipDecimal ? (totals.bb + totals.h) / ipDecimal : null;
-        const kbb = ipDecimal ? (totals.bb ? totals.so / totals.bb : totals.so) : null;
-        return { name: player.name, jersey: player.jersey, ip, ipDecimal, ...totals, era, whip, kbb };
-      }).filter(p => p.ipDecimal > 0).sort((a, b) => a.name.localeCompare(b.name));
+    function inferTeamName() {
+      const games = gameStats?.games || [];
+      for (const g of games) {
+        if (/mud[ ]*hens/i.test(g?.game?.home || "")) return g.game.home;
+        if (/mud[ ]*hens/i.test(g?.game?.away || "")) return g.game.away;
+        const keys = Object.keys(g?.teams || {});
+        const keyMatch = keys.find(k => /mud[ ]*hens/i.test(k));
+        if (keyMatch) return keyMatch;
+        if (/home/i.test(g?.game?.location || "") && g?.game?.home) return g.game.home;
+        if (/away/i.test(g?.game?.location || "") && g?.game?.away) return g.game.away;
+      }
+      return "Millbrae Mud Hens";
     }
 
-    function formatValue(key, value) {
-      if (value === null || value === undefined) return "—";
-      if (["avg","obp","slg","ops"].includes(key)) return formatRate(value, 3);
-      if (["era","whip","kbb"].includes(key)) return round(value, 2);
-      if (key === "ip") return Number(value).toFixed(1);
-      return value;
+    function renderShell() {
+      const teamName = inferTeamName();
+      app.innerHTML = `
+        <section class="hero">
+          <div class="eyebrow">⚾ ${teamName} • Dynamic JSON Dashboard</div>
+          <h1>${teamName} Season Stats</h1>
+          <p>
+            Leaders, sortable tables, progress charts, glossary-aware stat labels, and game-by-game box scores.
+            All season and game data is loaded from the local JSON files when the page opens.
+          </p>
+        </section>
+
+        
+
+        <section class="stats-grid" id="snapshotGrid"></section>
+
+        <section class="panel section leaders-panel">
+          <h2>Stat Leaders</h2>
+          <div class="section-note">Leaderboards are generated from the season JSON file and automatically update when the file changes.</div>
+          <div class="leader-groups" id="leaderGroups"></div>
+        </section>
+
+        <section class="charts-grid">
+          <div class="panel section chart-panel">
+            <h2>Player Progress Over Time</h2>
+            <div class="toolbar" style="margin:12px 0 8px;">
+              <div class="panel control"><label for="trendPlayer">Progress player</label><select id="trendPlayer"></select></div>
+              <div class="panel control"><label for="trendMode">Progress mode</label><select id="trendMode"><option value="batting">Batting</option><option value="pitching">Pitching</option></select></div>
+              <div class="panel control"><label for="trendStat">Progress stat</label><select id="trendStat"></select></div>
+              <div class="panel control"><label for="gameFilter">Game view</label><select id="gameFilter"><option value="all">All games</option><option value="wins">Wins only</option><option value="losses">Losses only</option><option value="ties">Ties only</option></select></div>
+            </div>
+            <div class="section-note">Blue line is the selected player. Green line is the team average for the same stat by game.</div>
+            <div class="chart-box"><svg id="trendChart" viewBox="0 0 760 360" preserveAspectRatio="none"></svg></div>
+          </div>
+        </section>
+
+        <section class="panel section games-panel">
+          <h2>Games & Box Scores</h2>
+          <div class="section-note">Each card is built from the game JSON. Open a game to see the linescore, player lines, and all available notes.</div>
+          <div class="games-list" id="gamesList"></div>
+        </section>
+
+        <section class="tables-grid">
+          <div class="panel section table-panel">
+            <div class="table-toolbar">
+              <div>
+                <h2 style="margin:0;">Batting Table</h2>
+                <div class="section-note">Columns come from the season JSON. Glossary descriptions appear below the table when you tap or click a stat header.</div>
+              </div>
+            </div>
+            <div class="mini-pill" id="battingGlossaryBox">Tap a stat header to see its description.</div>
+            <div class="table-wrap"><table id="battingTable"></table></div>
+          </div>
+
+          <div class="panel section table-panel">
+            <div class="table-toolbar">
+              <div>
+                <h2 style="margin:0;">Pitching Table</h2>
+                <div class="section-note">Only columns found in the JSON file are shown. Sorting is fully dynamic.</div>
+              </div>
+            </div>
+            <div class="mini-pill" id="pitchingGlossaryBox">Tap a stat header to see its description.</div>
+            <div class="table-wrap"><table id="pitchingTable"></table></div>
+          </div>
+
+          <div class="panel section table-panel">
+            <div class="table-toolbar">
+              <div>
+                <h2 style="margin:0;">Fielding Table</h2>
+                <div class="section-note">Fielding columns are also built from the season JSON, including position innings and catcher stats.</div>
+              </div>
+            </div>
+            <div class="mini-pill" id="fieldingGlossaryBox">Tap a stat header to see its description.</div>
+            <div class="table-wrap"><table id="fieldingTable"></table></div>
+          </div>
+        </section>
+      `;
     }
 
     function buildControls() {
-      const players = getBattingRows().map(p => `<option value="${p.name}">#${p.jersey} ${p.name}</option>`).join("");
-      trendPlayer.innerHTML = players;
+      const trendPlayer = document.getElementById("trendPlayer");
+      const players = getPlayers();
+      trendPlayer.innerHTML = players.map(p => `<option value="${displayName(p)}">#${p.number} ${displayName(p)}</option>`).join("");
+      if (players.length) trendPlayer.value = displayName(players[0]);
       updateTrendOptions();
-      trendPlayer.value = "B Mui";
+
+      document.getElementById("trendMode").addEventListener("change", () => { updateTrendOptions(); drawTrendChart(); });
+      document.getElementById("trendPlayer").addEventListener("change", drawTrendChart);
+      document.getElementById("trendStat").addEventListener("change", drawTrendChart);
+      document.getElementById("gameFilter").addEventListener("change", buildGamesList);
     }
 
     function updateTrendOptions() {
-      const mode = trendMode.value;
-      trendStat.innerHTML = trendStatOptions[mode].map(([value, label]) => `<option value="${value}">${label}</option>`).join("");
+      const mode = document.getElementById("trendMode").value;
+      const sample = getPlayers().find(p => p[mode])?.[mode] || {};
+      const preferred = mode === "batting" ? DEFAULT_UI.battingTrendKeys : DEFAULT_UI.pitchingTrendKeys;
+      const keys = pickKeys(sample, preferred);
+      document.getElementById("trendStat").innerHTML = keys.map(k => {
+        const gloss = getGlossaryText(mode, k);
+        return `<option value="${k}">${k}${gloss ? ` — ${gloss}` : ""}</option>`;
+      }).join("");
     }
 
     function buildSnapshot() {
-      const batting = getBattingRows();
-      const pitching = getPitchingRows();
-      const games = seasonData.games.length;
-      const wins = seasonData.games.filter(g => g.result === "W").length;
-      const losses = seasonData.games.filter(g => g.result === "L").length;
-      const teamRuns = seasonData.games.reduce((sum, g) => sum + g.teamRuns, 0);
-      const teamHits = seasonData.games.reduce((sum, g) => sum + g.teamHits, 0);
-      const teamAB = batting.reduce((sum, p) => sum + p.ab, 0);
-      const totalOuts = pitching.reduce((sum, p) => sum + p.outs, 0);
-      const totalER = pitching.reduce((sum, p) => sum + p.er, 0);
-      const totalSO = pitching.reduce((sum, p) => sum + p.so, 0);
-      const items = [
-        ["Record", `${wins}-${losses}`, "Season wins and losses"],
-        ["Games", games, "Loaded from the PDF set"],
-        ["Runs", teamRuns, "Total scored"],
-        ["Hits", teamHits, "Team total"],
-        ["Team AVG", formatRate(safeDiv(teamHits, teamAB), 3), "Batting average"],
-        ["Runs/Game", round(safeDiv(teamRuns, games), 2), "Scoring pace"],
-        ["Pitching ERA", round(safeDiv(totalER * 9, totalOuts / 3), 2), "Season ERA"],
-        ["Strikeouts", totalSO, "Pitching Ks"],
-        ["Run Diff", teamRuns - seasonData.games.reduce((sum, g) => sum + g.oppRuns, 0), "Runs scored minus allowed"],
-        ["Team SB", batting.reduce((sum, p) => sum + p.sb, 0), "Stolen bases"],
-        ["HR", batting.reduce((sum, p) => sum + p.hr, 0), "Home runs"],
-        ["Errors", seasonData.games.reduce((sum, g) => sum + g.teamErrors, 0), "Team errors"],
+      const totals = getTotals();
+      const games = getGames();
+      const gamesPlayed = games.length || toNumber(totals?.batting?.GP) || 0;
+      const wins = games.filter(g => g.result === "W").length;
+      const losses = games.filter(g => g.result === "L").length;
+      const ties = Math.max(0, gamesPlayed - wins - losses);
+      const runDiff = games.reduce((s, g) => s + ((g.teamRuns || 0) - (g.oppRuns || 0)), 0);
+
+      const cards = [
+        ["Record", `${wins}-${losses}-${ties}`,  `${gamesPlayed} games`],
+        ...DEFAULT_UI.teamCards.map(card => {
+          const value = totals?.[card.section]?.[card.key];
+          const num = toNumber(value);
+          const perGame = card.perGame && num !== null && gamesPlayed ? `${round(num / gamesPlayed, 2)} per game` : (getGlossary()[card.key] || "Season total");
+          return [card.label, formatStat(card.key, value), perGame];
+        }),
+        ["Run Diff", String(runDiff), gamesPlayed ? `${round(runDiff / gamesPlayed, 2)} per game` : "Runs scored minus allowed"]
       ];
-      document.getElementById("snapshotGrid").innerHTML = items.map(([label, value, sub]) => `
+
+      document.getElementById("snapshotGrid").innerHTML = cards.map(([label, value, sub]) => `
         <div class="panel snapshot-card">
           <div class="snapshot-label">${label}</div>
           <div class="snapshot-value">${value}</div>
@@ -941,157 +563,145 @@
       `).join("");
     }
 
-    function topLeaders(rows, key, count, ascending = false) {
-      return [...rows].sort((a, b) => {
-        if (typeof a[key] === "string") return a[key].localeCompare(b[key]);
-        return ascending ? a[key] - b[key] : b[key] - a[key];
-      }).slice(0, count);
+    function leaderMetricValue(player, section, key) {
+      return toNumber(player?.[section]?.[key]);
     }
 
-    function buildLeaderBlocks(containerId, categories, rows, isPitching = false) {
-      const container = document.getElementById(containerId);
-      container.innerHTML = categories.map(category => {
-        const filtered = rows.filter(row => {
-          if (category.minAB) return row.ab >= category.minAB;
-          if (category.minIP) return row.ipDecimal >= category.minIP;
-          return true;
-        });
-        const leaders = topLeaders(filtered, category.key, 5, category.ascending);
-        return `
-          <div class="leader-card">
-            <div class="leader-title">${category.label}</div>
-            <div class="leader-list">
-              ${leaders.map((p, index) => `
-                <div class="leader-row">
-                  <div class="badge">${index + 1}</div>
-                  <div>
-                    <div class="player-main">#${p.jersey} ${p.name}</div>
-                    <div class="player-sub">${isPitching ? `${formatValue("ip", p.ip)} IP` : `${p.ab} AB`}</div>
+    function buildLeaderGroup(title, section, keys) {
+      const players = getPlayers();
+      return `
+        <div>
+          <h3 class="leader-group-title">${title}</h3>
+          <div class="leaders-grid-inner">
+            ${keys.map(key => {
+              const asc = ["ERA", "WHIP", "FIP", "BAA", "P/BF", "BB/INN"].includes(key);
+              const minKey = section === "batting" ? "AB" : "IP";
+              const minThreshold = ["AVG", "OBP", "OPS", "SLG"].includes(key) ? 5 : (["ERA", "WHIP", "FIP"].includes(key) ? 2 : 0);
+              const filtered = players.filter(p => {
+                const metric = leaderMetricValue(p, section, key);
+                const minVal = toNumber(p?.[section]?.[minKey]) || 0;
+                return metric !== null && minVal >= minThreshold;
+              }).sort((a, b) => {
+                const av = leaderMetricValue(a, section, key);
+                const bv = leaderMetricValue(b, section, key);
+                return asc ? av - bv : bv - av;
+              }).slice(0, 5);
+
+              return `
+                <div class="leader-card">
+                  <div class="leader-title" title="${getGlossaryText(section, key) || key}">${key}</div>
+                  <div class="leader-list">
+                    ${filtered.map((p, i) => `
+                      <div class="leader-row">
+                        <div class="badge">${i + 1}</div>
+                        <div>
+                          <div class="player-main">#${p.number} ${displayName(p)}</div>
+                          <div class="player-sub">${formatStat(section, minKey, p?.[section]?.[minKey])} ${minKey}</div>
+                        </div>
+                        <div class="leader-value">${formatStat(section, key, p?.[section]?.[key])}</div>
+                      </div>
+                    `).join("") || `<div class="section-note">No data</div>`}
                   </div>
-                  <div class="leader-value">${formatValue(category.key, p[category.key])}</div>
                 </div>
-              `).join("")}
-            </div>
+              `;
+            }).join("")}
           </div>
-        `;
-      }).join("");
-    }
-
-    function sortRows(rows, sort) {
-      return [...rows].sort((a, b) => {
-        const av = a[sort.key];
-        const bv = b[sort.key];
-        if (typeof av === "string") return sort.dir === "asc" ? av.localeCompare(bv) : bv.localeCompare(av);
-        return sort.dir === "asc" ? av - bv : bv - av;
-      });
-    }
-
-    function buildTable(tableId, columns, rows, sortState, kind) {
-      const pretty = {
-        name: "Player", gp: "GP", ab: "AB", h: "H", r: "R", rbi: "RBI", bb: "BB", so: "K", doubles: "2B", triples: "3B", hr: "HR", sb: "SB", tb: "TB", avg: "AVG", obp: "OBP", slg: "SLG", ops: "OPS",
-        ip: "IP", er: "ER", wins: "W", losses: "L", era: "ERA", whip: "WHIP", kbb: "K/BB"
-      };
-      const sorted = sortRows(rows, sortState);
-      document.getElementById(tableId).innerHTML = `
-        <thead>
-          <tr>${columns.map(col => `<th data-kind="${kind}" data-col="${col}">${pretty[col] || col}</th>`).join("")}</tr>
-        </thead>
-        <tbody>
-          ${sorted.map(row => `
-            <tr>
-              ${columns.map((col, idx) => idx === 0
-                ? `<td><div class="player-cell"><span class="badge" style="width:30px;height:30px;font-size:12px;">#${row.jersey}</span>${row.name}</div></td>`
-                : `<td>${formatValue(col, row[col])}</td>`).join("")}
-            </tr>
-          `).join("")}
-        </tbody>
+        </div>
       `;
     }
 
-    function bindTableSorting() {
-      document.querySelectorAll("th[data-kind]").forEach(th => {
-        th.onclick = () => {
-          const kind = th.dataset.kind;
-          const col = th.dataset.col;
-          if (kind === "batting") battingSort = { key: col, dir: battingSort.key === col && battingSort.dir === "desc" ? "asc" : "desc" };
-          if (kind === "pitching") pitchingSort = { key: col, dir: pitchingSort.key === col && pitchingSort.dir === "desc" ? "asc" : "desc" };
-          render();
-        };
-      });
+    function buildLeaders() {
+      const sampleBatting = getPlayers().find(p => p.batting)?.batting || {};
+      const samplePitching = getPlayers().find(p => p.pitching)?.pitching || {};
+      const battingKeys = pickKeys(sampleBatting, DEFAULT_UI.battingLeaderKeys);
+      const pitchingKeys = pickKeys(samplePitching, DEFAULT_UI.pitchingLeaderKeys);
+      document.getElementById("leaderGroups").innerHTML = [
+        buildLeaderGroup("Batting Leaders", "batting", battingKeys),
+        buildLeaderGroup("Pitching Leaders", "pitching", pitchingKeys)
+      ].join("");
     }
 
     function buildGamesList() {
-      const filter = gameFilter.value;
-      const games = seasonData.games.filter(game => filter === "all" ? true : filter === "wins" ? game.result === "W" : game.result === "L");
+      const filter = document.getElementById("gameFilter").value;
+      const games = getGames().filter(game => {
+        if (filter === "wins") return game.result === "W";
+        if (filter === "losses") return game.result === "L";
+        if (filter === "ties") return game.result === "T";
+        return true;
+      });
+
       document.getElementById("gamesList").innerHTML = games.map(game => `
         <div class="game-card">
           <div class="game-top">
             <div>
-              <div class="pill ${game.result === "W" ? "win" : "loss"}">${game.result === "W" ? "Win" : "Loss"}</div>
-              <div style="font-weight:900;font-size:18px;margin-top:8px;">${game.shortDate} ${game.location === "Home" ? "vs" : "@"} ${game.opponent}</div>
+              <div class="pill ${game.result === "W" ? "win" : game.result === "L" ? "loss" : ""}">${game.result === "T" ? "Tie" : game.result === "W" ? "Win" : "Loss"}</div>
+              <div style="font-weight:900;font-size:18px;margin-top:8px;">${game.shortDate} ${/^home$/i.test(game.location) ? "vs" : "@"} ${game.opponent}</div>
             </div>
             <div class="game-score">${game.score}</div>
           </div>
-          <div class="game-meta">${game.location} game • ${game.teamHits} hits • ${game.teamErrors} errors</div>
+          <div class="game-meta">${game.location || ""} • ${game.teamHits} hits • ${game.teamErrors} errors • ${(game.battingNotes?.LOB ?? 0)} LOB</div>
           <button class="game-button" onclick="openGameModal('${game.id}')">View box score</button>
         </div>
-      `).join("");
-    }
-
-    function getTeamTrend(stat, mode) {
-      return seasonData.games.map(game => {
-        const lines = mode === "batting" ? game.batting : game.pitching;
-        if (mode === "batting" && stat === "avg") {
-          const h = lines.reduce((sum, p) => sum + p.h, 0);
-          const ab = lines.reduce((sum, p) => sum + p.ab, 0);
-          return { x: game.shortDate, y: safeDiv(h, ab) };
-        }
-        const values = lines.map(line => Number(line[stat] || 0));
-        return { x: game.shortDate, y: values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0 };
-      });
+      `).join("") || `<div class="section-note">No games match this filter.</div>`;
     }
 
     function getPlayerTrend(playerName, stat, mode) {
-      const gameMap = new Map();
-      seasonData.games.forEach(game => {
+      const games = getGames();
+      return games.map(game => {
         const lines = mode === "batting" ? game.batting : game.pitching;
-        const found = lines.find(line => line.name === playerName);
-        if (mode === "batting" && stat === "avg") {
-          gameMap.set(game.id, found ? safeDiv(found.h, found.ab) : 0);
-        } else {
-          gameMap.set(game.id, found ? Number(found[stat] || 0) : 0);
-        }
+        const found = lines.find(line => {
+          const player = getPlayers().find(p => Number(p.number) === Number(line.number) || displayName(p) === line.name || `${p.first?.[0] || ""} ${p.last}`.trim() === line.name);
+          return player ? displayName(player) === playerName : false;
+        });
+        if (!found) return { x: game.shortDate, y: 0 };
+        if (mode === "batting" && stat === "AVG") return { x: game.shortDate, y: safeDiv(Number(found.H || 0), Number(found.AB || 0)) };
+        return { x: game.shortDate, y: Number(found[stat] || 0) };
       });
-      return seasonData.games.map(game => ({ x: game.shortDate, y: gameMap.get(game.id) || 0 }));
+    }
+
+    function getTeamTrend(stat, mode) {
+      return getGames().map(game => {
+        const lines = mode === "batting" ? game.batting : game.pitching;
+        if (!lines.length) return { x: game.shortDate, y: 0 };
+        if (mode === "batting" && stat === "AVG") {
+          const hits = lines.reduce((s, p) => s + Number(p.H || p.h || 0), 0);
+          const abs = lines.reduce((s, p) => s + Number(p.AB || p.ab || 0), 0);
+          return { x: game.shortDate, y: safeDiv(hits, abs) };
+        }
+        const total = lines.reduce((s, p) => s + Number(p[stat] || 0), 0);
+        return { x: game.shortDate, y: total / lines.length };
+      });
     }
 
     function drawTrendChart() {
       const svg = document.getElementById("trendChart");
-      const mode = trendMode.value;
-      const stat = trendStat.value;
-      const playerName = trendPlayer.value;
+      const playerName = document.getElementById("trendPlayer").value;
+      const mode = document.getElementById("trendMode").value;
+      const stat = document.getElementById("trendStat").value;
       const playerSeries = getPlayerTrend(playerName, stat, mode);
       const teamSeries = getTeamTrend(stat, mode);
-      const width = 760, height = 340;
+
+      const width = 760, height = 360;
       const m = { top: 18, right: 18, bottom: 44, left: 44 };
       const innerW = width - m.left - m.right;
       const innerH = height - m.top - m.bottom;
       const maxY = Math.max(1, ...playerSeries.map(p => p.y), ...teamSeries.map(p => p.y));
-      const xPos = i => m.left + (playerSeries.length === 1 ? innerW / 2 : (i / (playerSeries.length - 1)) * innerW);
+      const xPos = i => m.left + (playerSeries.length <= 1 ? innerW / 2 : (i / (playerSeries.length - 1)) * innerW);
       const yPos = y => m.top + innerH - ((y / maxY) * innerH);
       const pathFor = arr => arr.map((p, i) => `${i === 0 ? "M" : "L"} ${xPos(i)} ${yPos(p.y)}`).join(" ");
       let grid = "";
       for (let i = 0; i <= 4; i++) {
         const y = m.top + (i / 4) * innerH;
-        const val = round(maxY - ((i / 4) * maxY), stat === "avg" ? 3 : 2);
+        const val = (maxY - ((i / 4) * maxY));
         grid += `<line x1="${m.left}" y1="${y}" x2="${width - m.right}" y2="${y}" stroke="rgba(255,255,255,.1)" />`;
-        grid += `<text x="${m.left - 8}" y="${y + 4}" text-anchor="end" class="axis-label">${String(val).replace(/^0/,"")}</text>`;
+        grid += `<text x="${m.left - 8}" y="${y + 4}" text-anchor="end" class="axis-label">${Math.abs(val) < 1 ? rate(val, 3) : round(val, 2)}</text>`;
       }
+
       svg.innerHTML = `
         ${grid}
         <line x1="${m.left}" y1="${height - m.bottom}" x2="${width - m.right}" y2="${height - m.bottom}" stroke="rgba(255,255,255,.18)" />
         <line x1="${m.left}" y1="${m.top}" x2="${m.left}" y2="${height - m.bottom}" stroke="rgba(255,255,255,.18)" />
-        <text x="${m.left}" y="14" class="axis-label" style="font-size:13px;font-weight:800;fill:#f8fafc;">${playerName} • ${trendStat.options[trendStat.selectedIndex].text}</text>
+        <text x="${m.left}" y="14" class="axis-label" style="font-size:13px;font-weight:800;fill:#f8fafc;">${playerName} • ${stat}</text>
         <path d="${pathFor(teamSeries)}" class="line-team" />
         <path d="${pathFor(playerSeries)}" class="line-player" />
         ${teamSeries.map((p, i) => `<circle cx="${xPos(i)}" cy="${yPos(p.y)}" r="5" class="point-team" />`).join("")}
@@ -1100,20 +710,113 @@
       `;
     }
 
-    function buildSimpleTable(tableId, cols, rows) {
-      const pretty = { player: "Player", ab: "AB", r: "R", h: "H", rbi: "RBI", bb: "BB", so: "K", doubles: "2B", hr: "HR", sb: "SB", ip: "IP", er: "ER", wins: "W", losses: "L" };
+    function renderTable(tableId, section, sortStateRef) {
+      const players = getPlayers();
+      const sectionGlossary = getGlossaryForSection(section);
+      const totals = getTotals()?.[section] || {};
+      const columns = Object.keys(players.find(p => p[section])?.[section] || totals || {});
+      if (!sortStateRef.key) sortStateRef.key = columns[0] || null;
+      const glossaryBoxId = tableId === "battingTable" ? "battingGlossaryBox" : tableId === "pitchingTable" ? "pitchingGlossaryBox" : "fieldingGlossaryBox";
+      const sorted = [...players].sort((a, b) => {
+        if (!sortStateRef.key) return 0;
+        const av = toNumber(a?.[section]?.[sortStateRef.key]);
+        const bv = toNumber(b?.[section]?.[sortStateRef.key]);
+        if (sortStateRef.key === "__name") return sortStateRef.dir === "asc" ? displayName(a).localeCompare(displayName(b)) : displayName(b).localeCompare(displayName(a));
+        if (av === null && bv === null) return displayName(a).localeCompare(displayName(b));
+        if (av === null) return 1;
+        if (bv === null) return -1;
+        return sortStateRef.dir === "asc" ? av - bv : bv - av;
+      });
+
       document.getElementById(tableId).innerHTML = `
-        <thead><tr>${cols.map(col => `<th>${pretty[col] || col}</th>`).join("")}</tr></thead>
+        <thead>
+          <tr>
+            <th data-table="${tableId}" data-col="__name">Player</th>
+            ${columns.map(col => `<th data-table="${tableId}" data-col="${col}" data-glossary-box="${glossaryBoxId}" title="${sectionGlossary[col] || getGlossaryText(section, col) || col}"><span class="glossary-tip">${col}</span></th>`).join("")}
+          </tr>
+        </thead>
         <tbody>
-          ${rows.map(row => `<tr>${cols.map((col, index) => `<td>${index === 0 ? `#${row.jersey} ${row.name}` : formatValue(col, row[col])}</td>`).join("")}</tr>`).join("")}
+          ${sorted.map(player => `
+            <tr>
+              <td><div class="player-cell"><span class="badge" style="width:30px;height:30px;font-size:12px;">#${player.number}</span>${displayName(player)}</div></td>
+              ${columns.map(col => `<td>${formatStat(section, col, player?.[section]?.[col])}</td>`).join("")}
+            </tr>
+          `).join("")}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Totals</td>
+            ${columns.map(col => `<td>${formatStat(section, col, totals[col])}</td>`).join("")}
+          </tr>
+        </tfoot>
+      `;
+    }
+
+    function bindTableSorting() {
+      document.querySelectorAll("th[data-table]").forEach(th => {
+        th.onclick = () => {
+          const table = th.dataset.table;
+          const col = th.dataset.col;
+          const glossaryBoxId = th.dataset.glossaryBox;
+          if (glossaryBoxId && col !== "__name") {
+            const box = document.getElementById(glossaryBoxId);
+            const section = table === "battingTable" ? "batting" : table === "pitchingTable" ? "pitching" : "fielding";
+            if (box) box.textContent = `${col}: ${getGlossaryText(section, col) || "No glossary description available."}`;
+          }
+          const apply = state => {
+            if (col === "__name") {
+              state.key = "__name";
+              state.dir = state.dir === "desc" ? "asc" : "desc";
+            } else {
+              state.dir = state.key === col && state.dir === "desc" ? "asc" : "desc";
+              state.key = col;
+            }
+          };
+          if (table === "battingTable") apply(battingSort);
+          if (table === "pitchingTable") apply(pitchingSort);
+          if (table === "fieldingTable") apply(fieldingSort);
+          renderTables();
+        };
+      });
+    }
+
+    function renderTables() {
+      renderTable("battingTable", "batting", battingSort);
+      renderTable("pitchingTable", "pitching", pitchingSort);
+      renderTable("fieldingTable", "fielding", fieldingSort);
+      bindTableSorting();
+    }
+
+    function renderMiniTable(targetId, players, preferredColumns) {
+      const columns = preferredColumns.filter(col => players.some(p => p[col] !== undefined));
+      document.getElementById(targetId).innerHTML = `
+        <thead><tr>${["Player", ...columns].map(c => `<th>${c}</th>`).join("")}</tr></thead>
+        <tbody>
+          ${players.map(p => `
+            <tr>
+              <td>#${p.number ?? ""} ${p.name || ""}</td>
+              ${columns.map(col => `<td>${formatStat(col, p[col])}</td>`).join("")}
+            </tr>
+          `).join("")}
         </tbody>
       `;
     }
 
+    function notesToCards(notes) {
+      return Object.entries(notes || {}).map(([key, value]) => {
+        const text = Array.isArray(value)
+          ? value.map(item => `${item.name}: ${item.count}`).join(", ")
+          : String(value);
+        return `<div class="note-card"><div class="note-label">${key}</div><div>${text || "—"}</div></div>`;
+      }).join("") || `<div class="section-note">No notes available for this game.</div>`;
+    }
+
     window.openGameModal = function(gameId) {
-      const game = seasonData.games.find(g => g.id === gameId);
-      document.getElementById("modalTitle").textContent = `${game.shortDate} ${game.location === "Home" ? "vs" : "@"} ${game.opponent}`;
+      const game = getGames().find(g => g.id === gameId);
+      if (!game) return;
+      document.getElementById("modalTitle").textContent = `${game.shortDate} ${/^home$/i.test(game.location) ? "vs" : "@"} ${game.opponent}`;
       document.getElementById("modalMeta").textContent = `${game.result} ${game.score} • ${game.location} • ${game.date}`;
+
       const inningCount = Math.max(game.teamInnings.length, game.oppInnings.length);
       const inningHeaders = Array.from({ length: inningCount }, (_, i) => i + 1);
       document.getElementById("modalBoxscore").innerHTML = `
@@ -1126,26 +829,29 @@
         </thead>
         <tbody>
           <tr>
-            <td>${game.location === "Home" ? game.opponent : seasonData.team}</td>
-            ${inningHeaders.map((_, idx) => `<td>${game.location === "Home" ? (game.oppInnings[idx] || "") : (game.teamInnings[idx] || "")}</td>`).join("")}
-            <td>${game.location === "Home" ? game.oppRuns : game.teamRuns}</td>
-            <td>${game.location === "Home" ? game.oppHits : game.teamHits}</td>
-            <td>${game.location === "Home" ? game.oppErrors : game.teamErrors}</td>
+            <td>${/^home$/i.test(game.location) ? game.opponent : game.mudhensKey}</td>
+            ${inningHeaders.map((_, idx) => `<td>${/^home$/i.test(game.location) ? (game.oppInnings[idx] ?? 0) : (game.teamInnings[idx] ?? 0)}</td>`).join("")}
+            <td>${/^home$/i.test(game.location) ? game.oppRuns : game.teamRuns}</td>
+            <td>${/^home$/i.test(game.location) ? game.oppHits : game.teamHits}</td>
+            <td>${/^home$/i.test(game.location) ? game.oppErrors : game.teamErrors}</td>
           </tr>
           <tr>
-            <td>${game.location === "Home" ? seasonData.team : game.opponent}</td>
-            ${inningHeaders.map((_, idx) => `<td>${game.location === "Home" ? (game.teamInnings[idx] || "") : (game.oppInnings[idx] || "")}</td>`).join("")}
-            <td>${game.location === "Home" ? game.teamRuns : game.oppRuns}</td>
-            <td>${game.location === "Home" ? game.teamHits : game.oppHits}</td>
-            <td>${game.location === "Home" ? game.teamErrors : game.oppErrors}</td>
+            <td>${/^home$/i.test(game.location) ? game.mudhensKey : game.opponent}</td>
+            ${inningHeaders.map((_, idx) => `<td>${/^home$/i.test(game.location) ? (game.teamInnings[idx] ?? 0) : (game.oppInnings[idx] ?? 0)}</td>`).join("")}
+            <td>${/^home$/i.test(game.location) ? game.teamRuns : game.oppRuns}</td>
+            <td>${/^home$/i.test(game.location) ? game.teamHits : game.oppHits}</td>
+            <td>${/^home$/i.test(game.location) ? game.teamErrors : game.oppErrors}</td>
           </tr>
         </tbody>
       `;
-      buildSimpleTable("modalBatting", ["player","ab","r","h","rbi","bb","so","doubles","hr","sb"], game.batting.map(p => ({ player: p.name, ...p })));
-      buildSimpleTable("modalPitching", ["player","ip","h","r","er","bb","so","wins","losses"], game.pitching.map(p => ({ player: p.name, ...p })));
+
+      renderMiniTable("modalBatting", game.batting, ["position", "AB", "R", "H", "RBI", "BB", "SO"]);
+      renderMiniTable("modalPitching", game.pitching, ["IP", "H", "R", "ER", "BB", "SO", "HR"]);
+      document.getElementById("modalBattingNotes").innerHTML = notesToCards(game.battingNotes || {});
+      document.getElementById("modalPitchingNotes").innerHTML = notesToCards(game.pitchingNotes || {});
       gameModal.classList.add("open");
       gameModal.setAttribute("aria-hidden", "false");
-    }
+    };
 
     function closeGameModal() {
       gameModal.classList.remove("open");
@@ -1157,25 +863,25 @@
     document.addEventListener("keydown", e => { if (e.key === "Escape") closeGameModal(); });
 
     function render() {
-      const battingRows = getBattingRows();
-      const pitchingRows = getPitchingRows();
+      renderShell();
+      buildControls();
       buildSnapshot();
-      buildLeaderBlocks("battingLeaders", seasonData.battingLeaderCategories, battingRows, false);
-      buildLeaderBlocks("pitchingLeaders", seasonData.pitchingLeaderCategories, pitchingRows, true);
+      buildLeaders();
       buildGamesList();
-      buildTable("battingTable", battingCols, battingRows, battingSort, "batting");
-      buildTable("pitchingTable", pitchingCols, pitchingRows, pitchingSort, "pitching");
-      bindTableSorting();
       drawTrendChart();
+      renderTables();
     }
 
-    trendMode.addEventListener("change", () => { updateTrendOptions(); drawTrendChart(); });
-    trendPlayer.addEventListener("change", drawTrendChart);
-    trendStat.addEventListener("change", drawTrendChart);
-    gameFilter.addEventListener("change", buildGamesList);
-
-    buildControls();
-    render();
+    Promise.all([
+      fetch("full-stats.json").then(r => r.json()),
+      fetch("game-stats.json").then(r => r.json())
+    ]).then(([full, games]) => {
+      fullStats = full;
+      gameStats = games;
+      render();
+    }).catch(err => {
+      app.innerHTML = `<div class="loading panel">Could not load the JSON files. Make sure <strong>full-stats.json</strong> and <strong>game-stats.json</strong> are next to this HTML file.<br><br>${String(err)}</div>`;
+    });
   </script>
 </body>
 </html>
