@@ -3,885 +3,330 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Millbrae Mudhens — Spring 2026 Stats</title>
+  <title>Millbrae Mud Hens — Season Stats</title>
   <style>
-    :root {
-      --bg: #0f172a;
-      --bg-2: #111827;
-      --panel: rgba(255,255,255,0.08);
-      --panel-strong: rgba(255,255,255,0.12);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --gold: #fbbf24;
-      --sky: #38bdf8;
-      --green: #22c55e;
-      --pink: #fb7185;
-      --line: rgba(255,255,255,0.10);
-      --shadow: 0 18px 40px rgba(0,0,0,.28);
-      --radius: 24px;
+    :root{
+      --bg:#0f172a;--bg2:#111827;--panel:rgba(255,255,255,.08);--text:#f8fafc;--muted:#cbd5e1;
+      --gold:#fbbf24;--line:rgba(255,255,255,.10);--shadow:0 18px 40px rgba(0,0,0,.28);--radius:24px;
+      --avg:#38bdf8;--obp:#22c55e;--slg:#fbbf24;--ops:#fb7185;
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(56,189,248,.18), transparent 20%),
-        radial-gradient(circle at top right, rgba(251,191,36,.18), transparent 24%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-      min-height: 100vh;
-    }
-
-    .wrap { max-width: 1360px; margin: 0 auto; padding: 14px 14px 40px; }
-    .hero {
-      position: relative; overflow: hidden; border-radius: 30px; padding: 24px; margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(251,191,36,.16), rgba(56,189,248,.14)), rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow);
-    }
-    .hero::after {
-      content: "⚾"; position: absolute; right: 16px; top: -8px; font-size: clamp(74px, 16vw, 152px);
-      opacity: .12; transform: rotate(12deg); pointer-events: none;
-    }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
-      background: rgba(251,191,36,.12); border: 1px solid rgba(251,191,36,.25);
-      font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em;
-      color: #fde68a; margin-bottom: 10px;
-    }
-    h1 { margin: 0; font-size: clamp(30px, 6vw, 54px); line-height: 1; letter-spacing: -.04em; }
-    .hero p { margin: 10px 0 0; max-width: 860px; color: var(--muted); line-height: 1.5; font-size: clamp(14px, 2.8vw, 18px); }
-
-    .panel {
-      background: var(--panel); border: 1px solid rgba(255,255,255,.10); border-radius: var(--radius);
-      box-shadow: var(--shadow); backdrop-filter: blur(10px);
-    }
-
-    .toolbar, .stats-grid, .leaders-grid, .tables-grid, .charts-grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-bottom: 16px;
-    }
-
-    .control, .section { padding: 16px; }
-    .control { grid-column: span 3; }
-    .control label {
-      display: block; margin-bottom: 8px; font-size: 12px; font-weight: 900;
-      text-transform: uppercase; letter-spacing: .1em; color: #bae6fd;
-    }
-
-    select, button {
-      width: 100%; border: 1px solid rgba(255,255,255,.10); border-radius: 14px; padding: 12px 14px; font: inherit; font-weight: 700;
-    }
-    select { background: rgba(2,6,23,.7); color: white; }
-    button { cursor: pointer; }
-
-    .section h2 { margin: 0 0 10px; font-size: clamp(22px, 4vw, 30px); letter-spacing: -.03em; }
-    .section-note { color: var(--muted); font-size: 13px; line-height: 1.45; }
-
-    .snapshot-card { grid-column: span 2; padding: 16px; min-height: 108px; background: rgba(255,255,255,.06); }
-    .snapshot-label { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #bae6fd; font-weight: 900; margin-bottom: 8px; }
-    .snapshot-value { font-size: 30px; line-height: 1; font-weight: 900; color: #fef08a; }
-    .snapshot-sub { margin-top: 8px; color: var(--muted); font-size: 12px; }
-
-    .games-panel, .leaders-panel, .table-panel, .chart-panel { grid-column: span 12; }
-
-    .games-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
-    .game-card {
-      background: rgba(2,6,23,.35); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 14px;
-    }
-    .game-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-    .pill {
-      display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 900; text-transform: uppercase;
-      letter-spacing: .08em; border-radius: 999px; padding: 7px 10px; background: rgba(255,255,255,.07); color: white;
-    }
-    .pill.win { background: rgba(34,197,94,.16); color: #bbf7d0; }
-    .pill.loss { background: rgba(251,113,133,.16); color: #fecdd3; }
-    .game-score { font-size: 24px; font-weight: 900; color: #fef08a; line-height: 1; }
-    .game-meta { color: var(--muted); font-size: 13px; line-height: 1.4; margin-bottom: 10px; }
-    .game-button { background: linear-gradient(135deg, var(--gold), #fb923c); color: #1f2937; font-weight: 900; }
-
-    .leader-groups { display: grid; gap: 16px; }
-    .leader-group-title { margin: 0 0 10px; font-size: 22px; }
-    .leaders-grid-inner { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-    .leader-card { background: rgba(2,6,23,.35); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 14px; }
-    .leader-title { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: #c7d2fe; font-weight: 900; margin-bottom: 8px; }
-    .leader-list { display: grid; gap: 8px; }
-    .leader-row { display: grid; grid-template-columns: 38px 1fr auto; gap: 10px; align-items: center; background: rgba(255,255,255,.04); border-radius: 14px; padding: 10px 12px; }
-    .badge { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; background: rgba(251,191,36,.16); color: #fde68a; }
-    .player-main { font-weight: 800; }
-    .player-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-    .leader-value { font-size: 22px; font-weight: 900; color: #fef08a; }
-    .leader-row:not(:first-child) .player-main { font-size: 14px; }
-    .leader-row:not(:first-child) .player-sub { font-size: 11px; }
-    .leader-row:not(:first-child) .leader-value { font-size: 16px; opacity: .9; }
-
-    .chart-box {
-      height: 360px; background: rgba(2,6,23,.36); border-radius: 18px; border: 1px solid rgba(255,255,255,.08); padding: 8px; margin-top: 12px;
-    }
-    svg { width: 100%; height: 100%; overflow: visible; }
-    .axis-label { fill: #cbd5e1; font-size: 12px; }
-    .line-player { fill: none; stroke: var(--sky); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-    .line-team { fill: none; stroke: var(--green); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-    .point-player { fill: #7dd3fc; stroke: #082f49; stroke-width: 2; }
-    .point-team { fill: #86efac; stroke: #14532d; stroke-width: 2; }
-
-    .table-toolbar {
-      display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 10px;
-    }
-    .table-toolbar .mini-controls { display: flex; gap: 10px; flex-wrap: wrap; }
-    .mini-pill {
-      display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px;
-      background: rgba(255,255,255,.07); color: var(--muted); font-size: 12px; border: 1px solid rgba(255,255,255,.08);
-    }
-    .table-wrap { overflow: auto; background: rgba(2,6,23,.35); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; margin-top: 12px; }
-    table { width: 100%; min-width: 980px; border-collapse: collapse; }
-    th, td { padding: 12px 10px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
-    th {
-      position: sticky; top: 0; z-index: 2; background: #111827; color: #fde68a; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; cursor: pointer; user-select: none;
-    }
-    th:first-child, td:first-child { position: sticky; left: 0; background: #0b1221; text-align: left; z-index: 1; }
-    tr:hover td { background: rgba(255,255,255,.04); }
-    tfoot td { font-weight: 900; background: rgba(255,255,255,.06); }
-    .player-cell { display: flex; align-items: center; gap: 8px; font-weight: 800; }
-    .glossary-tip { text-decoration: underline dotted; text-underline-offset: 2px; }
-
-    .modal {
-      position: fixed; inset: 0; display: none; align-items: center; justify-content: center; padding: 14px;
-      background: rgba(2,6,23,.76); z-index: 50;
-    }
-    .modal.open { display: flex; }
-    .modal-card {
-      width: min(1100px, 100%); max-height: 92vh; overflow: auto; border-radius: 24px;
-      background: linear-gradient(180deg, rgba(17,24,39,.98), rgba(15,23,42,.98)); border: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow); padding: 18px;
-    }
-    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
-    .close-btn { width: auto; min-width: 44px; background: rgba(255,255,255,.08); color: white; }
-    .boxscore-table { width: 100%; min-width: 620px; margin-top: 12px; }
-    .sub-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
-    .mini-panel { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 14px; }
-    .mini-title { margin: 0 0 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: #bae6fd; }
-    .note-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .note-card { background: rgba(255,255,255,.04); border-radius: 14px; padding: 10px 12px; }
-    .note-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #bae6fd; font-weight: 900; margin-bottom: 4px; }
-
-    .loading { padding: 28px; text-align: center; color: var(--muted); }
-
-    @media (max-width: 1180px) {
-      .control { grid-column: span 6; }
-      .snapshot-card { grid-column: span 3; }
-      .leaders-grid-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 760px) {
-      .wrap { padding: 10px 10px 28px; }
-      .hero { padding: 18px; border-radius: 24px; }
-      .control, .snapshot-card { grid-column: span 6; }
-      .chart-box { height: 300px; }
-      .note-grid { grid-template-columns: 1fr; }
-      .leader-row { grid-template-columns: 34px 1fr auto; }
-      .leader-value { font-size: 18px; }
-      .games-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 520px) {
-      .control, .snapshot-card { grid-column: span 12; }
-      .leaders-grid-inner { grid-template-columns: 1fr; }
-    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);
+      background:radial-gradient(circle at top left, rgba(56,189,248,.18), transparent 20%),radial-gradient(circle at top right, rgba(251,191,36,.18), transparent 24%),linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);min-height:100vh}
+    .wrap{max-width:1360px;margin:0 auto;padding:14px 14px 40px}
+    .panel{background:var(--panel);border:1px solid rgba(255,255,255,.10);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+    .hero{border-radius:30px;padding:24px;margin-bottom:16px;background:linear-gradient(135deg,rgba(251,191,36,.16),rgba(56,189,248,.14)),rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+    .eyebrow{display:inline-flex;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.25);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:#fde68a;margin-bottom:10px}
+    h1{margin:0;font-size:clamp(30px,6vw,54px);line-height:1} .hero p{margin:10px 0 0;max-width:860px;color:var(--muted);line-height:1.5;font-size:clamp(14px,2.8vw,18px)}
+    .stats-grid,.charts-grid,.tables-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-bottom:16px}.charts-grid>.panel,.tables-grid>.panel{grid-column:1 / -1}
+    .section,.control{padding:16px}.control{grid-column:span 3}
+    .control label{display:block;margin-bottom:8px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#bae6fd}
+    select,button{width:100%;border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px 14px;font:inherit;font-weight:700}
+    select{background:rgba(2,6,23,.7);color:#fff} button{cursor:pointer}
+    .section h2{margin:0 0 10px;font-size:clamp(22px,4vw,30px)} .section-note{color:var(--muted);font-size:13px;line-height:1.45}
+    .snapshot-card{grid-column:span 2;padding:16px;min-height:108px;background:rgba(255,255,255,.06)}
+    .snapshot-label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#bae6fd;font-weight:900;margin-bottom:8px}
+    .snapshot-value{font-size:30px;line-height:1;font-weight:900;color:#fef08a}
+    .snapshot-sub{margin-top:8px;color:var(--muted);font-size:12px}
+    .leaders-grid-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .leader-card{background:rgba(2,6,23,.35);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px}
+    .leader-title{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#c7d2fe;font-weight:900;margin-bottom:8px}
+    .leader-list{display:grid;gap:8px}.leader-row{display:grid;grid-template-columns:38px 1fr auto;gap:10px;align-items:center;background:rgba(255,255,255,.04);border-radius:14px;padding:10px 12px}
+    .leader-row:not(:first-child) .player-main{font-size:14px}.leader-row:not(:first-child) .player-sub{font-size:11px}.leader-row:not(:first-child) .leader-value{font-size:16px;opacity:.9}
+    .badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:900;background:rgba(251,191,36,.16);color:#fde68a}
+    .player-main{font-weight:800}.player-sub{font-size:12px;color:var(--muted);margin-top:2px}.leader-value{font-size:22px;font-weight:900;color:#fef08a}
+    .chart-box{height:360px;background:rgba(2,6,23,.36);border-radius:18px;border:1px solid rgba(255,255,255,.08);padding:8px;margin-top:12px}
+    svg{width:100%;height:100%;overflow:visible}.axis-label{fill:#cbd5e1;font-size:12px}
+    .games-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+    .game-card{background:rgba(2,6,23,.35);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px;display:flex;flex-direction:column;height:100%}
+    .game-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px}
+    .pill{display:inline-flex;gap:6px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.07)}
+    .pill.win{background:rgba(34,197,94,.16);color:#bbf7d0}.pill.loss{background:rgba(251,113,133,.16);color:#fecdd3}
+    .game-score{font-size:24px;font-weight:900;color:#fef08a;line-height:1;white-space:nowrap}.game-meta{color:var(--muted);font-size:13px;line-height:1.4;margin-bottom:10px}
+    .game-button{background:linear-gradient(135deg,var(--gold),#fb923c);color:#1f2937;font-weight:900;margin-top:auto}
+    .table-wrap{overflow:auto;background:rgba(2,6,23,.35);border:1px solid rgba(255,255,255,.08);border-radius:18px;margin-top:12px}
+    table{width:100%;min-width:980px;border-collapse:collapse} th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+    th{position:sticky;top:0;z-index:2;background:#111827;color:#fde68a;font-size:12px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+    th:first-child,td:first-child{position:sticky;left:0;background:#0b1221;text-align:left;z-index:1}
+    tfoot td{font-weight:900;background:rgba(255,255,255,.06)} .player-cell{display:flex;align-items:center;gap:8px;font-weight:800}
+    .mini-pill{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:var(--muted);font-size:12px;border:1px solid rgba(255,255,255,.08)}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(2,6,23,.76);z-index:50}.modal.open{display:flex}
+    .modal-card{width:min(1100px,100%);max-height:92vh;overflow:auto;border-radius:24px;background:linear-gradient(180deg,rgba(17,24,39,.98),rgba(15,23,42,.98));border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);padding:18px}
+    .modal-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}.close-btn{width:auto;min-width:44px;background:rgba(255,255,255,.08);color:#fff}
+    .sub-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}.mini-panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px}
+    .mini-title{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:#bae6fd}.note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .note-card{background:rgba(255,255,255,.04);border-radius:14px;padding:10px 12px}.note-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#bae6fd;font-weight:900;margin-bottom:4px}
+    @media (max-width:1180px){.control{grid-column:span 6}.snapshot-card{grid-column:span 3}.leaders-grid-inner{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:760px){.control,.snapshot-card{grid-column:span 6}.chart-box{height:300px}.games-list{grid-template-columns:repeat(2,minmax(0,1fr))}.note-grid{grid-template-columns:1fr}}
+    @media (max-width:520px){.control,.snapshot-card{grid-column:span 12}.leaders-grid-inner{grid-template-columns:repeat(2,minmax(0,1fr))}.games-list{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="wrap" id="app">
-    <div class="loading panel">Loading stats…</div>
-  </div>
+<div class="wrap" id="app"><div class="panel" style="padding:28px;text-align:center;color:var(--muted)">Loading stats…</div></div>
 
-  <div class="modal" id="gameModal" aria-hidden="true">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div>
-          <h2 id="modalTitle" style="margin:0 0 6px;"></h2>
-          <div id="modalMeta" class="section-note"></div>
-        </div>
-        <button class="close-btn" id="closeModal">✕</button>
-      </div>
-      <div class="table-wrap"><table class="boxscore-table" id="modalBoxscore"></table></div>
-      <div class="sub-grid">
-        <div class="mini-panel">
-          <h3 class="mini-title">Mudhens Batting</h3>
-          <div class="table-wrap"><table id="modalBatting"></table></div>
-        </div>
-        <div class="mini-panel">
-          <h3 class="mini-title">Mudhens Pitching</h3>
-          <div class="table-wrap"><table id="modalPitching"></table></div>
-        </div>
-        <div class="mini-panel">
-          <h3 class="mini-title">Batting Notes</h3>
-          <div class="note-grid" id="modalBattingNotes"></div>
-        </div>
-        <div class="mini-panel">
-          <h3 class="mini-title">Pitching Notes</h3>
-          <div class="note-grid" id="modalPitchingNotes"></div>
-        </div>
-      </div>
+<div class="modal" id="gameModal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div><h2 id="modalTitle" style="margin:0 0 6px;"></h2><div id="modalMeta" class="section-note"></div></div>
+      <button class="close-btn" id="closeModal">✕</button>
+    </div>
+    <div class="table-wrap"><table id="modalBoxscore"></table></div>
+    <div class="sub-grid">
+      <div class="mini-panel"><h3 class="mini-title">Mudhens Batting</h3><div class="table-wrap"><table id="modalBatting"></table></div></div>
+      <div class="mini-panel"><h3 class="mini-title">Mudhens Pitching</h3><div class="table-wrap"><table id="modalPitching"></table></div></div>
+      <div class="mini-panel"><h3 class="mini-title">Batting Notes</h3><div class="note-grid" id="modalBattingNotes"></div></div>
+      <div class="mini-panel"><h3 class="mini-title">Pitching Notes</h3><div class="note-grid" id="modalPitchingNotes"></div></div>
     </div>
   </div>
+</div>
 
-  <script>
-    const DEFAULT_UI = {
-      battingLeaderKeys: ["H", "R", "RBI", "AVG", "OBP", "SLG", "OPS", "HR", "SB", "2B"],
-      pitchingLeaderKeys: ["SO", "W", "ERA", "WHIP"],
-      battingTrendKeys: ["H", "R", "RBI", "BB", "AVG"],
-      pitchingTrendKeys: ["IP", "SO", "ER", "BF"],
-      teamCards: [
-        { section: "batting", key: "R", label: "Runs", perGame: true },
-        { section: "batting", key: "H", label: "Hits", perGame: true },
-        { section: "batting", key: "AVG", label: "Team AVG" },
-        { section: "pitching", key: "SO", label: "Pitching Ks", perGame: true },
-        { section: "batting", key: "SB", label: "Team SB", perGame: true },
-        { section: "batting", key: "HBP", label: "Team HBP", perGame: true },
-        { section: "batting", key: "LOB", label: "Team LOB", perGame: true },
-        { section: "fielding", key: "E", label: "Errors" },
-        { section: "pitching", key: "ERA", label: "Pitching ERA" },
-        { section: "pitching", key: "WHIP", label: "WHIP" }
-      ]
-    };
+<script>
+let fullStats=null, gameStats=null;
+let battingSort={key:null,dir:"desc"}, pitchingSort={key:null,dir:"desc"}, fieldingSort={key:null,dir:"desc"};
+let trendVisibility={AVG:true,OBP:true,SLG:true,OPS:true};
+const DEFAULT_UI={
+  battingLeaderKeys:["AVG","OBP","SLG","OPS","H","R","RBI","2B","HR","TB","BB","SB","SO"],
+  pitchingLeaderKeys:["SO","W","ERA","WHIP"],
+  teamCards:[
+    {label:"OBP",section:"batting",key:"OBP"},
+    {label:"OPS",section:"batting",key:"OPS"},
+    {label:"AVG",section:"batting",key:"AVG"},
+    {label:"SLG",section:"batting",key:"SLG"},
+    {label:"XBH",section:"batting",key:"XBH"},
+    {label:"BB%",derived:"BBPCT"},
+    {label:"K%",derived:"KPCT"},
+    {label:"SB%",section:"batting",key:"SB%"},
+    {label:"R/H",derived:"RPH"}
+  ]
+};
 
-    let fullStats = null;
-    let gameStats = null;
-    let battingSort = { key: null, dir: "desc" };
-    let pitchingSort = { key: null, dir: "desc" };
-    let fieldingSort = { key: null, dir: "desc" };
+const app=document.getElementById("app"), gameModal=document.getElementById("gameModal");
+function toNumber(v){ if(v===null||v===undefined) return null; if(typeof v==="number") return Number.isNaN(v)?null:v; const s=String(v).trim(); if(!s||s==="-" ) return null; const n=Number(s.startsWith(".")?"0"+s:s); return Number.isNaN(n)?null:n; }
+function safeDiv(a,b){ return b?a/b:0; } function round(n,d=2){ return Number(n).toFixed(d); } function rate(n,d=3){ return Number(n).toFixed(d).replace(/^0/,""); }
+function formatStat(sectionOrKey,keyOrValue,maybeValue){
+  const hasSection=maybeValue!==undefined, section=hasSection?sectionOrKey:null, key=hasSection?keyOrValue:sectionOrKey, value=hasSection?maybeValue:keyOrValue;
+  if(value===null||value===undefined||value==="") return "—"; const num=toNumber(value); if(num===null) return String(value);
+  const fixedTwo=new Set(["ERA","WHIP","FIP","K/BB","GO/AO","P/BF","PS/PA","BB/INN","K/BF","BAA","BABIP","BA/RISP"]);
+  const fixedThree=new Set(["AVG","OBP","OPS","SLG"]);
+  const pct=new Set(["SB%","QAB%","C%","LD%","FB%","GB%","<3%","S%","FPS%","FPSO%","FPSW%","FPSH%","SM%","WEAK%","HHB%","FBS%","FBSW%","FBSM%","CBS%","CBSW%","CBSM%","CTS%","CTSW%","CTSM%","SLS%","SLSW%","SLSM%","CHS%","CHSW%","CHSM%","OSS%","OSSW%","OSSM%","6+%","2S+3%","SV%","CS%"]);
+  const count=new Set(["GP","PA","AB","H","R","RBI","BB","SO","K-L","HBP","SAC","SF","ROE","FC","SB","CS","PIK","QAB","LOB","2OUTRBI","XBH","TB","PS","#P","W","L","SV","SVO","BS","BF","BK","WP","BBS","LOBB","LOBBS","HR"]);
+  const fieldingInnings=new Set(["P","C","1B","2B","3B","SS","LF","CF","RF","SF","Total","INN"]);
+  if(fixedTwo.has(key)) return num.toFixed(2);
+  if(fixedThree.has(key)) return num.toFixed(3).replace(/^0/,"");
+  if(pct.has(key)) return String(value);
+  if(section==="fielding" && fieldingInnings.has(key)){ const orig=String(value); return orig.includes(".")?Number(value).toFixed(1):String(Math.round(num)); }
+  if(count.has(key) || (section==="batting" && ["1B","2B","3B","HR"].includes(key))) return String(Math.round(num));
+  if(Number.isInteger(num)) return String(num);
+  return Math.abs(num)<1 ? rate(num,3) : String(Number(num.toFixed(3)));
+}
+function displayName(p){ const parts=[p.first,p.last].filter(Boolean); return parts.length?parts.join(" "):(p.name||"Unknown"); }
+function normalizeName(s){ return String(s||"").toLowerCase().replace(/[^a-z0-9]/g,""); }
+function playerAliases(player){
+  const aliases=new Set();
+  const first=player?.first||"", last=player?.last||"";
+  if(first||last) aliases.add(`${first} ${last}`.trim());
+  if(first&&last) aliases.add(`${first[0]} ${last}`.trim());
+  if(last) aliases.add(last);
+  return [...aliases].map(normalizeName).filter(Boolean);
+}
+function noteCountForPlayer(notes, key, player){
+  const arr = notes?.[key];
+  if(!Array.isArray(arr)) return null;
+  const aliases = new Set(playerAliases(player));
+  let total = 0, matched = false;
+  for(const item of arr){
+    const n = normalizeName(item?.name);
+    if(aliases.has(n)){ total += Number(item?.count||0); matched = true; }
+  }
+  return matched ? total : null;
+}
+function getGlossary(){ return fullStats?.glossary||{}; }
+function getGlossaryForSection(section){ const g=getGlossary(); return g&&typeof g==="object"&&!Array.isArray(g)&&g[section]&&typeof g[section]==="object" ? g[section] : g||{}; }
+function getGlossaryText(section,key){ const sg=getGlossaryForSection(section); return sg[key] || getGlossary()[key] || null; }
+function getPlayers(){ return fullStats?.players||[]; } function getTotals(){ return fullStats?.totals||{}; }
 
-    const app = document.getElementById("app");
-    const gameModal = document.getElementById("gameModal");
-    const closeModal = document.getElementById("closeModal");
+function findMudhensTeamKey(game){
+  const keys=Object.keys(game.teams||{}), home=game.game?.home||"", away=game.game?.away||"", loc=game.game?.location||"";
+  const direct=keys.find(k=>/mud[ ]*hens/i.test(k)); if(direct) return direct;
+  if(/home/i.test(loc)&&keys.includes(home)) return home; if(/away/i.test(loc)&&keys.includes(away)) return away;
+  if(/home/i.test(loc)&&keys.includes("Home")) return "Home"; if(/away/i.test(loc)&&keys.includes("Away")) return "Away";
+  return keys[0]||null;
+}
+function deriveOpponentTeamKey(game,mudhensKey){
+  const keys=Object.keys(game.teams||{}), home=game.game?.home||"", away=game.game?.away||"", loc=game.game?.location||"";
+  if(/home/i.test(loc)) return keys.find(k=>k!==mudhensKey&&(k===away||k==="Away"))||keys.find(k=>k!==mudhensKey)||mudhensKey;
+  if(/away/i.test(loc)) return keys.find(k=>k!==mudhensKey&&(k===home||k==="Home"))||keys.find(k=>k!==mudhensKey)||mudhensKey;
+  return keys.find(k=>k!==mudhensKey)||mudhensKey;
+}
+function getGames(){
+  return (gameStats?.games||[])
+    .map((g,idx)=>{
+      const mudhensKey=findMudhensTeamKey(g), oppKey=deriveOpponentTeamKey(g,mudhensKey);
+      const mudLS=g.linescore?.[mudhensKey]||g.linescore?.[g.game?.away]||g.linescore?.[g.game?.home]||null;
+      const oppLS=g.linescore?.[oppKey]||null;
+      const mudTeam=g.teams?.[mudhensKey]||{}, oppTeam=g.teams?.[oppKey]||{};
+      const mudScore=mudLS?.R ?? mudTeam?.batting?.totals?.R ?? 0, oppScore=oppLS?.R ?? oppTeam?.batting?.totals?.R ?? 0;
+      const loc=g.game?.location||"", isHome=/^home$/i.test(loc), opponent=isHome?(g.game?.away||oppKey):(g.game?.home||oppKey);
+      const inningsObj=mudLS?.innings||{}, oppInningsObj=oppLS?.innings||{}, maxInning=Math.max(0,...Object.keys({...inningsObj,...oppInningsObj}).map(Number));
+      const range=Array.from({length:maxInning},(_,i)=>String(i+1));
+      const d=g.game?.date?new Date(`${g.game.date}T00:00:00`):null;
+      return {
+        id:`game-${idx}`, raw:g, date:g.game?.date||"", sortDate:d&&!Number.isNaN(d.valueOf())?d.getTime():idx,
+        shortDate:d&&!Number.isNaN(d.valueOf())?`${d.getMonth()+1}/${d.getDate()}`:(g.game?.date||`Game ${idx+1}`),
+        opponent:opponent||oppKey||`Opponent ${idx+1}`, location:loc, result:mudScore>oppScore?"W":mudScore<oppScore?"L":"T", score:`${mudScore}-${oppScore}`,
+        teamRuns:mudScore, oppRuns:oppScore, teamHits:mudLS?.H ?? mudTeam?.batting?.totals?.H ?? 0, oppHits:oppLS?.H ?? oppTeam?.batting?.totals?.H ?? 0,
+        teamErrors:mudLS?.E ?? 0, oppErrors:oppLS?.E ?? 0, mudhensKey, oppKey,
+        teamInnings:range.map(i=>inningsObj[i] ?? 0), oppInnings:range.map(i=>oppInningsObj[i] ?? 0),
+        batting:mudTeam?.batting?.players||[], pitching:mudTeam?.pitching?.players||[], battingNotes:mudTeam?.batting?.notes||{}, pitchingNotes:mudTeam?.pitching?.notes||{}
+      };
+    })
+    .sort((a,b)=>a.sortDate-b.sortDate);
+}
+function inferTeamName(){ for(const g of (gameStats?.games||[])){ if(/mud[ ]*hens/i.test(g?.game?.home||"")) return g.game.home; if(/mud[ ]*hens/i.test(g?.game?.away||"")) return g.game.away; } return "Millbrae Mud Hens"; }
+function pickKeys(sectionObj, preferred){ const keys=Object.keys(sectionObj||{}); const chosen=preferred.filter(k=>keys.includes(k)); return chosen.length?chosen:keys.slice(0,Math.min(10,keys.length)); }
 
-    function toNumber(value) {
-      if (value === null || value === undefined) return null;
-      if (typeof value === "number") return Number.isNaN(value) ? null : value;
-      const str = String(value).trim();
-      if (!str || str === "-") return null;
-      const normalized = str.startsWith(".") ? `0${str}` : str;
-      const num = Number(normalized);
-      return Number.isNaN(num) ? null : num;
-    }
+function renderShell(){
+  const teamName=inferTeamName();
+  app.innerHTML=`
+    <section class="hero">
+      <div class="eyebrow">⚾ ${teamName} • Dynamic JSON Dashboard</div>
+      <h1>${teamName} Season Stats</h1>
+      <p>Leaders, sortable tables, cumulative player rate charts, glossary-aware stat labels, and game-by-game box scores.</p>
+    </section>
+    <section class="stats-grid" id="snapshotGrid"></section>
+    <section class="panel section"><h2>Stat Leaders</h2><div class="section-note">Leaderboards are generated from the season JSON.</div><div class="leader-groups" id="leaderGroups"></div></section>
+    <section class="charts-grid"><div class="panel section">
+      <h2>Player Progress Over Time</h2>
+      <div class="toolbar" style="margin:12px 0 8px;">
+        <div class="panel control"><label for="trendPlayer">Progress player</label><select id="trendPlayer"></select></div>
+        <div class="panel control"><label for="gameFilter">Game view</label><select id="gameFilter"><option value="all">All games</option><option value="wins">Wins only</option><option value="losses">Losses only</option><option value="ties">Ties only</option></select></div>
+      </div>
+      <div class="section-note">Cumulative AVG, OBP, SLG, and OPS for the selected player. Tap the toggles to hide or show each stat.</div>
+      <div id="trendLegend" style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 6px;"></div>
+      <div class="chart-box"><svg id="trendChart" viewBox="0 0 760 360" preserveAspectRatio="none"></svg></div>
+    </div></section>
+    <section class="panel section"><h2>Games & Box Scores</h2><div class="section-note">Each card is built from the game JSON.</div><div class="games-list" id="gamesList"></div></section>
+    <section class="tables-grid">
+      <div class="panel section"><div class="table-toolbar"><div><h2 style="margin:0;">Batting Table</h2><div class="section-note">Tap a stat header to see its description.</div></div></div><div class="mini-pill" id="battingGlossaryBox">Tap a stat header to see its description.</div><div class="table-wrap"><table id="battingTable"></table></div></div>
+      <div class="panel section"><div class="table-toolbar"><div><h2 style="margin:0;">Pitching Table</h2><div class="section-note">Only columns found in the JSON file are shown.</div></div></div><div class="mini-pill" id="pitchingGlossaryBox">Tap a stat header to see its description.</div><div class="table-wrap"><table id="pitchingTable"></table></div></div>
+      <div class="panel section"><div class="table-toolbar"><div><h2 style="margin:0;">Fielding Table</h2><div class="section-note">Fielding columns are also built from the season JSON.</div></div></div><div class="mini-pill" id="fieldingGlossaryBox">Tap a stat header to see its description.</div><div class="table-wrap"><table id="fieldingTable"></table></div></div>
+    </section>`;
+}
 
-    function safeDiv(a, b) { return b ? a / b : 0; }
-    function round(n, digits = 2) { return Number(n).toFixed(digits); }
-    function rate(n, digits = 3) { return Number(n).toFixed(digits).replace(/^0/, ""); }
-
-    function formatStat(sectionOrKey, keyOrValue, maybeValue) {
-      const hasSection = maybeValue !== undefined;
-      const section = hasSection ? sectionOrKey : null;
-      const key = hasSection ? keyOrValue : sectionOrKey;
-      const value = hasSection ? maybeValue : keyOrValue;
-
-      if (value === null || value === undefined || value === "") return "—";
-      const num = toNumber(value);
-      if (num === null) return String(value);
-
-      const fixedTwoKeys = new Set(["ERA", "WHIP", "FIP", "K/BB", "GO/AO", "P/BF", "PS/PA", "BB/INN", "K/BF", "BAA", "BABIP", "BA/RISP"]);
-      const fixedThreeKeys = new Set(["AVG", "OBP", "OPS", "SLG"]);
-      const percentageKeys = new Set(["SB%", "QAB%", "C%", "LD%", "FB%", "GB%", "<3%", "S%", "FPS%", "FPSO%", "FPSW%", "FPSH%", "SM%", "WEAK%", "HHB%", "FBS%", "FBSW%", "FBSM%", "CBS%", "CBSW%", "CBSM%", "CTS%", "CTSW%", "CTSM%", "SLS%", "SLSW%", "SLSM%", "CHS%", "CHSW%", "CHSM%", "OSS%", "OSSW%", "OSSM%", "6+%", "2S+3%", "SV%", "CS%"]);
-      const genericCountLike = new Set(["GP", "PA", "AB", "H", "R", "RBI", "BB", "SO", "K-L", "HBP", "SAC", "SF", "ROE", "FC", "SB", "CS", "PIK", "QAB", "LOB", "2OUTRBI", "XBH", "TB", "PS", "#P", "W", "L", "SV", "SVO", "BS", "BF", "BK", "WP", "BBS", "LOBB", "LOBBS", "HR"]);
-      const fieldingInningKeys = new Set(["P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "SF", "Total", "INN"]);
-      const battingCountLike = new Set(["1B", "2B", "3B", "HR"]);
-
-      if (fixedTwoKeys.has(key)) return num.toFixed(2);
-      if (fixedThreeKeys.has(key)) return num.toFixed(3).replace(/^0/, "");
-      if (percentageKeys.has(key)) return String(value);
-
-      if (section === "fielding" && fieldingInningKeys.has(key)) {
-        const original = String(value);
-        if (original.includes(".")) return Number(value).toFixed(1);
-        return String(Math.round(num));
-      }
-
-      if (section === "batting" && battingCountLike.has(key)) {
-        return String(Math.round(num));
-      }
-
-      if (genericCountLike.has(key)) return String(Math.round(num));
-      if (Number.isInteger(num)) return String(num);
-      return Math.abs(num) < 1 ? rate(num, 3) : String(Number(num.toFixed(3)));
-    }
-
-    function displayName(player) {
-      const parts = [player.first, player.last].filter(Boolean);
-      return parts.length ? parts.join(" ") : (player.name || "Unknown");
-    }
-
-    function getGlossary() {
-      return fullStats?.glossary || {};
-    }
-
-    function getGlossaryForSection(section) {
-      const glossary = getGlossary();
-      if (glossary && typeof glossary === "object" && !Array.isArray(glossary)) {
-        if (glossary[section] && typeof glossary[section] === "object") return glossary[section];
-      }
-      return glossary || {};
-    }
-
-    function getGlossaryText(section, key) {
-      const scoped = getGlossaryForSection(section);
-      if (scoped && scoped[key]) return scoped[key];
-      const glossary = getGlossary();
-      if (glossary && glossary[key]) return glossary[key];
-      return null;
-    }
-    function getPlayers() { return fullStats?.players || []; }
-    function getTotals() { return fullStats?.totals || {}; }
-
-    function findMudhensTeamKey(game) {
-      const keys = Object.keys(game.teams || {});
-      const homeName = game.game?.home || "";
-      const awayName = game.game?.away || "";
-      const location = game.game?.location || "";
-      const directMatch = keys.find(k => /mud[ ]*hens/i.test(k));
-      if (directMatch) return directMatch;
-      if (/home/i.test(location) && keys.includes(homeName)) return homeName;
-      if (/away/i.test(location) && keys.includes(awayName)) return awayName;
-      if (/home/i.test(location) && keys.includes("Home")) return "Home";
-      if (/away/i.test(location) && keys.includes("Away")) return "Away";
-      return keys[0] || null;
-    }
-
-    function deriveOpponentTeamKey(game, mudhensKey) {
-      const keys = Object.keys(game.teams || {});
-      const homeName = game.game?.home || "";
-      const awayName = game.game?.away || "";
-      const location = game.game?.location || "";
-      if (/home/i.test(location)) {
-        const expectedOpponent = awayName || "Away";
-        return keys.find(k => k !== mudhensKey && (k === expectedOpponent || k === "Away")) || keys.find(k => k !== mudhensKey) || mudhensKey;
-      }
-      if (/away/i.test(location)) {
-        const expectedOpponent = homeName || "Home";
-        return keys.find(k => k !== mudhensKey && (k === expectedOpponent || k === "Home")) || keys.find(k => k !== mudhensKey) || mudhensKey;
-      }
-      return keys.find(k => k !== mudhensKey) || mudhensKey;
-    }
-
-    function getGames() {
-      return (gameStats?.games || []).map((g, idx) => {
-        const mudhensKey = findMudhensTeamKey(g);
-        const oppKey = deriveOpponentTeamKey(g, mudhensKey);
-        const mudhensLinescore = g.linescore?.[mudhensKey] || g.linescore?.[g.game?.away] || g.linescore?.[g.game?.home] || null;
-        const oppLinescore = g.linescore?.[oppKey] || null;
-        const mudhensTeam = g.teams?.[mudhensKey] || {};
-        const oppTeam = g.teams?.[oppKey] || {};
-
-        const mudhensScore = mudhensLinescore?.R ?? mudhensTeam?.batting?.totals?.R ?? 0;
-        const oppScore = oppLinescore?.R ?? oppTeam?.batting?.totals?.R ?? 0;
-        const location = g.game?.location || "";
-        const isHome = /^home$/i.test(location);
-        const opponent = isHome ? (g.game?.away || oppKey) : (g.game?.home || oppKey);
-        const inningsObj = mudhensLinescore?.innings || {};
-        const oppInningsObj = oppLinescore?.innings || {};
-        const maxInning = Math.max(0, ...Object.keys({...inningsObj, ...oppInningsObj}).map(Number));
-        const inningRange = Array.from({ length: maxInning }, (_, i) => String(i + 1));
-
-        return {
-          id: `game-${idx}`,
-          raw: g,
-          date: g.game?.date || "",
-          shortDate: (() => {
-            const d = g.game?.date ? new Date(`${g.game.date}T00:00:00`) : null;
-            return d && !Number.isNaN(d.valueOf()) ? `${d.getMonth() + 1}/${d.getDate()}` : g.game?.date || `Game ${idx + 1}`;
-          })(),
-          opponent: opponent || oppKey || `Opponent ${idx + 1}`,
-          location,
-          result: mudhensScore > oppScore ? "W" : mudhensScore < oppScore ? "L" : "T",
-          score: `${mudhensScore}-${oppScore}`,
-          teamRuns: mudhensScore,
-          oppRuns: oppScore,
-          teamHits: mudhensLinescore?.H ?? mudhensTeam?.batting?.totals?.H ?? 0,
-          oppHits: oppLinescore?.H ?? oppTeam?.batting?.totals?.H ?? 0,
-          teamErrors: mudhensLinescore?.E ?? mudhensTeam?.pitching?.notes?.E?.reduce((s,x)=>s + (x.count||0),0) ?? 0,
-          oppErrors: oppLinescore?.E ?? oppTeam?.pitching?.notes?.E?.reduce((s,x)=>s + (x.count||0),0) ?? 0,
-          mudhensKey,
-          oppKey,
-          teamInnings: inningRange.map(i => inningsObj[i] ?? ""),
-          oppInnings: inningRange.map(i => oppInningsObj[i] ?? ""),
-          batting: mudhensTeam?.batting?.players || [],
-          pitching: mudhensTeam?.pitching?.players || [],
-          battingTotals: mudhensTeam?.batting?.totals || {},
-          pitchingTotals: mudhensTeam?.pitching?.totals || {},
-          battingNotes: mudhensTeam?.batting?.notes || {},
-          pitchingNotes: mudhensTeam?.pitching?.notes || {}
-        };
-      });
-    }
-
-    function pickKeys(sectionObj, preferred) {
-      const keys = Object.keys(sectionObj || {});
-      const chosen = preferred.filter(k => keys.includes(k));
-      return chosen.length ? chosen : keys.slice(0, Math.min(10, keys.length));
-    }
-
-    function inferTeamName() {
-      const games = gameStats?.games || [];
-      for (const g of games) {
-        if (/mud[ ]*hens/i.test(g?.game?.home || "")) return g.game.home;
-        if (/mud[ ]*hens/i.test(g?.game?.away || "")) return g.game.away;
-        const keys = Object.keys(g?.teams || {});
-        const keyMatch = keys.find(k => /mud[ ]*hens/i.test(k));
-        if (keyMatch) return keyMatch;
-        if (/home/i.test(g?.game?.location || "") && g?.game?.home) return g.game.home;
-        if (/away/i.test(g?.game?.location || "") && g?.game?.away) return g.game.away;
-      }
-      return "Millbrae Mud Hens";
-    }
-
-    function renderShell() {
-      const teamName = inferTeamName();
-      app.innerHTML = `
-        <section class="hero">
-          <div class="eyebrow">⚾ ${teamName} • Dynamic JSON Dashboard</div>
-          <h1>${teamName} Season Stats</h1>
-          <p>
-            Leaders, sortable tables, progress charts, glossary-aware stat labels, and game-by-game box scores.
-            All season and game data is loaded from the local JSON files when the page opens.
-          </p>
-        </section>
-
-        
-
-        <section class="stats-grid" id="snapshotGrid"></section>
-
-        <section class="panel section leaders-panel">
-          <h2>Stat Leaders</h2>
-          <div class="section-note">Leaderboards are generated from the season JSON file and automatically update when the file changes.</div>
-          <div class="leader-groups" id="leaderGroups"></div>
-        </section>
-
-        <section class="charts-grid">
-          <div class="panel section chart-panel">
-            <h2>Player Progress Over Time</h2>
-            <div class="toolbar" style="margin:12px 0 8px;">
-              <div class="panel control"><label for="trendPlayer">Progress player</label><select id="trendPlayer"></select></div>
-              <div class="panel control"><label for="trendMode">Progress mode</label><select id="trendMode"><option value="batting">Batting</option><option value="pitching">Pitching</option></select></div>
-              <div class="panel control"><label for="trendStat">Progress stat</label><select id="trendStat"></select></div>
-              <div class="panel control"><label for="gameFilter">Game view</label><select id="gameFilter"><option value="all">All games</option><option value="wins">Wins only</option><option value="losses">Losses only</option><option value="ties">Ties only</option></select></div>
-            </div>
-            <div class="section-note">Blue line is the selected player. Green line is the team average for the same stat by game.</div>
-            <div class="chart-box"><svg id="trendChart" viewBox="0 0 760 360" preserveAspectRatio="none"></svg></div>
-          </div>
-        </section>
-
-        <section class="panel section games-panel">
-          <h2>Games & Box Scores</h2>
-          <div class="section-note">Each card is built from the game JSON. Open a game to see the linescore, player lines, and all available notes.</div>
-          <div class="games-list" id="gamesList"></div>
-        </section>
-
-        <section class="tables-grid">
-          <div class="panel section table-panel">
-            <div class="table-toolbar">
-              <div>
-                <h2 style="margin:0;">Batting Table</h2>
-                <div class="section-note">Columns come from the season JSON. Glossary descriptions appear below the table when you tap or click a stat header.</div>
-              </div>
-            </div>
-            <div class="mini-pill" id="battingGlossaryBox">Tap a stat header to see its description.</div>
-            <div class="table-wrap"><table id="battingTable"></table></div>
-          </div>
-
-          <div class="panel section table-panel">
-            <div class="table-toolbar">
-              <div>
-                <h2 style="margin:0;">Pitching Table</h2>
-                <div class="section-note">Only columns found in the JSON file are shown. Sorting is fully dynamic.</div>
-              </div>
-            </div>
-            <div class="mini-pill" id="pitchingGlossaryBox">Tap a stat header to see its description.</div>
-            <div class="table-wrap"><table id="pitchingTable"></table></div>
-          </div>
-
-          <div class="panel section table-panel">
-            <div class="table-toolbar">
-              <div>
-                <h2 style="margin:0;">Fielding Table</h2>
-                <div class="section-note">Fielding columns are also built from the season JSON, including position innings and catcher stats.</div>
-              </div>
-            </div>
-            <div class="mini-pill" id="fieldingGlossaryBox">Tap a stat header to see its description.</div>
-            <div class="table-wrap"><table id="fieldingTable"></table></div>
-          </div>
-        </section>
-      `;
-    }
-
-    function buildControls() {
-      const trendPlayer = document.getElementById("trendPlayer");
-      const players = getPlayers();
-      trendPlayer.innerHTML = players.map(p => `<option value="${displayName(p)}">#${p.number} ${displayName(p)}</option>`).join("");
-      if (players.length) trendPlayer.value = displayName(players[0]);
-      updateTrendOptions();
-
-      document.getElementById("trendMode").addEventListener("change", () => { updateTrendOptions(); drawTrendChart(); });
-      document.getElementById("trendPlayer").addEventListener("change", drawTrendChart);
-      document.getElementById("trendStat").addEventListener("change", drawTrendChart);
-      document.getElementById("gameFilter").addEventListener("change", buildGamesList);
-    }
-
-    function updateTrendOptions() {
-      const mode = document.getElementById("trendMode").value;
-      const sample = getPlayers().find(p => p[mode])?.[mode] || {};
-      const preferred = mode === "batting" ? DEFAULT_UI.battingTrendKeys : DEFAULT_UI.pitchingTrendKeys;
-      const keys = pickKeys(sample, preferred);
-      document.getElementById("trendStat").innerHTML = keys.map(k => {
-        const gloss = getGlossaryText(mode, k);
-        return `<option value="${k}">${k}${gloss ? ` — ${gloss}` : ""}</option>`;
-      }).join("");
-    }
-
-    function buildSnapshot() {
-      const totals = getTotals();
-      const games = getGames();
-      const gamesPlayed = games.length || toNumber(totals?.batting?.GP) || 0;
-      const wins = games.filter(g => g.result === "W").length;
-      const losses = games.filter(g => g.result === "L").length;
-      const ties = Math.max(0, gamesPlayed - wins - losses);
-      const runDiff = games.reduce((s, g) => s + ((g.teamRuns || 0) - (g.oppRuns || 0)), 0);
-
-      const cards = [
-        ["Record", `${wins}-${losses}-${ties}`,  `${gamesPlayed} games`],
-        ...DEFAULT_UI.teamCards.map(card => {
-          const value = totals?.[card.section]?.[card.key];
-          const num = toNumber(value);
-          const perGame = card.perGame && num !== null && gamesPlayed ? `${round(num / gamesPlayed, 2)} per game` : (getGlossary()[card.key] || "Season total");
-          return [card.label, formatStat(card.key, value), perGame];
-        }),
-        ["Run Diff", String(runDiff), gamesPlayed ? `${round(runDiff / gamesPlayed, 2)} per game` : "Runs scored minus allowed"]
-      ];
-
-      document.getElementById("snapshotGrid").innerHTML = cards.map(([label, value, sub]) => `
-        <div class="panel snapshot-card">
-          <div class="snapshot-label">${label}</div>
-          <div class="snapshot-value">${value}</div>
-          <div class="snapshot-sub">${sub}</div>
-        </div>
-      `).join("");
-    }
-
-    function leaderMetricValue(player, section, key) {
-      return toNumber(player?.[section]?.[key]);
-    }
-
-    function buildLeaderGroup(title, section, keys) {
-      const players = getPlayers();
-      return `
-        <div>
-          <h3 class="leader-group-title">${title}</h3>
-          <div class="leaders-grid-inner">
-            ${keys.map(key => {
-              const asc = ["ERA", "WHIP", "FIP", "BAA", "P/BF", "BB/INN"].includes(key);
-              const minKey = section === "batting" ? "AB" : "IP";
-              const minThreshold = ["AVG", "OBP", "OPS", "SLG"].includes(key) ? 5 : (["ERA", "WHIP", "FIP"].includes(key) ? 2 : 0);
-              const filtered = players.filter(p => {
-                const metric = leaderMetricValue(p, section, key);
-                const minVal = toNumber(p?.[section]?.[minKey]) || 0;
-                return metric !== null && minVal >= minThreshold;
-              }).sort((a, b) => {
-                const av = leaderMetricValue(a, section, key);
-                const bv = leaderMetricValue(b, section, key);
-                return asc ? av - bv : bv - av;
-              }).slice(0, 5);
-
-              return `
-                <div class="leader-card">
-                  <div class="leader-title" title="${getGlossaryText(section, key) || key}">${key}</div>
-                  <div class="leader-list">
-                    ${filtered.map((p, i) => `
-                      <div class="leader-row">
-                        <div class="badge">${i + 1}</div>
-                        <div>
-                          <div class="player-main">#${p.number} ${displayName(p)}</div>
-                          <div class="player-sub">${formatStat(section, minKey, p?.[section]?.[minKey])} ${minKey}</div>
-                        </div>
-                        <div class="leader-value">${formatStat(section, key, p?.[section]?.[key])}</div>
-                      </div>
-                    `).join("") || `<div class="section-note">No data</div>`}
-                  </div>
-                </div>
-              `;
-            }).join("")}
-          </div>
-        </div>
-      `;
-    }
-
-    function buildLeaders() {
-      const sampleBatting = getPlayers().find(p => p.batting)?.batting || {};
-      const samplePitching = getPlayers().find(p => p.pitching)?.pitching || {};
-      const battingKeys = pickKeys(sampleBatting, DEFAULT_UI.battingLeaderKeys);
-      const pitchingKeys = pickKeys(samplePitching, DEFAULT_UI.pitchingLeaderKeys);
-      document.getElementById("leaderGroups").innerHTML = [
-        buildLeaderGroup("Batting Leaders", "batting", battingKeys),
-        buildLeaderGroup("Pitching Leaders", "pitching", pitchingKeys)
-      ].join("");
-    }
-
-    function buildGamesList() {
-      const filter = document.getElementById("gameFilter").value;
-      const games = getGames().filter(game => {
-        if (filter === "wins") return game.result === "W";
-        if (filter === "losses") return game.result === "L";
-        if (filter === "ties") return game.result === "T";
-        return true;
-      });
-
-      document.getElementById("gamesList").innerHTML = games.map(game => `
-        <div class="game-card">
-          <div class="game-top">
-            <div>
-              <div class="pill ${game.result === "W" ? "win" : game.result === "L" ? "loss" : ""}">${game.result === "T" ? "Tie" : game.result === "W" ? "Win" : "Loss"}</div>
-              <div style="font-weight:900;font-size:18px;margin-top:8px;">${game.shortDate} ${/^home$/i.test(game.location) ? "vs" : "@"} ${game.opponent}</div>
-            </div>
-            <div class="game-score">${game.score}</div>
-          </div>
-          <div class="game-meta">${game.location || ""} • ${game.teamHits} hits • ${game.teamErrors} errors • ${(game.battingNotes?.LOB ?? 0)} LOB</div>
-          <button class="game-button" onclick="openGameModal('${game.id}')">View box score</button>
-        </div>
-      `).join("") || `<div class="section-note">No games match this filter.</div>`;
-    }
-
-    function getPlayerTrend(playerName, stat, mode) {
-      const games = getGames();
-      return games.map(game => {
-        const lines = mode === "batting" ? game.batting : game.pitching;
-        const found = lines.find(line => {
-          const player = getPlayers().find(p => Number(p.number) === Number(line.number) || displayName(p) === line.name || `${p.first?.[0] || ""} ${p.last}`.trim() === line.name);
-          return player ? displayName(player) === playerName : false;
-        });
-        if (!found) return { x: game.shortDate, y: 0 };
-        if (mode === "batting" && stat === "AVG") return { x: game.shortDate, y: safeDiv(Number(found.H || 0), Number(found.AB || 0)) };
-        return { x: game.shortDate, y: Number(found[stat] || 0) };
-      });
-    }
-
-    function getTeamTrend(stat, mode) {
-      return getGames().map(game => {
-        const lines = mode === "batting" ? game.batting : game.pitching;
-        if (!lines.length) return { x: game.shortDate, y: 0 };
-        if (mode === "batting" && stat === "AVG") {
-          const hits = lines.reduce((s, p) => s + Number(p.H || p.h || 0), 0);
-          const abs = lines.reduce((s, p) => s + Number(p.AB || p.ab || 0), 0);
-          return { x: game.shortDate, y: safeDiv(hits, abs) };
-        }
-        const total = lines.reduce((s, p) => s + Number(p[stat] || 0), 0);
-        return { x: game.shortDate, y: total / lines.length };
-      });
-    }
-
-    function drawTrendChart() {
-      const svg = document.getElementById("trendChart");
-      const playerName = document.getElementById("trendPlayer").value;
-      const mode = document.getElementById("trendMode").value;
-      const stat = document.getElementById("trendStat").value;
-      const playerSeries = getPlayerTrend(playerName, stat, mode);
-      const teamSeries = getTeamTrend(stat, mode);
-
-      const width = 760, height = 360;
-      const m = { top: 18, right: 18, bottom: 44, left: 44 };
-      const innerW = width - m.left - m.right;
-      const innerH = height - m.top - m.bottom;
-      const maxY = Math.max(1, ...playerSeries.map(p => p.y), ...teamSeries.map(p => p.y));
-      const xPos = i => m.left + (playerSeries.length <= 1 ? innerW / 2 : (i / (playerSeries.length - 1)) * innerW);
-      const yPos = y => m.top + innerH - ((y / maxY) * innerH);
-      const pathFor = arr => arr.map((p, i) => `${i === 0 ? "M" : "L"} ${xPos(i)} ${yPos(p.y)}`).join(" ");
-      let grid = "";
-      for (let i = 0; i <= 4; i++) {
-        const y = m.top + (i / 4) * innerH;
-        const val = (maxY - ((i / 4) * maxY));
-        grid += `<line x1="${m.left}" y1="${y}" x2="${width - m.right}" y2="${y}" stroke="rgba(255,255,255,.1)" />`;
-        grid += `<text x="${m.left - 8}" y="${y + 4}" text-anchor="end" class="axis-label">${Math.abs(val) < 1 ? rate(val, 3) : round(val, 2)}</text>`;
-      }
-
-      svg.innerHTML = `
-        ${grid}
-        <line x1="${m.left}" y1="${height - m.bottom}" x2="${width - m.right}" y2="${height - m.bottom}" stroke="rgba(255,255,255,.18)" />
-        <line x1="${m.left}" y1="${m.top}" x2="${m.left}" y2="${height - m.bottom}" stroke="rgba(255,255,255,.18)" />
-        <text x="${m.left}" y="14" class="axis-label" style="font-size:13px;font-weight:800;fill:#f8fafc;">${playerName} • ${stat}</text>
-        <path d="${pathFor(teamSeries)}" class="line-team" />
-        <path d="${pathFor(playerSeries)}" class="line-player" />
-        ${teamSeries.map((p, i) => `<circle cx="${xPos(i)}" cy="${yPos(p.y)}" r="5" class="point-team" />`).join("")}
-        ${playerSeries.map((p, i) => `<circle cx="${xPos(i)}" cy="${yPos(p.y)}" r="6" class="point-player" />`).join("")}
-        ${playerSeries.map((p, i) => `<text x="${xPos(i)}" y="${height - m.bottom + 22}" text-anchor="middle" class="axis-label">${p.x}</text>`).join("")}
-      `;
-    }
-
-    function renderTable(tableId, section, sortStateRef) {
-      const players = getPlayers();
-      const sectionGlossary = getGlossaryForSection(section);
-      const totals = getTotals()?.[section] || {};
-      const columns = Object.keys(players.find(p => p[section])?.[section] || totals || {});
-      if (!sortStateRef.key) sortStateRef.key = columns[0] || null;
-      const glossaryBoxId = tableId === "battingTable" ? "battingGlossaryBox" : tableId === "pitchingTable" ? "pitchingGlossaryBox" : "fieldingGlossaryBox";
-      const sorted = [...players].sort((a, b) => {
-        if (!sortStateRef.key) return 0;
-        const av = toNumber(a?.[section]?.[sortStateRef.key]);
-        const bv = toNumber(b?.[section]?.[sortStateRef.key]);
-        if (sortStateRef.key === "__name") return sortStateRef.dir === "asc" ? displayName(a).localeCompare(displayName(b)) : displayName(b).localeCompare(displayName(a));
-        if (av === null && bv === null) return displayName(a).localeCompare(displayName(b));
-        if (av === null) return 1;
-        if (bv === null) return -1;
-        return sortStateRef.dir === "asc" ? av - bv : bv - av;
-      });
-
-      document.getElementById(tableId).innerHTML = `
-        <thead>
-          <tr>
-            <th data-table="${tableId}" data-col="__name">Player</th>
-            ${columns.map(col => `<th data-table="${tableId}" data-col="${col}" data-glossary-box="${glossaryBoxId}" title="${sectionGlossary[col] || getGlossaryText(section, col) || col}"><span class="glossary-tip">${col}</span></th>`).join("")}
-          </tr>
-        </thead>
-        <tbody>
-          ${sorted.map(player => `
-            <tr>
-              <td><div class="player-cell"><span class="badge" style="width:30px;height:30px;font-size:12px;">#${player.number}</span>${displayName(player)}</div></td>
-              ${columns.map(col => `<td>${formatStat(section, col, player?.[section]?.[col])}</td>`).join("")}
-            </tr>
-          `).join("")}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>Totals</td>
-            ${columns.map(col => `<td>${formatStat(section, col, totals[col])}</td>`).join("")}
-          </tr>
-        </tfoot>
-      `;
-    }
-
-    function bindTableSorting() {
-      document.querySelectorAll("th[data-table]").forEach(th => {
-        th.onclick = () => {
-          const table = th.dataset.table;
-          const col = th.dataset.col;
-          const glossaryBoxId = th.dataset.glossaryBox;
-          if (glossaryBoxId && col !== "__name") {
-            const box = document.getElementById(glossaryBoxId);
-            const section = table === "battingTable" ? "batting" : table === "pitchingTable" ? "pitching" : "fielding";
-            if (box) box.textContent = `${col}: ${getGlossaryText(section, col) || "No glossary description available."}`;
-          }
-          const apply = state => {
-            if (col === "__name") {
-              state.key = "__name";
-              state.dir = state.dir === "desc" ? "asc" : "desc";
-            } else {
-              state.dir = state.key === col && state.dir === "desc" ? "asc" : "desc";
-              state.key = col;
-            }
-          };
-          if (table === "battingTable") apply(battingSort);
-          if (table === "pitchingTable") apply(pitchingSort);
-          if (table === "fieldingTable") apply(fieldingSort);
-          renderTables();
-        };
-      });
-    }
-
-    function renderTables() {
-      renderTable("battingTable", "batting", battingSort);
-      renderTable("pitchingTable", "pitching", pitchingSort);
-      renderTable("fieldingTable", "fielding", fieldingSort);
-      bindTableSorting();
-    }
-
-    function renderMiniTable(targetId, players, preferredColumns) {
-      const columns = preferredColumns.filter(col => players.some(p => p[col] !== undefined));
-      document.getElementById(targetId).innerHTML = `
-        <thead><tr>${["Player", ...columns].map(c => `<th>${c}</th>`).join("")}</tr></thead>
-        <tbody>
-          ${players.map(p => `
-            <tr>
-              <td>#${p.number ?? ""} ${p.name || ""}</td>
-              ${columns.map(col => `<td>${formatStat(col, p[col])}</td>`).join("")}
-            </tr>
-          `).join("")}
-        </tbody>
-      `;
-    }
-
-    function notesToCards(notes) {
-      return Object.entries(notes || {}).map(([key, value]) => {
-        const text = Array.isArray(value)
-          ? value.map(item => `${item.name}: ${item.count}`).join(", ")
-          : String(value);
-        return `<div class="note-card"><div class="note-label">${key}</div><div>${text || "—"}</div></div>`;
-      }).join("") || `<div class="section-note">No notes available for this game.</div>`;
-    }
-
-    window.openGameModal = function(gameId) {
-      const game = getGames().find(g => g.id === gameId);
-      if (!game) return;
-      document.getElementById("modalTitle").textContent = `${game.shortDate} ${/^home$/i.test(game.location) ? "vs" : "@"} ${game.opponent}`;
-      document.getElementById("modalMeta").textContent = `${game.result} ${game.score} • ${game.location} • ${game.date}`;
-
-      const inningCount = Math.max(game.teamInnings.length, game.oppInnings.length);
-      const inningHeaders = Array.from({ length: inningCount }, (_, i) => i + 1);
-      document.getElementById("modalBoxscore").innerHTML = `
-        <thead>
-          <tr>
-            <th>Team</th>
-            ${inningHeaders.map(i => `<th>${i}</th>`).join("")}
-            <th>R</th><th>H</th><th>E</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>${/^home$/i.test(game.location) ? game.opponent : game.mudhensKey}</td>
-            ${inningHeaders.map((_, idx) => `<td>${/^home$/i.test(game.location) ? (game.oppInnings[idx] ?? 0) : (game.teamInnings[idx] ?? 0)}</td>`).join("")}
-            <td>${/^home$/i.test(game.location) ? game.oppRuns : game.teamRuns}</td>
-            <td>${/^home$/i.test(game.location) ? game.oppHits : game.teamHits}</td>
-            <td>${/^home$/i.test(game.location) ? game.oppErrors : game.teamErrors}</td>
-          </tr>
-          <tr>
-            <td>${/^home$/i.test(game.location) ? game.mudhensKey : game.opponent}</td>
-            ${inningHeaders.map((_, idx) => `<td>${/^home$/i.test(game.location) ? (game.teamInnings[idx] ?? 0) : (game.oppInnings[idx] ?? 0)}</td>`).join("")}
-            <td>${/^home$/i.test(game.location) ? game.teamRuns : game.oppRuns}</td>
-            <td>${/^home$/i.test(game.location) ? game.teamHits : game.oppHits}</td>
-            <td>${/^home$/i.test(game.location) ? game.teamErrors : game.oppErrors}</td>
-          </tr>
-        </tbody>
-      `;
-
-      renderMiniTable("modalBatting", game.batting, ["position", "AB", "R", "H", "RBI", "BB", "SO"]);
-      renderMiniTable("modalPitching", game.pitching, ["IP", "H", "R", "ER", "BB", "SO", "HR"]);
-      document.getElementById("modalBattingNotes").innerHTML = notesToCards(game.battingNotes || {});
-      document.getElementById("modalPitchingNotes").innerHTML = notesToCards(game.pitchingNotes || {});
-      gameModal.classList.add("open");
-      gameModal.setAttribute("aria-hidden", "false");
-    };
-
-    function closeGameModal() {
-      gameModal.classList.remove("open");
-      gameModal.setAttribute("aria-hidden", "true");
-    }
-
-    closeModal.addEventListener("click", closeGameModal);
-    gameModal.addEventListener("click", e => { if (e.target === gameModal) closeGameModal(); });
-    document.addEventListener("keydown", e => { if (e.key === "Escape") closeGameModal(); });
-
-    function render() {
-      renderShell();
-      buildControls();
-      buildSnapshot();
-      buildLeaders();
-      buildGamesList();
-      drawTrendChart();
-      renderTables();
-    }
-
-    Promise.all([
-      fetch("full-stats.json").then(r => r.json()),
-      fetch("game-stats.json").then(r => r.json())
-    ]).then(([full, games]) => {
-      fullStats = full;
-      gameStats = games;
-      render();
-    }).catch(err => {
-      app.innerHTML = `<div class="loading panel">Could not load the JSON files. Make sure <strong>full-stats.json</strong> and <strong>game-stats.json</strong> are next to this HTML file.<br><br>${String(err)}</div>`;
+function buildControls(){
+  const sel=document.getElementById("trendPlayer"), players=getPlayers();
+  sel.innerHTML=players.map(p=>`<option value="${displayName(p)}">#${p.number} ${displayName(p)}</option>`).join("");
+  if(players.length) sel.value=displayName(players[0]);
+  document.getElementById("trendPlayer").addEventListener("change", drawTrendChart);
+  document.getElementById("gameFilter").addEventListener("change", buildGamesList);
+  renderTrendLegend();
+}
+function renderTrendLegend(){
+  const colors={AVG:"var(--avg)",OBP:"var(--obp)",SLG:"var(--slg)",OPS:"var(--ops)"}, legend=document.getElementById("trendLegend");
+  legend.innerHTML=Object.keys(trendVisibility).map(key=>`<button type="button" data-trend-toggle="${key}" style="width:auto;padding:8px 12px;border-radius:999px;background:${trendVisibility[key]?colors[key]:'rgba(255,255,255,.08)'};color:${trendVisibility[key]?'#0f172a':'white'};border:1px solid rgba(255,255,255,.12);font-weight:900;">${key}</button>`).join("");
+  legend.querySelectorAll("button[data-trend-toggle]").forEach(btn=>btn.onclick=()=>{ const key=btn.dataset.trendToggle; trendVisibility[key]=!trendVisibility[key]; renderTrendLegend(); drawTrendChart(); });
+}
+function buildSnapshot(){
+  const totals=getTotals(), games=getGames(), gamesPlayed=games.length||toNumber(totals?.batting?.GP)||0, wins=games.filter(g=>g.result==="W").length, losses=games.filter(g=>g.result==="L").length, ties=Math.max(0,gamesPlayed-wins-losses), batting=totals?.batting||{};
+  const derived=code=> code==="BBPCT"?safeDiv(toNumber(batting.BB)||0,toNumber(batting.PA)||0): code==="KPCT"?safeDiv(toNumber(batting.SO)||0,toNumber(batting.PA)||0): code==="RPH"?safeDiv(toNumber(batting.R)||0,toNumber(batting.H)||0): null;
+  const cards=[["Record",`${wins}-${losses}-${ties}`,`${gamesPlayed} games`],["Runs",formatStat("batting","R",batting.R),gamesPlayed?`${round((toNumber(batting.R)||0)/gamesPlayed,2)} per game`:"Season total"],...DEFAULT_UI.teamCards.map(card=>{ const value=card.derived?derived(card.derived):batting[card.key]; const formatted=card.derived==="BBPCT"||card.derived==="KPCT"?`${round((value||0)*100,1)}%`:card.derived==="RPH"?round(value||0,2):formatStat(card.section,card.key,value); const subtitle=card.derived==="BBPCT"?"Walks / PA":card.derived==="KPCT"?"Strikeouts / PA":card.derived==="RPH"?"Runs per hit":(getGlossaryText(card.section,card.key)||"Season total"); return [card.label,formatted,subtitle]; })];
+  document.getElementById("snapshotGrid").innerHTML=cards.map(([label,value,sub])=>`<div class="panel snapshot-card"><div class="snapshot-label">${label}</div><div class="snapshot-value">${value}</div><div class="snapshot-sub">${sub}</div></div>`).join("");
+}
+function leaderMetricValue(player, section, key){ return toNumber(player?.[section]?.[key]); }
+function buildLeaderGroup(title, section, keys){
+  const players=getPlayers();
+  return `<div><h3 class="leader-group-title">${title}</h3><div class="leaders-grid-inner">${keys.map(key=>{ const asc=["ERA","WHIP","FIP","BAA","P/BF","BB/INN"].includes(key)||(section==="batting"&&key==="SO"); const minKey=section==="batting"?"AB":"IP"; const minThreshold=["AVG","OBP","OPS","SLG"].includes(key)?5:(["ERA","WHIP","FIP"].includes(key)?2:0); const filtered=players.filter(p=>{ const metric=leaderMetricValue(p,section,key); const minVal=toNumber(p?.[section]?.[minKey])||0; return metric!==null && minVal>=minThreshold; }).sort((a,b)=>{ const av=leaderMetricValue(a,section,key), bv=leaderMetricValue(b,section,key); if(av===bv) return displayName(a).localeCompare(displayName(b)); return asc?av-bv:bv-av; }).slice(0,5); let prev=null, prevRank=0; return `<div class="leader-card"><div class="leader-title" title="${getGlossaryText(section,key)||key}">${key}</div><div class="leader-list">${filtered.map((p,i)=>{ const current=leaderMetricValue(p,section,key); const rank=prev!==null&&current===prev?prevRank:(i+1); prev=current; prevRank=rank; return `<div class="leader-row"><div class="badge">${rank}</div><div><div class="player-main">#${p.number} ${displayName(p)}</div><div class="player-sub">${formatStat(section,minKey,p?.[section]?.[minKey])} ${minKey}</div></div><div class="leader-value">${formatStat(section,key,p?.[section]?.[key])}</div></div>`; }).join("") || `<div class="section-note">No data</div>`}</div></div>`; }).join("")}</div></div>`;
+}
+function buildLeaders(){
+  const sampleBatting=getPlayers().find(p=>p.batting)?.batting||{}, samplePitching=getPlayers().find(p=>p.pitching)?.pitching||{};
+  document.getElementById("leaderGroups").innerHTML=[buildLeaderGroup("Batting Leaders","batting",pickKeys(sampleBatting,DEFAULT_UI.battingLeaderKeys)),buildLeaderGroup("Pitching Leaders","pitching",pickKeys(samplePitching,DEFAULT_UI.pitchingLeaderKeys))].join("");
+}
+function buildGamesList(){
+  const filter=document.getElementById("gameFilter").value;
+  const games=getGames().filter(g=>filter==="wins"?g.result==="W":filter==="losses"?g.result==="L":filter==="ties"?g.result==="T":true);
+  document.getElementById("gamesList").innerHTML=games.map(game=>`<div class="game-card"><div class="game-top"><div><div class="pill ${game.result==="W"?"win":game.result==="L"?"loss":""}">${game.result==="T"?"Tie":game.result==="W"?"Win":"Loss"}</div><div style="font-weight:900;font-size:18px;margin-top:8px;">${game.shortDate} ${/^home$/i.test(game.location)?"vs":"@"} ${game.opponent}</div></div><div class="game-score">${game.score}</div></div><div class="game-meta">${game.location||""} • ${game.teamHits} hits • ${game.teamErrors} errors • ${(game.battingNotes?.LOB ?? 0)} LOB</div><button class="game-button" onclick="openGameModal('${game.id}')">View box score</button></div>`).join("") || `<div class="section-note">No games match this filter.</div>`;
+}
+function getPlayerTrend(playerName, stat){
+  const games=getGames();
+  let hits=0, ab=0, bb=0, hbp=0, tb=0;
+  const selectedPlayer = getPlayers().find(p=>displayName(p)===playerName);
+  const statValue=(obj,keys)=>{ for(const key of keys){ if(obj&&obj[key]!==undefined&&obj[key]!==null&&obj[key]!=="") return Number(obj[key])||0; } return 0; };
+  return games.map(game=>{
+    const found=game.batting.find(line=>{
+      const name=String(line.name||"").trim();
+      const byNumber=getPlayers().find(p=>Number(p.number)===Number(line.number));
+      if(byNumber&&displayName(byNumber)===playerName) return true;
+      const byFull=getPlayers().find(p=>displayName(p)===name);
+      if(byFull&&displayName(byFull)===playerName) return true;
+      const byShort=getPlayers().find(p=>`${p.first?.[0]||""} ${p.last}`.trim()===name);
+      return byShort?displayName(byShort)===playerName:false;
     });
-  </script>
+
+    if(found){
+      const gameHits=statValue(found,["H","h"]);
+      const gameAB=statValue(found,["AB","ab"]);
+      const gameBB=statValue(found,["BB","bb"]);
+      const fallback2B=statValue(found,["2B","doubles"]);
+      const fallback3B=statValue(found,["3B","triples"]);
+      const fallbackHR=statValue(found,["HR","hr","homeRuns"]);
+      const notesTB = noteCountForPlayer(game.battingNotes, "TB", selectedPlayer);
+      const notesHBP = noteCountForPlayer(game.battingNotes, "HBP", selectedPlayer);
+      const singles = gameHits - fallback2B - fallback3B - fallbackHR;
+      const gameTB = notesTB !== null
+        ? notesTB
+        : ((found.TB!==undefined||found.tb!==undefined) ? statValue(found,["TB","tb"]) : (singles + 2*fallback2B + 3*fallback3B + 4*fallbackHR));
+      const gameHBP = notesHBP !== null ? notesHBP : statValue(found,["HBP","hbp"]);
+
+      hits += gameHits;
+      ab += gameAB;
+      bb += gameBB;
+      hbp += gameHBP;
+      tb += gameTB;
+    }
+
+    const avg=safeDiv(hits,ab), obp=safeDiv(hits+bb+hbp,ab+bb+hbp), slg=safeDiv(tb,ab), ops=obp+slg;
+    return {x:game.shortDate, y: stat==="AVG"?avg:stat==="OBP"?obp:stat==="SLG"?slg:ops};
+  });
+}
+function drawTrendChart(){
+  const svg=document.getElementById("trendChart"), playerName=document.getElementById("trendPlayer").value, colors={AVG:"#38bdf8",OBP:"#22c55e",SLG:"#fbbf24",OPS:"#fb7185"};
+  const activeKeys=Object.keys(trendVisibility).filter(k=>trendVisibility[k]), plottingKeys=activeKeys.length?activeKeys:["AVG"];
+  const seriesMap={AVG:getPlayerTrend(playerName,"AVG"),OBP:getPlayerTrend(playerName,"OBP"),SLG:getPlayerTrend(playerName,"SLG"),OPS:getPlayerTrend(playerName,"OPS")};
+  const width=760,height=360,m={top:18,right:18,bottom:44,left:44},innerW=width-m.left-m.right,innerH=height-m.top-m.bottom;
+  const allValues=plottingKeys.flatMap(k=>seriesMap[k].map(p=>p.y)), maxY=Math.max(1,...allValues), xCount=seriesMap.AVG.length;
+  const xPos=i=>m.left+(xCount<=1?innerW/2:(i/(xCount-1))*innerW), yPos=y=>m.top+innerH-((y/maxY)*innerH), pathFor=arr=>arr.map((p,i)=>`${i===0?"M":"L"} ${xPos(i)} ${yPos(p.y)}`).join(" ");
+  let grid=""; for(let i=0;i<=4;i++){ const y=m.top+(i/4)*innerH, val=maxY-((i/4)*maxY); grid += `<line x1="${m.left}" y1="${y}" x2="${width-m.right}" y2="${y}" stroke="rgba(255,255,255,.1)" />`; grid += `<text x="${m.left-8}" y="${y+4}" text-anchor="end" class="axis-label">${rate(val,3)}</text>`; }
+  svg.innerHTML = `${grid}<line x1="${m.left}" y1="${height-m.bottom}" x2="${width-m.right}" y2="${height-m.bottom}" stroke="rgba(255,255,255,.18)" /><line x1="${m.left}" y1="${m.top}" x2="${m.left}" y2="${height-m.bottom}" stroke="rgba(255,255,255,.18)" /><text x="${m.left}" y="14" class="axis-label" style="font-size:13px;font-weight:800;fill:#f8fafc;">${playerName} • Cumulative AVG / OBP / SLG / OPS</text>${plottingKeys.map(key=>`<path d="${pathFor(seriesMap[key])}" fill="none" stroke="${colors[key]}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />`).join("")}${activeKeys.map(key=>seriesMap[key].map((p,i)=>`<circle cx="${xPos(i)}" cy="${yPos(p.y)}" r="5" fill="${colors[key]}" stroke="#082f49" stroke-width="2" />`).join("")).join("")}${(seriesMap.AVG||[]).map((p,i)=>`<text x="${xPos(i)}" y="${height-m.bottom+22}" text-anchor="middle" class="axis-label">${p.x}</text>`).join("")}`;
+}
+function renderTable(tableId, section, sortStateRef){
+  const players=getPlayers(), sectionGlossary=getGlossaryForSection(section), totals=getTotals()?.[section]||{}, columns=Object.keys(players.find(p=>p[section])?.[section]||totals||{});
+  if(!sortStateRef.key) sortStateRef.key=columns[0]||null; const glossaryBoxId=tableId==="battingTable"?"battingGlossaryBox":tableId==="pitchingTable"?"pitchingGlossaryBox":"fieldingGlossaryBox";
+  const sorted=[...players].sort((a,b)=>{ if(!sortStateRef.key) return 0; if(sortStateRef.key==="__name") return sortStateRef.dir==="asc"?displayName(a).localeCompare(displayName(b)):displayName(b).localeCompare(displayName(a)); const av=toNumber(a?.[section]?.[sortStateRef.key]), bv=toNumber(b?.[section]?.[sortStateRef.key]); if(av===null&&bv===null) return displayName(a).localeCompare(displayName(b)); if(av===null) return 1; if(bv===null) return -1; return sortStateRef.dir==="asc"?av-bv:bv-av; });
+  document.getElementById(tableId).innerHTML=`<thead><tr><th data-table="${tableId}" data-col="__name">Player</th>${columns.map(col=>`<th data-table="${tableId}" data-col="${col}" data-glossary-box="${glossaryBoxId}" title="${sectionGlossary[col]||getGlossaryText(section,col)||col}">${col}</th>`).join("")}</tr></thead><tbody>${sorted.map(player=>`<tr><td><div class="player-cell"><span class="badge" style="width:30px;height:30px;font-size:12px;">#${player.number}</span>${displayName(player)}</div></td>${columns.map(col=>`<td>${formatStat(section,col,player?.[section]?.[col])}</td>`).join("")}</tr>`).join("")}</tbody><tfoot><tr><td>Totals</td>${columns.map(col=>`<td>${formatStat(section,col,totals[col])}</td>`).join("")}</tr></tfoot>`;
+}
+function bindTableSorting(){
+  document.querySelectorAll("th[data-table]").forEach(th=>{ th.onclick=()=>{ const table=th.dataset.table, col=th.dataset.col, glossaryBoxId=th.dataset.glossaryBox; if(glossaryBoxId&&col!=="__name"){ const box=document.getElementById(glossaryBoxId), section=table==="battingTable"?"batting":table==="pitchingTable"?"pitching":"fielding"; if(box) box.textContent=`${col}: ${getGlossaryText(section,col)||"No glossary description available."}`; } const apply=state=>{ if(col==="__name"){ state.key="__name"; state.dir=state.dir==="desc"?"asc":"desc"; } else { state.dir=state.key===col&&state.dir==="desc"?"asc":"desc"; state.key=col; } }; if(table==="battingTable") apply(battingSort); if(table==="pitchingTable") apply(pitchingSort); if(table==="fieldingTable") apply(fieldingSort); renderTables(); }; });
+}
+function renderTables(){ renderTable("battingTable","batting",battingSort); renderTable("pitchingTable","pitching",pitchingSort); renderTable("fieldingTable","fielding",fieldingSort); bindTableSorting(); }
+function renderMiniTable(targetId, players, preferredColumns){ const cols=preferredColumns.filter(col=>players.some(p=>p[col]!==undefined)); document.getElementById(targetId).innerHTML=`<thead><tr>${["Player",...cols].map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${players.map(p=>`<tr><td>#${p.number??""} ${p.name||""}</td>${cols.map(col=>`<td>${formatStat(col,p[col])}</td>`).join("")}</tr>`).join("")}</tbody>`; }
+function notesToCards(notes){ return Object.entries(notes||{}).map(([key,value])=>{ const text=Array.isArray(value)?value.map(item=>`${item.name}: ${item.count}`).join(", "):String(value); return `<div class="note-card"><div class="note-label">${key}</div><div>${text||"—"}</div></div>`; }).join("") || `<div class="section-note">No notes available for this game.</div>`; }
+window.openGameModal=function(gameId){
+  const game=getGames().find(g=>g.id===gameId); if(!game) return;
+  document.getElementById("modalTitle").textContent=`${game.shortDate} ${/^home$/i.test(game.location)?"vs":"@"} ${game.opponent}`;
+  document.getElementById("modalMeta").textContent=`${game.result} ${game.score} • ${game.location} • ${game.date}`;
+  const inningCount=Math.max(game.teamInnings.length,game.oppInnings.length), inningHeaders=Array.from({length:inningCount},(_,i)=>i+1);
+  document.getElementById("modalBoxscore").innerHTML=`<thead><tr><th>Team</th>${inningHeaders.map(i=>`<th>${i}</th>`).join("")}<th>R</th><th>H</th><th>E</th></tr></thead><tbody><tr><td>${/^home$/i.test(game.location)?game.opponent:game.mudhensKey}</td>${inningHeaders.map((_,idx)=>`<td>${/^home$/i.test(game.location)?(game.oppInnings[idx]??0):(game.teamInnings[idx]??0)}</td>`).join("")}<td>${/^home$/i.test(game.location)?game.oppRuns:game.teamRuns}</td><td>${/^home$/i.test(game.location)?game.oppHits:game.teamHits}</td><td>${/^home$/i.test(game.location)?game.oppErrors:game.teamErrors}</td></tr><tr><td>${/^home$/i.test(game.location)?game.mudhensKey:game.opponent}</td>${inningHeaders.map((_,idx)=>`<td>${/^home$/i.test(game.location)?(game.teamInnings[idx]??0):(game.oppInnings[idx]??0)}</td>`).join("")}<td>${/^home$/i.test(game.location)?game.teamRuns:game.oppRuns}</td><td>${/^home$/i.test(game.location)?game.teamHits:game.oppHits}</td><td>${/^home$/i.test(game.location)?game.teamErrors:game.oppErrors}</td></tr></tbody>`;
+  renderMiniTable("modalBatting", game.batting, ["position","AB","R","H","RBI","BB","SO"]);
+  renderMiniTable("modalPitching", game.pitching, ["IP","H","R","ER","BB","SO","HR"]);
+  document.getElementById("modalBattingNotes").innerHTML=notesToCards(game.battingNotes||{});
+  document.getElementById("modalPitchingNotes").innerHTML=notesToCards(game.pitchingNotes||{});
+  gameModal.classList.add("open");
+};
+document.getElementById("closeModal").onclick=()=>gameModal.classList.remove("open");
+gameModal.addEventListener("click",e=>{ if(e.target===gameModal) gameModal.classList.remove("open"); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") gameModal.classList.remove("open"); });
+
+function render(){ renderShell(); buildControls(); buildSnapshot(); buildLeaders(); buildGamesList(); drawTrendChart(); renderTables(); }
+Promise.all([fetch("full-stats.json").then(r=>r.json()), fetch("game-stats.json").then(r=>r.json())]).then(([full,games])=>{ fullStats=full; gameStats=games; render(); }).catch(err=>{ app.innerHTML=`<div class="panel" style="padding:28px;text-align:center;color:var(--muted)">Could not load the JSON files.<br><br>${String(err)}</div>`; });
+</script>
 </body>
 </html>
